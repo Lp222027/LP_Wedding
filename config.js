@@ -4,7 +4,7 @@
    ==================================================================== */
 window.SITE = {
   "eventDate": "2027-03-22T14:00:00+07:00",
-  "scriptUrl": "https://script.google.com/macros/s/AKfycbw_ztr1sOXaiVQGineC0jbvd887tILksTrVNVqpQK-Zq6wws7LOjjZDk2rlHZ_YbAEaIg/exec",
+  "scriptUrl": "",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=The+Signature+Hotel+Airport",
 
   "theme": {"bg": "#34502f", "bg2": "#5f7f49", "paper": "#fbf7ee", "ink": "#3b3c30", "accent": "#f4cdd3", "olive": "#587343", "peanut": "#b27c88"},
