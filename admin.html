@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>แอดมิน · Lee & Praew</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Sans+Thai:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<style>
+:root{--bg:#121a14;--card:#1a251c;--line:rgba(239,232,214,.14);--cr:#efe8d6;--mute:#a9ab92;--accent:#fdf4b7;--ok:#9fd08a;--warn:#f0b36b;--bad:#ee8f80}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--cr);font:300 15px/1.55 'IBM Plex Sans Thai',system-ui,sans-serif;height:100vh;height:100dvh;display:flex;flex-direction:column;overflow:hidden}
+button,input,select,textarea{font:inherit;color:inherit}
+.top{display:flex;align-items:center;gap:12px;padding:10px 16px;border-bottom:1px solid var(--line);background:#0f1712}
+.top b{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;letter-spacing:.04em}
+.top .sub{color:var(--mute);font-size:.85rem}
+.top .sp{flex:1}
+.btn{color:var(--cr);padding:9px 16px;border-radius:9px;border:1px solid var(--line);background:transparent;cursor:pointer;font-weight:400;white-space:nowrap}
+.btn:hover{background:rgba(239,232,214,.07)}
+.btn.pri{background:var(--accent);color:#2a281d;border-color:var(--accent);font-weight:500}
+.btn.pri:hover{filter:brightness(.95)}
+.btn.sm{padding:5px 10px;font-size:.82rem}
+.tabs{display:none}
+.layout{flex:1;min-height:0;display:grid;grid-template-columns:minmax(360px,460px) 1fr}
+#panel{overflow:auto;padding:14px 14px 60px;border-right:1px solid var(--line)}
+.pv{display:flex;justify-content:center;align-items:center;padding:14px;background:radial-gradient(80% 60% at 50% 40%,#1b2a1f,#0f1712)}
+.phone{width:min(100%,402px);height:100%;max-height:860px;border-radius:34px;padding:10px;background:#050806;box-shadow:0 0 0 1px #2c3a2f,0 30px 70px rgba(0,0,0,.6)}
+.phone iframe{width:100%;height:100%;border:0;border-radius:26px;background:#161f18;display:block}
+details.g{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+details.g>summary{cursor:pointer;list-style:none;padding:13px 14px;font-weight:500;display:flex;align-items:center;gap:8px}
+details.g>summary::-webkit-details-marker{display:none}
+details.g>summary::after{content:"＋";margin-left:auto;color:var(--mute)}
+details.g[open]>summary::after{content:"－"}
+.gb{padding:2px 14px 16px;border-top:1px solid var(--line)}
+.fld{margin-top:12px}
+.fld label{display:block;font-size:.8rem;color:var(--mute);margin-bottom:4px}
+.fld input[type=text],.fld input[type=datetime-local],.fld textarea,.fld select{width:100%;padding:9px 11px;border-radius:8px;border:1px solid var(--line);background:#101812;outline:none}
+.fld input:focus,.fld textarea:focus,.fld select:focus{border-color:var(--accent)}
+.fld textarea{resize:vertical;min-height:62px}
+.tg{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:.88rem;color:var(--cr)}
+.tg input{width:18px;height:18px;accent-color:#fdf4b7}
+.row{display:grid;gap:6px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line)}
+.row.tl{grid-template-columns:62px 1fr 1fr}
+.row.tl .full{grid-column:1/-1;display:flex;gap:6px}
+.row.tl select{flex:1}
+.row input,.row select{width:100%;padding:8px 9px;border-radius:8px;border:1px solid var(--line);background:#101812}
+.row.dr{grid-template-columns:44px 1fr auto}
+.row.dr input[type=color]{padding:2px;height:36px;border-radius:8px;background:#101812}
+.ib{border:1px solid var(--line);background:transparent;border-radius:8px;padding:6px 10px;cursor:pointer}
+.ib:hover{background:rgba(239,232,214,.08)}
+.photo{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line)}
+.photo img{width:70px;height:70px;object-fit:cover;border-radius:8px;background:#222}
+.photo .ctl{display:flex;flex-direction:column;gap:5px}
+.photo .nm{font-size:.88rem}
+.photo label.sl{display:grid;grid-template-columns:44px 1fr;font-size:.74rem;color:var(--mute);align-items:center}
+.photo input[type=range]{width:100%;accent-color:#fdf4b7}
+.note{font-size:.78rem;color:var(--mute);margin-top:8px}
+.st{font-size:.8rem;margin-top:6px}.st.ok{color:var(--ok)}.st.warn{color:var(--warn)}.st.bad{color:var(--bad)}
+.th{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.th .c{display:flex;align-items:center;gap:8px;font-size:.82rem}
+.th input[type=color]{width:38px;height:32px;padding:1px;border-radius:7px;background:#101812;border:1px solid var(--line)}
+.banner{background:#2a2a14;border:1px solid #6b6a2c;border-radius:10px;padding:10px 12px;margin-bottom:10px;font-size:.86rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.banner span{flex:1;min-width:150px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;align-items:center;justify-content:center;z-index:50;padding:16px}
+.modal.on{display:flex}
+.mb{background:#18241b;border:1px solid var(--line);border-radius:16px;padding:20px;width:min(520px,100%);max-height:92vh;overflow:auto}
+.mb h3{font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-bottom:6px}
+.mb ol{margin:8px 0 4px 20px;color:var(--mute);font-size:.84rem}
+.mb a{color:var(--accent)}
+.log{margin-top:12px;background:#0c120e;border-radius:8px;padding:10px;font:12px/1.6 ui-monospace,monospace;max-height:160px;overflow:auto;white-space:pre-wrap;display:none}
+.mb .ft{display:flex;gap:8px;justify-content:flex-end;margin-top:16px}
+@media (max-width:900px){
+  .layout{grid-template-columns:1fr}
+  .tabs{display:flex;border-bottom:1px solid var(--line)}
+  .tabs button{flex:1;padding:11px;background:none;border:0;border-bottom:2px solid transparent;cursor:pointer;color:var(--mute)}
+  .tabs button.on{color:var(--accent);border-color:var(--accent)}
+  body[data-tab=edit] .pv{display:none}
+  body[data-tab=view] #panel{display:none}
+  .phone{max-height:none;height:100%}
+  .top .sub{display:none}
+  .top{gap:6px;padding:8px 10px}.top b{display:none}.top .sp{display:none}.top .btn{flex:1;text-align:center}.top .btn{padding:8px 9px;font-size:.78rem}
+}
+</style>
+</head>
+<body data-tab="edit">
+
+<header class="top">
+  <b>แอดมินงานแต่ง</b><span class="sub">Lee &amp; Praew</span><span class="sp"></span>
+  <a class="btn" id="btnSite" href="index.html" target="_blank" rel="noopener" style="text-decoration:none">ดูตั้งแต่ซอง</a>
+  <button class="btn" id="btnDl" title="ดาวน์โหลด config.js และไฟล์รูป/เพลงที่เปลี่ยน">ดาวน์โหลดไฟล์</button>
+  <button class="btn pri" id="btnPub">เผยแพร่ขึ้นเว็บ</button>
+</header>
+<nav class="tabs"><button data-tab="edit" class="on">แก้ไข</button><button data-tab="view">ดูตัวอย่าง</button></nav>
+
+<div class="layout">
+  <aside id="panel"></aside>
+  <section class="pv"><div class="phone"><iframe id="frame" src="index.html?preview" title="ตัวอย่างเว็บ"></iframe></div></section>
+</div>
+
+<div class="modal" id="pub">
+  <div class="mb">
+    <h3>เผยแพร่ขึ้นเว็บ</h3>
+    <p style="color:var(--mute);font-size:.86rem">ส่งการแก้ไขขึ้น GitHub โดยตรง เว็บจริงจะอัปเดตภายใน 1–2 นาที</p>
+    <div class="fld"><label>บัญชี GitHub (owner)</label><input type="text" id="gOwner" placeholder="lp222027"></div>
+    <div class="fld"><label>ชื่อ repo</label><input type="text" id="gRepo" placeholder="LP_Wedding"></div>
+    <div class="fld"><label>Branch</label><input type="text" id="gBranch" placeholder="main"></div>
+    <div class="fld"><label>โทเค็น (Personal access token)</label><input type="text" id="gToken" autocomplete="off" placeholder="github_pat_..." style="-webkit-text-security:disc"></div>
+    <label class="tg"><input type="checkbox" id="gRemember"> จำค่าไว้ในเบราว์เซอร์นี้ (ไม่ส่งไปที่อื่น)</label>
+    <details style="margin-top:12px"><summary style="cursor:pointer;color:var(--accent);font-size:.86rem">วิธีสร้างโทเค็น (ทำครั้งเดียว)</summary>
+      <ol>
+        <li>เปิด <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a></li>
+        <li>ตั้งชื่อ เช่น wedding-admin และเลือกวันหมดอายุ</li>
+        <li>Repository access → <b>Only select repositories</b> → เลือก repo เว็บงานแต่ง</li>
+        <li>Permissions → Repository permissions → <b>Contents: Read and write</b></li>
+        <li>กด Generate token แล้วคัดลอกมาวางด้านบน (ห้ามแชร์โทเค็นให้ใคร)</li>
+      </ol></details>
+    <div class="log" id="log"></div>
+    <div class="ft"><button class="btn" id="pubClose">ปิด</button><button class="btn pri" id="pubGo">เผยแพร่</button></div>
+  </div>
+</div>
+
+<script>
+/* ============ สถานะ ============ */
+const ORIG = JSON.parse(JSON.stringify(window.SITE || {}));
+let S = JSON.parse(JSON.stringify(ORIG));
+['text','theme','sections','photos','music','video','pageBg','motion'].forEach(k => S[k] = S[k] || {});
+S.decor = S.decor || []; S.timeline = S.timeline || []; S.dress = S.dress || [];
+const blobs = { photos:{}, music:null, video:null, pageBg:null, decor:{} };
+const $ = (s, r=document) => r.querySelector(s);
+const el = (tag, props={}, kids=[]) => { const e = Object.assign(document.createElement(tag), props); [].concat(kids).forEach(k => e.append(k)); return e; };
+const frame = $('#frame'); let ready = false, draftTimer;
+
+function push(){ if (ready) frame.contentWindow.postMessage({ type:'site', site:S }, '*'); clearTimeout(draftTimer); draftTimer = setTimeout(saveDraft, 400); }
+function gotoPreview(id){ if (ready) frame.contentWindow.postMessage({ type:'goto', id }, '*'); document.body.dataset.tab !== 'edit' || 0; }
+addEventListener('message', e => { if (e.data && e.data.type === 'ready') { ready = true; push(); } });
+frame.addEventListener('load', () => setTimeout(() => { if (!ready) { ready = true; push(); } }, 600));
+
+/* ฉบับร่าง (เฉพาะข้อความ/ตั้งค่า — รูปที่เลือกใหม่ไม่ถูกเก็บ) */
+function saveDraft(){ try { const d = JSON.parse(JSON.stringify(S)); Object.keys(blobs.photos).forEach(k => d.photos[k].src = (ORIG.photos[k] || {}).src); if (blobs.music) d.music.src = (ORIG.music || {}).src || ''; if (blobs.pageBg) d.pageBg.src = (ORIG.pageBg || {}).src || ''; if (blobs.video) d.video.src = (ORIG.video || {}).src || ''; (d.decor||[]).forEach(x => { if (String(x.src).startsWith('blob:')) { x.src = ''; x.kind = 'blossom'; } delete x._k; }); localStorage.setItem('lp_admin_draft', JSON.stringify(d)); } catch(e){} }
+const setPath = (o, p, v) => { const ks = p.split('.'); let t = o; ks.slice(0,-1).forEach(k => t = (t[k] = t[k] || {})); t[ks.at(-1)] = v; };
+const getPath = (o, p) => p.split('.').reduce((a,k) => a == null ? a : a[k], o);
+
+/* ============ โครงฟอร์ม ============ */
+const T = (k, label, ml) => ({ k:'text.'+k, label, ml });
+const GROUPS = [
+  { id:'info', title:'ข้อมูลงาน', goto:'date', items:[
+    { k:'eventDate', label:'วันเวลาเริ่มงาน (ใช้นับถอยหลัง)', type:'datetime' },
+    { k:'mapUrl', label:'ลิงก์แผนที่ Google Maps' },
+    { k:'scriptUrl', label:'ลิงก์รับคำตอบ RSVP (Google Apps Script /exec)' } ]},
+  { id:'hero', title:'หน้าแรก และซองจดหมาย', goto:'hero', items:[
+    T('envelopeLine','ข้อความบนซอง (เหนือชื่อ)'), T('couple','ชื่อคู่บ่าวสาว (หัวเว็บและซอง)'), T('heroDate','บรรทัดบนสุดของหน้าแรก'),
+    T('tagline','ข้อความสคริปต์ใต้ชื่อ'), T('whereTh','วันที่ (ไทย) ใต้รูป'), T('whereEn','ชื่อสถานที่ (อังกฤษ) ใต้รูป') ]},
+  { id:'welcome', title:'คำเชิญ และชื่อ', goto:'welcome', toggle:'welcome', items:[
+    T('welcomeTitle','หัวข้อ (ขึ้นบรรทัดใหม่ได้)',1), T('welcomeTh','ข้อความไทย',1), T('welcomeEn','ข้อความอังกฤษ',1),
+    T('name1','ชื่อ-นามสกุล คนที่ 1'), T('name2','ชื่อ-นามสกุล คนที่ 2'), T('sig','ลายเซ็น (ตัวสคริปต์)') ]},
+  { id:'date', title:'วันที่ และนับถอยหลัง', goto:'date', toggle:'date', items:[
+    T('dateEyebrow','หัวเล็กด้านบน'), T('dateScript','วันที่ (ตัวสคริปต์ใหญ่)'), T('dateTh','วันที่ภาษาไทย'), T('quote','ประโยคข้อความ',1) ]},
+  { id:'details', title:'สถานที่ และตารางงาน', goto:'details', toggle:'details', items:[
+    T('detailsEyebrow','หัวเล็ก'), T('detailsTitle','หัวข้อใหญ่'), T('detailsSub','คำอธิบายใต้หัวข้อ'),
+    T('venueName','ชื่อสถานที่'), T('venueDate','วันที่ใต้ชื่อสถานที่'), T('mapBtn','ข้อความปุ่มแผนที่') ], list:'timeline' },
+  { id:'dress', title:'โทนสีเสื้อผ้า (Dress code)', goto:'dress', toggle:'dress', items:[
+    T('dressEyebrow','หัวเล็ก'), T('dressTitle','หัวข้อ'), T('dressSub','คำอธิบายภาษาไทย') ], list:'dress' },
+  { id:'rsvp', title:'ฟอร์ม RSVP และข้อความตอบกลับ', goto:'rsvp', toggle:'rsvp', items:[
+    T('rsvpEyebrow','หัวเล็ก'), T('rsvpTitle','หัวข้อ'), T('rsvpSub','คำอธิบายภาษาไทย'),
+    T('thanksYesTitle','หัวข้อเมื่อตอบ "ไปร่วมงาน"'), T('thanksYesText','ข้อความเมื่อ "ไปร่วมงาน" ({name} = ชื่อแขก)',1),
+    T('thanksNoTitle','หัวข้อเมื่อตอบ "ไม่สะดวก"'), T('thanksNoText','ข้อความเมื่อ "ไม่สะดวก"',1) ]},
+  { id:'footer', title:'ท้ายหน้า', goto:'footer', items:[ T('footerTag','แฮชแท็ก'), T('footerNote','ข้อความท้ายสุด') ]},
+  { id:'photos', title:'รูปภาพ', goto:'collage', custom:'photos' },
+  { id:'decor', title:'ของตกแต่งลอย (ใบไม้ ดอกไม้)', goto:'hero', custom:'decor' },
+  { id:'media', title:'เพลงและวิดีโอ', goto:'hero', custom:'media' },
+  { id:'theme', title:'พื้นหลังและสีของเว็บ', goto:'hero', custom:'theme' }
+];
+const PHOTO_NAMES = { hero:'รูปในกรอบลูกไม้หน้าแรก (และพื้นหลังเบลอ)', print1:'รูปปริ้นต์ใบที่ 1', print2:'รูปปริ้นต์ใบที่ 2', strip1:'แถบฟิล์ม เฟรม 1', strip2:'แถบฟิล์ม เฟรม 2', strip3:'แถบฟิล์ม เฟรม 3' };
+const ICON_NAMES = { tea:'ถ้วยชา', rings:'แหวน', dinner:'อาหารเย็น', heart:'หัวใจ', music:'ดนตรี', camera:'ถ่ายรูป', cake:'เค้ก', car:'รถ' };
+const THEME_NAMES = { bg:'พื้นหลังเว็บ', bg2:'พื้นหลังไล่เฉด', paper:'สีกระดาษ', ink:'ตัวอักษรบนกระดาษ', accent:'สีเน้น (ชมพูอ่อน)', olive:'เขียวหลัก (ตัวอักษร/ปุ่ม)', peanut:'ชมพูเข้ม (ขอบ/ตกแต่ง)' };
+
+/* ---- ตัวช่วยสร้าง input ---- */
+function textField(d){
+  const v = getPath(S, d.k) ?? '';
+  let inp;
+  if (d.type === 'datetime') { inp = el('input', { type:'datetime-local', value: String(v).slice(0,16) }); inp.oninput = () => { if (inp.value) { setPath(S, d.k, inp.value + ':00+07:00'); push(); } }; }
+  else { inp = el(d.ml ? 'textarea' : 'input', d.ml ? { value:v, rows:2 } : { type:'text', value:v }); inp.oninput = () => { setPath(S, d.k, inp.value); push(); }; if (d.ml) inp.value = v; }
+  return el('div', { className:'fld' }, [el('label', { textContent:d.label }), inp]);
+}
+function listTimeline(box){
+  box.replaceChildren();
+  S.timeline.forEach((it, i) => {
+    const t = el('input', { type:'text', value:it.time||'', placeholder:'เวลา' }), th = el('input', { type:'text', value:it.th||'', placeholder:'กิจกรรม (ไทย)' }), en = el('input', { type:'text', value:it.en||'', placeholder:'English' });
+    const sel = el('select', {}, Object.entries(ICON_NAMES).map(([k,n]) => el('option', { value:k, textContent:n, selected: it.icon === k })));
+    t.oninput = () => { it.time = t.value; push(); }; th.oninput = () => { it.th = th.value; push(); }; en.oninput = () => { it.en = en.value; push(); }; sel.onchange = () => { it.icon = sel.value; push(); };
+    const mv = (d) => el('button', { className:'ib', type:'button', textContent:d<0?'↑':'↓', onclick:() => { const j = i+d; if (j<0||j>=S.timeline.length) return; [S.timeline[i], S.timeline[j]] = [S.timeline[j], S.timeline[i]]; listTimeline(box); push(); } });
+    const del = el('button', { className:'ib', type:'button', textContent:'✕', onclick:() => { S.timeline.splice(i,1); listTimeline(box); push(); } });
+    box.append(el('div', { className:'row tl' }, [t, th, en, el('div', { className:'full' }, [sel, mv(-1), mv(1), del])]));
+  });
+  box.append(el('button', { className:'btn sm', type:'button', style:'margin-top:10px', textContent:'+ เพิ่มรายการ', onclick:() => { S.timeline.push({ time:'', th:'กิจกรรมใหม่', en:'', icon:'heart' }); listTimeline(box); push(); } }));
+}
+function listDress(box){
+  box.replaceChildren();
+  S.dress.forEach((d, i) => {
+    const c = el('input', { type:'color', value:d.color || '#999999' }), n = el('input', { type:'text', value:d.name || '' });
+    c.oninput = () => { d.color = c.value; push(); }; n.oninput = () => { d.name = n.value; push(); };
+    box.append(el('div', { className:'row dr' }, [c, n, el('button', { className:'ib', type:'button', textContent:'✕', onclick:() => { S.dress.splice(i,1); listDress(box); push(); } })]));
+  });
+  box.append(el('button', { className:'btn sm', type:'button', style:'margin-top:10px', textContent:'+ เพิ่มสี', onclick:() => { S.dress.push({ name:'สีใหม่', color:'#b79c87' }); listDress(box); push(); } }));
+}
+
+/* ---- รูป ---- */
+async function shrink(file, max=1600, q=.86){
+  const bmp = await createImageBitmap(file), sc = Math.min(1, max/Math.max(bmp.width, bmp.height));
+  const c = Object.assign(document.createElement('canvas'), { width:Math.round(bmp.width*sc), height:Math.round(bmp.height*sc) });
+  c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
+  return new Promise(r => c.toBlob(r, 'image/jpeg', q));
+}
+function photosUI(box){
+  box.append(el('p', { className:'note', textContent:'กดเลือกรูปใหม่ได้เลย ระบบย่อขนาดให้อัตโนมัติ ใช้แถบเลื่อนปรับว่าให้เห็นส่วนไหนของรูปเมื่อถูกตัดขอบ' }));
+  Object.entries(PHOTO_NAMES).forEach(([slot, name]) => {
+    const p = S.photos[slot] = S.photos[slot] || { src:`photos/${slot}.jpg`, focus:'50% 50%' };
+    const [fx, fy] = (p.focus || '50% 50%').split(' ').map(parseFloat);
+    const img = el('img', { src:p.src, alt:'' }), file = el('input', { type:'file', accept:'image/*', hidden:true });
+    const setF = () => { p.focus = `${X.value}% ${Y.value}%`; img.style.objectPosition = p.focus; push(); };
+    const X = el('input', { type:'range', min:0, max:100, value:isNaN(fx)?50:fx, oninput:setF }), Y = el('input', { type:'range', min:0, max:100, value:isNaN(fy)?50:fy, oninput:setF });
+    img.style.objectPosition = p.focus;
+    file.onchange = async () => { const f = file.files[0]; if (!f) return; const b = await shrink(f); blobs.photos[slot] = b; p.src = URL.createObjectURL(b); img.src = p.src; push(); };
+    box.append(el('div', { className:'photo' }, [img, el('div', { className:'ctl' }, [
+      el('div', { className:'nm', textContent:name }),
+      el('div', {}, [el('button', { className:'btn sm', type:'button', textContent:'เปลี่ยนรูป', onclick:() => file.click() }), file]),
+      el('label', { className:'sl' }, [el('span', { textContent:'ซ้าย-ขวา' }), X]), el('label', { className:'sl' }, [el('span', { textContent:'บน-ล่าง' }), Y]) ])]));
+  });
+}
+
+/* ---- เพลง / วิดีโอ ---- */
+function mediaUI(box){
+  const mk = (key, label, accept, limitMB, hint) => {
+    const st = el('div', { className:'st' }), file = el('input', { type:'file', accept, hidden:true });
+    const show = () => { const cur = S[key].src; const b = blobs[key];
+      if (b) { const mb = b.size/1048576; st.textContent = `${b.name} · ${mb.toFixed(1)} MB` + (mb > limitMB ? ` — ใหญ่เกิน ${limitMB} MB แขกที่ใช้เน็ตมือถือจะโหลดช้า` : ' — ขนาดโอเค'); st.className = 'st ' + (mb > limitMB ? 'warn' : 'ok'); }
+      else if (cur) { st.textContent = 'ใช้ไฟล์เดิม: ' + cur.split('?')[0]; st.className = 'st ok'; } else { st.textContent = 'ยังไม่ได้ใส่'; st.className = 'st'; } };
+    file.onchange = () => { const f = file.files[0]; if (!f) return; blobs[key] = f; S[key].src = URL.createObjectURL(f); show(); push(); };
+    const clear = el('button', { className:'btn sm', type:'button', textContent:'เอาออก', onclick:() => { blobs[key] = null; S[key].src = ''; show(); push(); } });
+    show();
+    return el('div', { className:'fld' }, [el('label', { textContent:label }), el('div', { style:'display:flex;gap:8px' }, [el('button', { className:'btn sm', type:'button', textContent:'เลือกไฟล์', onclick:() => file.click() }), file, clear]), st, el('p', { className:'note', textContent:hint })]);
+  };
+  box.append(
+    mk('music', 'เพลงประกอบ (mp3 / m4a)', 'audio/*', 4, 'เพลงจะเริ่มเล่นเมื่อแขกแตะเปิดซอง และมีปุ่มปิดเสียงมุมจอ ใช้เพลงที่ฟรีลิขสิทธิ์หรือคุณมีสิทธิ์ใช้ ความยาวไม่เกิน 3–4 นาที'),
+    mk('video', 'วิดีโอพื้นหลังหน้าแรก (mp4 / webm)', 'video/mp4,video/webm', 10, 'เล่นวนอัตโนมัติแบบไม่มีเสียง แนะนำคลิปสั้น 8–15 วินาที ความละเอียดไม่เกิน 720p')
+  );
+}
+
+/* ---- สี ---- */
+function bgUI(box){
+  const st = el('div', { className:'st' }), file = el('input', { type:'file', accept:'image/*', hidden:true });
+  const show = () => { st.textContent = S.pageBg.src ? (blobs.pageBg ? 'ใช้รูปใหม่ที่เลือก' : 'ใช้รูป: ' + S.pageBg.src.split('?')[0]) : 'ยังไม่ใช้รูป (ใช้สีพื้นหลังด้านล่าง)'; st.className = 'st ' + (S.pageBg.src ? 'ok' : ''); };
+  file.onchange = async () => { const f = file.files[0]; if (!f) return; const b = await shrink(f, 1800, .8); blobs.pageBg = b; S.pageBg.src = URL.createObjectURL(b); show(); push(); };
+  const dim = el('input', { type:'range', min:0, max:90, value:S.pageBg.dim ?? 18, oninput:() => { S.pageBg.dim = +dim.value; push(); } });
+  box.append(el('div', { className:'fld' }, [el('label', { textContent:'รูปพื้นหลังทั้งหน้าเว็บ' }),
+    el('div', { style:'display:flex;gap:8px' }, [el('button', { className:'btn sm', type:'button', textContent:'เลือกรูป', onclick:() => file.click() }), file,
+      el('button', { className:'btn sm', type:'button', textContent:'เอาออก', onclick:() => { blobs.pageBg = null; S.pageBg.src = ''; show(); push(); } })]), st,
+    el('label', { className:'sl', style:'margin-top:10px', textContent:'ความมืดทับรูป (ยิ่งมากตัวอักษรยิ่งอ่านง่าย)' }), dim,
+    el('p', { className:'note', textContent:'แนะนำรูปลายกระดาษ ใบไม้ หรือเท็กซ์เจอร์โทนเข้ม รูปจะถูกย่อให้อัตโนมัติ' })]));
+}
+
+const DKIND = { leaf:'ใบไม้', blossom:'ดอกไฮเดรนเยีย', rose:'กุหลาบชมพู', bird:'นก', heart:'หัวใจ', berry:'กิ่งผล', image:'รูปของฉัน (PNG โปร่งใส)' };
+function decorUI(box){
+  box.replaceChildren();
+  box.append(el('p', { className:'note', textContent:'แต่ละชิ้นเลือกเป็นใบไม้ ดอกไม้ กิ่งผล หรืออัปโหลดรูปเอง (แนะนำ PNG พื้นหลังโปร่งใส เช่น ดอกไม้ ซองจดหมาย โพลารอยด์) ตั้งตำแหน่ง ขนาด ความเร็ว และมุมได้' }));
+  S.decor.forEach((it, i) => {
+    const kind = el('select', {}, Object.entries(DKIND).map(([k,n]) => el('option', { value:k, textContent:n, selected:it.kind === k })));
+    const file = el('input', { type:'file', accept:'image/png,image/webp,image/*', hidden:true });
+    const mkSl = (label, key, min, max, step, scale=1) => { const v = el('span', { textContent:String(it[key]) }); const r = el('input', { type:'range', min, max, step, value:it[key], oninput:() => { it[key] = +r.value; v.textContent = r.value; push(); } }); return el('label', { className:'sl', style:'grid-template-columns:64px 1fr 38px' }, [el('span', { textContent:label }), r, v]); };
+    const fileRow = el('div', { style:'display:' + (it.kind === 'image' ? 'flex' : 'none') + ';gap:8px;align-items:center;margin:6px 0' }, [el('button', { className:'btn sm', type:'button', textContent:'เลือกรูป', onclick:() => file.click() }), file, el('span', { className:'st', textContent:it.src ? 'มีรูปแล้ว' : 'ยังไม่ได้เลือกรูป' })]);
+    kind.onchange = () => { it.kind = kind.value; fileRow.style.display = it.kind === 'image' ? 'flex' : 'none'; push(); };
+    file.onchange = async () => { const f = file.files[0]; if (!f) return; const png = /png|webp/.test(f.type); const b = png ? f : await shrink(f, 900, .85); const key = 'd' + i + '_' + Date.now(); blobs.decor[key] = { blob:b, ext: png ? (f.type.includes('webp') ? 'webp' : 'png') : 'jpg' }; it._k = key; it.src = URL.createObjectURL(b); it.kind = 'image'; kind.value = 'image'; fileRow.lastChild.textContent = 'มีรูปแล้ว'; push(); };
+    const mv = el('button', { className:'ib', type:'button', textContent:'✕', onclick:() => { S.decor.splice(i, 1); decorUI(box); push(); } });
+    box.append(el('div', { className:'row', style:'border:1px solid var(--line);border-radius:10px;padding:10px;margin-top:10px' }, [
+      el('div', { style:'display:flex;gap:8px' }, [el('b', { textContent:'#' + (i+1), style:'padding-top:6px' }), kind, mv]), fileRow,
+      mkSl('ซ้าย-ขวา', 'x', -15, 100, 1), mkSl('ตำแหน่งหน้า', 'y', 0, 100, 1), mkSl('ขนาด', 'w', 30, 260, 2), mkSl('ความเร็ว', 'd', -.3, .3, .01), mkSl('หมุน', 'r', -90, 90, 1)]));
+  });
+  box.append(el('div', { style:'display:flex;gap:8px;margin-top:12px' }, [
+    el('button', { className:'btn sm', type:'button', textContent:'+ เพิ่มชิ้นใหม่', onclick:() => { S.decor.push({ kind:'blossom', x:88, y:50, w:70, d:.1, r:0, src:'' }); decorUI(box); push(); } }),
+    el('button', { className:'btn sm', type:'button', textContent:'คืนค่าเดิม', onclick:() => { S.decor = JSON.parse(JSON.stringify(ORIG.decor || [])); blobs.decor = {}; decorUI(box); push(); } }),
+    el('button', { className:'btn sm', type:'button', textContent:'ลบทั้งหมด', onclick:() => { S.decor = []; decorUI(box); push(); } })]));
+}
+function themeUI(box){
+  const pc = el('input', { type:'checkbox', checked: S.motion.parallax !== false }); pc.onchange = () => { S.motion.parallax = pc.checked; push(); };
+  box.append(el('label', { className:'tg' }, [pc, 'ใบไม้/ดอกไม้ลอยตามการเลื่อนหน้า (parallax)']));
+  bgUI(box);
+  const g = el('div', { className:'th' });
+  Object.entries(THEME_NAMES).forEach(([k, name]) => {
+    const i = el('input', { type:'color', value:S.theme[k] || ORIG.theme?.[k] || '#000000' });
+    i.oninput = () => { S.theme[k] = i.value; push(); };
+    g.append(el('label', { className:'c' }, [i, name]));
+  });
+  box.append(g, el('button', { className:'btn sm', type:'button', style:'margin-top:12px', textContent:'คืนค่าสีเดิม', onclick:() => { S.theme = JSON.parse(JSON.stringify(ORIG.theme || {})); box.replaceChildren(); themeUI(box); push(); } }));
+}
+
+/* ---- ประกอบหน้า ---- */
+const panel = $('#panel');
+function build(){
+  panel.replaceChildren();
+  let draft = null; try { draft = JSON.parse(localStorage.getItem('lp_admin_draft') || 'null'); } catch(e){}
+  if (draft && JSON.stringify(draft) !== JSON.stringify(ORIG) && !build.skipDraft) {
+    panel.append(el('div', { className:'banner' }, [el('span', { textContent:'พบฉบับร่างที่ยังไม่ได้เผยแพร่ (รูปที่เลือกใหม่ไม่ถูกเก็บ)' }),
+      el('button', { className:'btn sm', textContent:'ใช้ฉบับร่าง', onclick:() => { S = Object.assign(JSON.parse(JSON.stringify(ORIG)), draft); build.skipDraft = true; build(); push(); } }),
+      el('button', { className:'btn sm', textContent:'ทิ้ง', onclick:() => { try { localStorage.removeItem('lp_admin_draft'); } catch(e){} build.skipDraft = true; build(); } })]));
+  }
+  GROUPS.forEach((g, gi) => {
+    const d = el('details', { className:'g' }), body = el('div', { className:'gb' });
+    d.append(el('summary', { textContent:g.title }), body);
+    if (gi === 1) d.open = true;
+    d.addEventListener('toggle', () => { if (d.open) gotoPreview(g.goto); });
+    if (g.toggle) { const cb = el('input', { type:'checkbox', checked: S.sections[g.toggle] !== false }); cb.onchange = () => { S.sections[g.toggle] = cb.checked; push(); }; body.append(el('label', { className:'tg' }, [cb, 'แสดงส่วนนี้ในหน้าเว็บ'])); }
+    (g.items || []).forEach(it => body.append(textField(it)));
+    if (g.list === 'timeline') { body.append(el('div', { className:'fld' }, [el('label', { textContent:'ตารางกำหนดการ' })])); const b = el('div'); body.append(b); listTimeline(b); }
+    if (g.list === 'dress') { body.append(el('div', { className:'fld' }, [el('label', { textContent:'สีที่แนะนำ' })])); const b = el('div'); body.append(b); listDress(b); }
+    if (g.custom === 'photos') { const cb = el('input', { type:'checkbox', checked: S.sections.collage !== false }); cb.onchange = () => { S.sections.collage = cb.checked; push(); }; body.append(el('label', { className:'tg' }, [cb, 'แสดงกลุ่มรูปปริ้นต์/แถบฟิล์ม']), el('div', { className:'fld' })); photosUI(body); }
+    if (g.custom === 'media') mediaUI(body);
+    if (g.custom === 'decor') decorUI(body);
+    if (g.custom === 'theme') themeUI(body);
+    panel.append(d);
+  });
+}
+build();
+
+/* ============ แท็บมือถือ ============ */
+document.querySelectorAll('.tabs button').forEach(b => b.onclick = () => { document.body.dataset.tab = b.dataset.tab; document.querySelectorAll('.tabs button').forEach(x => x.classList.toggle('on', x === b)); });
+
+/* ============ สร้างไฟล์ผลลัพธ์ ============ */
+const extOf = (f, d) => (f.name.match(/\.([a-z0-9]{2,4})$/i) || [0, d])[1].toLowerCase();
+function finalFiles(){
+  const c = JSON.parse(JSON.stringify(S)), v = Date.now().toString(36), files = [];
+  Object.entries(blobs.photos).forEach(([slot, b]) => { c.photos[slot].src = `photos/${slot}.jpg?v=${v}`; files.push({ path:`photos/${slot}.jpg`, data:b }); });
+  if (blobs.music) { const e = extOf(blobs.music, 'mp3'); c.music.src = `media/music.${e}?v=${v}`; files.push({ path:`media/music.${e}`, data:blobs.music }); }
+  c.decor.forEach((it, i) => { const m = blobs.decor[it._k]; delete it._k; if (it.kind === 'image' && m) { const p = `photos/decor-${i+1}.${m.ext}`; it.src = p + `?v=${v}`; files.push({ path:p, data:m.blob }); } });
+  if (blobs.pageBg) { c.pageBg.src = `photos/page-bg.jpg?v=${v}`; files.push({ path:'photos/page-bg.jpg', data:blobs.pageBg }); }
+  if (blobs.video) { const e = extOf(blobs.video, 'mp4'); c.video.src = `media/hero.${e}?v=${v}`; files.push({ path:`media/hero.${e}`, data:blobs.video }); }
+  const text = '/* config.js — สร้างจากหน้าแอดมิน */\nwindow.SITE = ' + JSON.stringify(c, null, 2) + ';\n';
+  files.push({ path:'config.js', data:new Blob([text], { type:'text/javascript' }) });
+  return files;
+}
+$('#btnDl').onclick = () => {
+  const files = finalFiles(); let i = 0;
+  files.forEach(f => setTimeout(() => { const a = el('a', { href:URL.createObjectURL(f.data), download:f.path.split('/').pop() }); document.body.append(a); a.click(); a.remove(); }, 450 * i++));
+  alert_(`กำลังดาวน์โหลด ${files.length} ไฟล์\nอัปโหลดไปที่ GitHub: ไฟล์รูปไปโฟลเดอร์ photos/, เพลงและวิดีโอไปโฟลเดอร์ media/, ส่วน config.js ไปที่ราก repo`);
+};
+function alert_(msg){ const l = $('#log'); $('#pub').classList.add('on'); l.style.display = 'block'; l.textContent = msg; }
+
+/* ============ เผยแพร่ขึ้น GitHub ============ */
+const gv = id => $('#' + id).value.trim();
+try { const sv = JSON.parse(localStorage.getItem('lp_admin_gh') || 'null'); if (sv) { $('#gOwner').value = sv.o||''; $('#gRepo').value = sv.r||''; $('#gBranch').value = sv.b||'main'; $('#gToken').value = sv.t||''; $('#gRemember').checked = true; } } catch(e){}
+if (!$('#gOwner').value) { $('#gOwner').value = 'lp222027'; $('#gRepo').value = 'LP_Wedding'; $('#gBranch').value = 'main'; }
+$('#btnPub').onclick = () => { $('#log').style.display = 'none'; $('#pub').classList.add('on'); };
+$('#pubClose').onclick = () => $('#pub').classList.remove('on');
+const b64 = async blob => { const u = new Uint8Array(await blob.arrayBuffer()); let s = ''; for (let i = 0; i < u.length; i += 0x8000) s += String.fromCharCode.apply(null, u.subarray(i, i + 0x8000)); return btoa(s); };
+$('#pubGo').onclick = async () => {
+  const o = gv('gOwner'), r = gv('gRepo'), br = gv('gBranch') || 'main', tok = gv('gToken'), log = $('#log'), say = m => { log.textContent += m + '\n'; log.scrollTop = 1e9; };
+  log.style.display = 'block'; log.textContent = '';
+  if (!o || !r || !tok) { say('กรุณากรอก owner, repo และโทเค็นให้ครบ'); return; }
+  try { if ($('#gRemember').checked) localStorage.setItem('lp_admin_gh', JSON.stringify({ o, r, b:br, t:tok })); else localStorage.removeItem('lp_admin_gh'); } catch(e){}
+  const api = (method, path, body) => fetch(`https://api.github.com/repos/${o}/${r}/contents/${path}` + (method === 'GET' ? `?ref=${encodeURIComponent(br)}` : ''), { method, headers:{ Authorization:'Bearer ' + tok, Accept:'application/vnd.github+json', 'X-GitHub-Api-Version':'2022-11-28' }, body: body ? JSON.stringify(body) : undefined });
+  const btn = $('#pubGo'); btn.disabled = true;
+  try {
+    const files = finalFiles();
+    for (const f of files) {
+      say('กำลังส่ง ' + f.path + ' ...');
+      const g = await api('GET', f.path); let sha;
+      if (g.status === 200) sha = (await g.json()).sha; else if (g.status === 401 || g.status === 403) throw new Error('โทเค็นไม่ถูกต้องหรือไม่มีสิทธิ์ (' + g.status + ')'); else if (g.status !== 404) throw new Error('อ่านไฟล์ไม่ได้ (' + g.status + ')');
+      const p = await api('PUT', f.path, { message:'แก้ไขผ่านหน้าแอดมิน: ' + f.path, content:await b64(f.data), branch:br, sha });
+      if (!p.ok) throw new Error(f.path + ' ส่งไม่สำเร็จ (' + p.status + ') ' + ((await p.json().catch(() => ({}))).message || ''));
+    }
+    say('\n✓ เสร็จแล้ว! รอประมาณ 1–2 นาที แล้วรีเฟรชหน้าเว็บ (ถ้ายังเห็นของเก่า ให้กด Ctrl+Shift+R)');
+    try { localStorage.removeItem('lp_admin_draft'); } catch(e){}
+  } catch (e) { say('\n✗ ' + e.message); }
+  btn.disabled = false;
+};
+</script>
+</body>
+</html>
