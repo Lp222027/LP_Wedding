@@ -1,188 +1,102 @@
 /* ====================================================================
-   config.js — ข้อมูลทั้งหมดของเว็บอยู่ที่นี่ (แก้ได้ 3 ทาง)
-   1) เปิด admin.html (แนะนำ)   2) แก้ไฟล์นี้บน GitHub ตรงๆ   3) ?edit เฉพาะรูป
+   config.js — ข้อมูลทั้งหมดของเว็บอยู่ที่นี่
+   แก้ง่ายที่สุดผ่าน admin.html  (หรือแก้ไฟล์นี้บน GitHub ตรงๆ ก็ได้)
+   - ข้อความ: ขึ้นบรรทัดใหม่ใช้ \n
+   - รูป: ใส่ "src": "" เพื่อเว้นช่องรูปไว้ก่อน (เว็บจะแสดงกรอบสีเขียวพร้อมโลโก้แทน)
    ==================================================================== */
 window.SITE = {
   "eventDate": "2027-03-22T14:00:00+07:00",
-  "scriptUrl": "https://script.google.com/macros/s/AKfycbw_ztr1sOXaiVQGineC0jbvd887tILksTrVNVqpQK-Zq6wws7LOjjZDk2rlHZ_YbAEaIg/exec",
+  "scriptUrl": "",
+  "siteUrl": "https://lp222027.github.io/LP_Wedding/",
   "mapUrl": "https://www.google.com/maps/search/?api=1&query=The+Signature+Hotel+Airport",
 
-  "theme": {"bg": "#34502f", "bg2": "#5f7f49", "paper": "#fbf7ee", "ink": "#3b3c30", "accent": "#f4cdd3", "olive": "#587343", "peanut": "#b27c88"},
+  "theme": { "white": "#fdfcf8", "paper": "#f5f2ea", "ink": "#22231b", "olive": "#5b582c", "moss": "#68663f", "film": "#1d1b16" },
 
-  "sections": { "welcome": true, "collage": true, "date": true, "details": true, "dress": true, "rsvp": true },
+  "sections": { "save": true, "invite": true, "schedule": true, "dress": true, "gallery": true, "rsvp": true, "closing": true },
 
   "text": {
-    "envelopeLine": "ขอเชิญร่วมงานมงคลสมรส",
-    "couple": "Lee & Praew",
-    "heroDate": "2027 · MARCH 22",
-    "tagline": "are getting married",
-    "whereTh": "วันจันทร์ 22 มีนาคม 2570",
-    "whereEn": "THE SIGNATURE HOTEL AIRPORT",
-    "welcomeTitle": "Welcome to\nour wedding",
-    "welcomeTh": "วันพิเศษของเราจะสมบูรณ์ยิ่งขึ้น\nเมื่อมีคนสำคัญเช่นคุณมาร่วมยินดี",
-    "welcomeEn": "Together with our families, we would love for you to join us in celebrating our wedding.",
+    "introEyebrow": "The wedding of",
+    "introHint": "แตะซองเพื่อเปิด",
+    "introHintEn": "Tap to open",
+    "toPrefix": "ถึง",
+
+    "nameA": "Lee",
+    "and": "and",
+    "nameB": "Praew",
+    "heroEyebrow": "We're getting married",
+    "heroDate": "22 · 03 · 2027",
+    "whereEn": "The Signature Hotel Airport",
+    "tag": "#LPLingerHour",
+
+    "bar1": "Save the date",
+    "saveTitle": "Save the Date",
+    "saveSub": "Grab your best fit and celebrate with us",
+    "saveP1": "Together with our families,\nwe would love for you to join us\nin celebrating our wedding.",
+    "saveP2": "Come gather, linger a little longer,\nand share in the warmth of our favorite day.",
+    "dateEn": "March 22, 2027",
+    "saveCta": "ตอบรับคำเชิญ",
+
+    "bar2": "The invitation",
+    "estLabel": "Est.",
+    "estYear": "2027",
+    "inviteTh": "วันพิเศษของเราจะสมบูรณ์ยิ่งขึ้น\nเมื่อมีคนสำคัญเช่นคุณมาร่วมยินดี",
     "name1": "อาภากร อารีวัฒนา",
+    "andTh": "และ",
     "name2": "วรัญญา เกสโร",
-    "sig": "Lee and Praew",
-    "dateEyebrow": "Save the Date",
-    "dateScript": "March 22, 2027",
-    "dateTh": "วันจันทร์ 22 มีนาคม 2570",
-    "quote": "We cannot wait to share love, laughter, and unforgettable memories with the people who mean the most to us.",
-    "detailsEyebrow": "The Details",
-    "detailsTitle": "Venue & Time",
-    "detailsSub": "สถานที่และกำหนดการ",
     "venueName": "เดอะ ซิกเนเจอร์ โฮเทล แอร์พอร์ต",
-    "venueDate": "วันจันทร์ 22 มีนาคม 2570",
+    "dateTh": "วันจันทร์ 22 มีนาคม 2570",
     "mapBtn": "ดูแผนที่",
-    "dressEyebrow": "Dress Code",
-    "dressTitle": "Colour palette",
+
+    "bar3": "The day",
+    "schedTitle": "Wedding Day Schedule",
+    "schedSub": "กำหนดการ",
+
+    "bar4": "Dress code",
+    "dressEyebrow": "what to wear",
+    "dressTitle": "Dress Code",
     "dressSub": "โทนสีที่แนะนำ",
-    "rsvpEyebrow": "RSVP",
-    "rsvpTitle": "Will you join us?",
-    "rsvpSub": "ยืนยันการเข้าร่วม",
-    "thanksYesTitle": "แล้วพบกันนะคะ 🤍",
-    "thanksYesText": "ขอบคุณคุณ {name} เจอกัน 22 มีนาคม 2570",
+
+    "bar5": "Moments",
+    "filmEdge": "LP 2027",
+
+    "bar6": "RSVP",
+    "rsvpTitle": "Kindly Reply",
+    "rsvpSub": "กรุณายืนยันการเข้าร่วมงาน",
+    "rsvpNote": "",
+    "thanksScript": "Thank you",
+    "thanksYesTitle": "แล้วพบกันนะคะ",
+    "thanksYesText": "ขอบคุณ {name} เจอกันวันที่ 22 มีนาคม 2570",
     "thanksNoTitle": "ขอบคุณที่แจ้งให้ทราบค่ะ",
-    "thanksNoText": "เสียดายที่ไม่ได้เจอกัน แต่ขอบคุณสำหรับคำอวยพรของคุณ {name}",
-    "footerTag": "#LPLingerHour",
-    "footerNote": "ขออภัยหากไม่ได้มาเรียนเชิญด้วยตนเอง"
+    "thanksNoText": "เสียดายที่ไม่ได้เจอกัน ขอบคุณ {name} สำหรับคำอวยพรนะคะ",
+
+    "footerNote": "(ขออภัยหากมิได้มาเรียนเชิญด้วยตนเอง)"
   },
 
   "timeline": [
-    { "time": "14:00", "th": "พิธียกน้ำชา", "en": "Tea ceremony", "icon": "tea" },
-    { "time": "15:00", "th": "พิธีกล่าวคำสัญญาและแลกแหวน", "en": "Vows & ring exchange", "icon": "rings" },
-    { "time": "18:30", "th": "รับประทานอาหารเย็นร่วมกัน", "en": "Dinner together", "icon": "dinner" }
+    { "time": "14.00", "th": "พิธียกน้ำชา", "en": "Tea ceremony", "icon": "teapot" },
+    { "time": "15.00", "th": "พิธีกล่าวคำสัญญาและแลกแหวน", "en": "Vows & ring exchange", "icon": "ringbox" },
+    { "time": "18.30", "th": "รับประทานอาหารเย็นร่วมกัน", "en": "Dinner together", "icon": "cherub" }
   ],
 
   "dress": [
-    { "name": "Butter Yellow", "color": "#fdf4b7" },
-    { "name": "Avocado", "color": "#9c984c" },
-    { "name": "Olive", "color": "#5a572c" },
-    { "name": "Dusty Taupe", "color": "#b79c87" },
-    { "name": "Peanut", "color": "#a67a48" }
+    { "name": "Butter Yellow", "color": "#fff2b7" },
+    { "name": "Avocado", "color": "#9c984b" },
+    { "name": "Olive", "color": "#5b582c" },
+    { "name": "Peanut", "color": "#a77b48" },
+    { "name": "Dusty Taupe", "color": "#b79c87" }
   ],
 
   "photos": {
-    "hero":   { "src": "photos/hero.jpg",   "focus": "50% 45%" },
-    "print1": { "src": "photos/print1.jpg", "focus": "50% 40%" },
-    "print2": { "src": "photos/print2.jpg", "focus": "50% 40%" },
-    "strip1": { "src": "photos/strip1.jpg", "focus": "50% 40%" },
-    "strip2": { "src": "photos/strip2.jpg", "focus": "50% 40%" },
-    "strip3": { "src": "photos/strip3.jpg", "focus": "50% 40%" }
+    "hero":     { "src": "photos/hero.jpg",   "focus": "47% 62%" },
+    "portrait": { "src": "photos/print1.jpg", "focus": "50% 45%" },
+    "detail":   { "src": "", "focus": "50% 50%" },
+    "film1":    { "src": "", "focus": "50% 50%" },
+    "film2":    { "src": "", "focus": "50% 50%" },
+    "film3":    { "src": "", "focus": "50% 50%" },
+    "closing":  { "src": "", "focus": "50% 50%" }
   },
 
-  "decor": [
-    {
-      "kind": "blossom",
-      "x": -4,
-      "y": 2,
-      "w": 90,
-      "d": 0.1,
-      "r": -10,
-      "src": ""
-    },
-    {
-      "kind": "bird",
-      "x": 86,
-      "y": 7,
-      "w": 70,
-      "d": -0.06,
-      "r": -8,
-      "src": ""
-    },
-    {
-      "kind": "rose",
-      "x": 88,
-      "y": 16,
-      "w": 74,
-      "d": 0.14,
-      "r": 10,
-      "src": ""
-    },
-    {
-      "kind": "leaf",
-      "x": -5,
-      "y": 25,
-      "w": 96,
-      "d": -0.08,
-      "r": 30,
-      "src": ""
-    },
-    {
-      "kind": "heart",
-      "x": 80,
-      "y": 33,
-      "w": 64,
-      "d": 0.12,
-      "r": 14,
-      "src": ""
-    },
-    {
-      "kind": "blossom",
-      "x": -3,
-      "y": 43,
-      "w": 86,
-      "d": 0.15,
-      "r": 8,
-      "src": ""
-    },
-    {
-      "kind": "leaf",
-      "x": 90,
-      "y": 52,
-      "w": 92,
-      "d": -0.1,
-      "r": -28,
-      "src": ""
-    },
-    {
-      "kind": "rose",
-      "x": -6,
-      "y": 61,
-      "w": 70,
-      "d": 0.09,
-      "r": -12,
-      "src": ""
-    },
-    {
-      "kind": "blossom",
-      "x": 84,
-      "y": 70,
-      "w": 76,
-      "d": 0.12,
-      "r": -6,
-      "src": ""
-    },
-    {
-      "kind": "leaf",
-      "x": -4,
-      "y": 78,
-      "w": 100,
-      "d": -0.07,
-      "r": 24,
-      "src": ""
-    },
-    {
-      "kind": "heart",
-      "x": 86,
-      "y": 88,
-      "w": 58,
-      "d": 0.11,
-      "r": -10,
-      "src": ""
-    },
-    {
-      "kind": "rose",
-      "x": -2,
-      "y": 94,
-      "w": 80,
-      "d": 0.15,
-      "r": 10,
-      "src": ""
-    }
-  ],
-  "motion": { "parallax": true },
-  "pageBg": { "src": "photos/bg.jpg", "dim": 18 },
+  "pageBg": { "src": "photos/bg.jpg", "dim": 58 },
   "music": { "src": "" },
   "video": { "src": "" }
 };

@@ -3,925 +3,632 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Lee & Praew · 22.03.2027</title>
-<meta name="description" content="คำเชิญงานแต่งงาน Lee & Praew · วันจันทร์ 22 มีนาคม 2570">
-<meta name="theme-color" content="#161f18">
-<meta property="og:title" content="Lee & Praew · Save the Date">
+<title>Lee & Praew · 22 · 03 · 2027</title>
+<meta name="description" content="คำเชิญงานแต่งงาน Lee & Praew · วันจันทร์ 22 มีนาคม 2570 · เดอะ ซิกเนเจอร์ โฮเทล แอร์พอร์ต">
+<meta name="theme-color" content="#5b582c">
+<meta property="og:title" content="Lee and Praew · Save the Date">
 <meta property="og:description" content="วันจันทร์ 22 มีนาคม 2570 · เดอะ ซิกเนเจอร์ โฮเทล แอร์พอร์ต">
 <meta property="og:image" content="photos/hero.jpg">
-<link rel="icon" href="assets/logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400&family=IBM+Plex+Sans+Thai:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
-<link rel="preload" as="image" href="photos/bg.jpg">
+<link rel="icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="preload" as="font" type="font/woff2" href="fonts/pinyon.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="fonts/kanit-thai-300.woff2" crossorigin>
 <link rel="preload" as="image" href="photos/hero.jpg">
 <script src="config.js"></script>
+<script src="icons.js"></script>
 <style>
-/* ============================================================
-   THEME · deep forest green + cream paper
-   แก้สีทั้งเว็บที่ตัวแปรด้านล่าง
-   ============================================================ */
-:root{
-  --bg:#34502f; --bg2:#5f7f49; --moss:#4b6a3d; --sage:#aebd9a;
-  --paper:#fbf7ee; --paper2:#efe9da; --ink:#3b3c30; --soft:#6d7060;
-  --cr:#fbf7ee; --mute:#e4ebd8; --butter:#f4cdd3; --avocado:#9c984c; --olive:#587343; --peanut:#b27c88; --taupe:#c9a9a9; --mauve:#c9a0aa; --pink:#efb9c3; --sagel:#c6d3b3;
-  --photo-filter:saturate(.88) sepia(.1);
-  --serif:'Cormorant Garamond','Noto Serif Thai',Georgia,serif;
-  --sans:'IBM Plex Sans Thai','Sarabun',system-ui,sans-serif;
-  --script:'Pinyon Script','Snell Roundhand',cursive;
-  --ease:cubic-bezier(.22,.8,.24,1);
-  --dark-noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .9 0 0 0 0 .75 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  --paper-grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='320'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .42 0 0 0 0 .33 0 0 0 0 .2 0 0 0 .3 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:hidden;overflow-x:clip;max-width:100%}
-body{background:var(--dark-noise),radial-gradient(120% 80% at 50% 0%,var(--bg2),var(--bg) 70%);background-attachment:scroll,fixed;color:var(--cr);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden;overflow-x:clip;max-width:100%;position:relative}
-body.locked{overflow:hidden;height:100svh}
-body::before{content:"";position:fixed;inset:0;z-index:199;pointer-events:none;background:radial-gradient(130% 100% at 50% 40%,transparent 60%,rgba(0,0,0,.22) 100%)}
-img{display:block;max-width:100%}
-img[data-slot]{filter:var(--photo-filter)}
-section{position:relative;padding:92px 24px;text-align:center}
-.wrap{max-width:560px;margin:0 auto}
-.eyebrow{font-family:var(--serif);letter-spacing:.32em;font-size:.78rem;text-transform:uppercase;color:var(--butter);font-weight:500;opacity:.85}
-.caps{font-family:var(--serif);text-transform:uppercase;font-weight:500;letter-spacing:.05em;color:var(--cr)}
-.script{font-family:var(--script);font-weight:400;line-height:1.1}
-.script-title{font-family:var(--script);font-weight:400;font-size:clamp(2.3rem,10.5vw,3.4rem);line-height:1.12;color:var(--cr)}
-.sm{font-family:var(--serif);font-size:.76rem;letter-spacing:.26em;text-transform:uppercase;color:var(--mute)}
-.orn{display:block;margin:1.4rem auto;width:96px;height:5px;border-top:1px solid rgba(239,232,214,.45);border-bottom:1px solid rgba(239,232,214,.45);position:relative}
-.orn::after{content:"";position:absolute;left:50%;top:50%;width:7px;height:7px;background:var(--bg);border:1px solid rgba(239,232,214,.6);transform:translate(-50%,-50%) rotate(45deg)}
-
-/* reveal */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease);transition-delay:var(--d,0s)}
-.rv.in{opacity:1;transform:none}
-.split span{display:inline-block;opacity:0;transform:translateY(.6em);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--i)*55ms + var(--d,0s))}
-.split.in span{opacity:1;transform:none}
-.sp{width:.28em}
-
-/* ---------- intro envelope (green) ---------- */
-#intro{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;
-  background:linear-gradient(rgba(34,56,30,.4),rgba(34,56,30,.6));transition:opacity 1s ease,transform 1.1s var(--ease);padding:20px}
-#intro.done{opacity:0;transform:scale(1.08);pointer-events:none}
-.env{position:relative;width:min(86vw,420px);aspect-ratio:4/3;perspective:1100px;cursor:pointer;filter:drop-shadow(0 26px 34px rgba(0,0,0,.55));animation:floaty 4s ease-in-out infinite}
-.env.open{animation:none}
-@keyframes floaty{50%{transform:translateY(-8px)}}
-.env-back{position:absolute;inset:0;background:#4e5c3d;border-radius:3px}
-.letter{position:absolute;left:6%;right:6%;top:5%;bottom:8%;background:var(--paper-grain),var(--paper);z-index:2;border-radius:1px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;color:var(--ink);
-  transition:transform 1.1s var(--ease) .75s}
-.letter::before{content:"";position:absolute;inset:7px;border:1px solid rgba(166,122,72,.5);pointer-events:none}
-.letter img{width:34%}
-.letter .to{font-size:.72rem;color:var(--soft);min-height:1.2em}
-.letter .nm{font-family:var(--script);font-size:clamp(1.7rem,8vw,2.4rem);line-height:1}
-.env.open .letter{transform:translateY(-62%) scale(1.04)}
-.env-front{position:absolute;inset:0;z-index:3;background:linear-gradient(180deg,#6a7a53,#5f6f49);clip-path:polygon(0 0,50% 54%,100% 0,100% 100%,0 100%);border-radius:3px}
-.flap{position:absolute;left:0;top:0;width:100%;height:54%;z-index:4;background:linear-gradient(180deg,#738459,#657650);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top center;transition:transform .85s var(--ease),z-index 0s .35s}
-.env.open .flap{transform:rotateX(180deg);z-index:1}
-.seal{position:absolute;left:50%;top:54%;width:23%;aspect-ratio:1;transform:translate(-50%,-50%);z-index:5;border:0;border-radius:50%;
-  background:radial-gradient(circle at 35% 30%,#fbf4de,#e6dcc0 62%,#c9bd9c);display:grid;place-items:center;cursor:pointer;
-  box-shadow:0 4px 10px rgba(0,0,0,.45),inset 0 0 0 3px rgba(255,255,255,.35);transition:opacity .4s,transform .5s var(--ease)}
-.seal img{width:64%;opacity:.85}
-.env.open .seal{opacity:0;transform:translate(-50%,-50%) scale(1.6)}
-.hint{font-family:var(--serif);letter-spacing:.3em;font-size:.82rem;text-transform:uppercase;color:var(--cr);animation:pulse 2.2s ease-in-out infinite;text-align:center}
-.hint small{display:block;font-family:var(--sans);letter-spacing:.05em;text-transform:none;font-size:.85rem;margin-top:2px;color:var(--mute)}
-.env.open ~ .hint{opacity:0;transition:opacity .4s;animation:none}
-@keyframes pulse{50%{opacity:.45}}
-
-/* ---------- hero ---------- */
-.hero{min-height:100svh;padding:64px 20px 90px;display:flex;flex-direction:column;align-items:center;overflow:hidden}
-.hero-bg{position:absolute;inset:-30px;background:var(--hero-url) center/cover;filter:blur(22px) brightness(.38) saturate(.55);transform:scale(1.1)}
-.hero-bg::before{content:"";position:absolute;inset:0;background:#3d5a39;mix-blend-mode:color;z-index:1}
-.hero-bg::after{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(22,31,24,.45),rgba(22,31,24,.15) 40%,rgba(22,31,24,.92))}
-.hero>*:not(.hero-bg){position:relative;z-index:1}
-.hero .date-sm{font-family:var(--serif);letter-spacing:.34em;font-size:.82rem;color:var(--cr)}
-.hero h1{font-size:clamp(2.1rem,10.5vw,3.3rem);margin:8px 0 2px;text-shadow:0 2px 16px rgba(0,0,0,.45)}
-.hero h1 .amp{font-style:italic;font-weight:400}
-.hero .script{font-size:clamp(1.8rem,8.5vw,2.5rem);color:var(--cr);text-shadow:0 2px 14px rgba(0,0,0,.5)}
-.lace-wrap{margin-top:30px;filter:drop-shadow(0 22px 28px rgba(0,0,0,.55))}
-.lace{position:relative;width:min(88vw,450px);aspect-ratio:1.2/1;background:radial-gradient(circle,rgba(110,90,55,.55) 0 1.3px,transparent 1.8px) 0 0/10px 10px,radial-gradient(circle,rgba(110,90,55,.55) 0 1.3px,transparent 1.8px) 5px 5px/10px 10px,var(--paper-grain),var(--paper)}
-.lace::before{content:"";position:absolute;inset:11%;border-radius:50%;background:var(--paper);box-shadow:0 0 0 1px rgba(166,122,72,.5),0 0 0 6px var(--paper),0 0 0 7px rgba(166,122,72,.35)}
-.lace-in{position:absolute;inset:15% 17%;border-radius:50%;overflow:hidden;background:#222;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2)}
-.lace-in img{width:100%;height:100%;object-fit:cover;animation:kb 18s ease-in-out infinite alternate}
-@keyframes kb{from{transform:scale(1.02)}to{transform:scale(1.14)}}
-.hero .where{margin-top:28px;font-size:.92rem;color:var(--cr);opacity:.9}
-.hero .where small{display:block;font-family:var(--serif);letter-spacing:.24em;font-size:.76rem;color:var(--mute)}
-.scroll{margin-top:34px;width:22px;height:36px;border:1px solid rgba(239,232,214,.5);border-radius:12px;position:relative}
-.scroll::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;border-radius:2px;background:var(--cr);transform:translateX(-50%);animation:wheel 1.8s infinite}
-@keyframes wheel{0%{opacity:0;transform:translate(-50%,0)}30%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
-
-/* ---------- welcome + collage ---------- */
-.welcome h2{font-size:clamp(1.6rem,7.4vw,2.2rem);letter-spacing:.07em;line-height:1.25}
-.welcome p.t{font-size:.95rem;color:var(--mute);max-width:26em;margin:16px auto 0}
-.welcome .en{font-family:var(--serif);font-size:1.12rem;color:var(--cr);line-height:1.6;margin-top:12px}
-.sig{font-family:var(--script);font-size:2.2rem;color:var(--butter);margin-top:14px;line-height:1.2}
-.names{margin:22px 0 0;color:var(--cr)}
-.names .n{font-size:1.15rem;font-weight:400}
-.names .and{display:block;font-family:var(--script);font-size:1.9rem;color:var(--peanut);line-height:1.2}
-.collage{position:relative;height:540px;max-width:430px;margin:50px auto 0}
-.print{position:absolute;margin:0;background:#fbf8ee;padding:10px;box-shadow:0 1px 2px rgba(0,0,0,.4),0 18px 34px rgba(0,0,0,.45)}
-.print .ph{position:relative;width:100%;height:100%;overflow:hidden;background:#222}
-.print img{width:100%;height:100%;object-fit:cover}
-.print.p1{right:0;top:0;width:60%;height:300px;transform:rotate(3.5deg)}
-.print.p2{right:12%;bottom:0;width:56%;height:240px;transform:rotate(-3deg)}
-.tape{position:absolute;top:-13px;left:50%;width:78px;height:26px;margin-left:-39px;background:rgba(222,205,160,.78);box-shadow:0 1px 2px rgba(0,0,0,.2);transform:rotate(-3deg);z-index:2}
-.strip{position:absolute;left:0;top:34px;width:34%;max-width:130px;padding:10px 8px 22px;background:#f6f1e3;transform:rotate(-5deg);box-shadow:0 1px 2px rgba(0,0,0,.4),0 18px 34px rgba(0,0,0,.45);display:flex;flex-direction:column;gap:8px;z-index:2}
-.strip .fr{position:relative;aspect-ratio:1/1.05;overflow:hidden;background:#222}
-.strip img{width:100%;height:100%;object-fit:cover}
-.dove{position:absolute;width:104px;fill:var(--paper);filter:drop-shadow(0 6px 8px rgba(0,0,0,.45));animation:fly 6s ease-in-out infinite;z-index:3}
-.dove.a{right:-10px;top:-46px;transform:rotate(-8deg)}
-@keyframes fly{50%{translate:0 -8px;rotate:2deg}}
-.print.rv{transform:translateY(26px) rotate(0)}
-@media (min-width:820px){.collage{height:600px;max-width:560px}.print.p1{height:340px}.print.p2{height:280px}.strip{max-width:150px}}
-
-/* ---------- date ---------- */
-.date .d{font-family:var(--serif);font-size:clamp(1.3rem,5.4vw,1.8rem);color:var(--cr)}
-.date .quote{font-family:var(--serif);font-style:italic;font-size:1.22rem;line-height:1.6;max-width:22em;margin:0 auto 34px;color:var(--cr);opacity:.92}
-.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 auto;max-width:400px}
-.count div{border:3px double rgba(239,232,214,.4);border-radius:2px;padding:14px 4px 10px;background:rgba(239,232,214,.05)}
-.count b{display:block;font-family:var(--serif);font-size:2.1rem;font-weight:500;color:var(--cr);line-height:1;font-variant-numeric:tabular-nums}
-.count b.tick{animation:tick .4s var(--ease)}
-@keyframes tick{0%{transform:translateY(-6px);opacity:.3}100%{transform:none;opacity:1}}
-.count span{font-size:.68rem;letter-spacing:.15em;color:var(--mute);text-transform:uppercase}
-.doodle{position:absolute;stroke:rgba(239,232,214,.5);fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
-.d1{width:64px;left:6px;bottom:20px}.d2{width:70px;right:18px;top:26px}
-
-/* ---------- torn paper sheet ---------- */
-.sheet-wrap{max-width:540px;margin:0 auto;filter:drop-shadow(0 2px 2px rgba(0,0,0,.35)) drop-shadow(0 24px 30px rgba(0,0,0,.5))}
-.sheet{position:relative;background:var(--paper-grain),var(--paper);color:var(--ink);padding:60px 22px 64px;text-align:center}
-.sheet .eyebrow{color:var(--peanut);opacity:1}
-.sheet .script-title{color:var(--olive)}
-.sheet .sm{color:var(--soft)}
-.sheet h3{font-size:1.14rem;font-weight:400;margin-bottom:2px;text-wrap:balance}
-.sheet .orn{border-color:rgba(166,122,72,.6)}
-.sheet .orn::after{background:var(--paper);border-color:var(--taupe)}
-.btn{display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:12px 26px;border-radius:1px;border:1px solid currentColor;color:var(--olive);text-decoration:none;font-size:.92rem;font-family:var(--sans);background:transparent;cursor:pointer;letter-spacing:.05em;transition:background .3s,color .3s,transform .3s var(--ease)}
-.btn:hover{background:var(--olive);color:var(--paper);transform:translateY(-2px)}
-.tl{position:relative;margin:34px auto 0;max-width:420px;text-align:left;padding-left:88px}
-.tl .line{position:absolute;left:70px;top:10px;bottom:10px;width:0;border-left:1px dashed rgba(166,122,72,.6)}
-.tl .it{position:relative;padding:14px 0 32px}.tl .it:last-child{padding-bottom:6px}
-.tl .time{position:absolute;left:-88px;top:18px;width:46px;text-align:right;font-family:var(--serif);font-size:1.08rem;font-weight:500;color:var(--olive)}
-.tl .ic{position:absolute;left:-36px;top:8px;width:36px;height:36px;border-radius:50%;background:var(--paper);box-shadow:0 0 0 1px rgba(166,122,72,.55),0 0 0 4px var(--paper),0 0 0 5px rgba(166,122,72,.3);display:grid;place-items:center;transform:scale(0);transition:transform .7s var(--ease) .2s}
-.tl .it.in .ic{transform:scale(1)}
-.tl .ic svg{width:20px;height:20px;stroke:var(--peanut);fill:none;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
-.tl h4{font-weight:400;font-size:.98rem;margin-top:4px;text-wrap:balance}
-.tl p{font-family:var(--serif);font-style:italic;color:var(--soft);font-size:1rem;line-height:1.3}
-
-/* ---------- dress code ---------- */
-.sw{display:flex;justify-content:center;flex-wrap:wrap;gap:22px 14px;margin-top:30px}
-.sw div{width:90px}
-.sw i{display:block;width:66px;height:58px;box-sizing:content-box;margin:0 auto;border:7px solid #fbf8ee;border-bottom-width:22px;border-radius:2px;background:var(--c);
-  box-shadow:0 1px 2px rgba(0,0,0,.4),0 10px 18px rgba(0,0,0,.4);transform:translateY(24px) scale(.9);opacity:0;transition:transform .9s cubic-bezier(.3,1.6,.5,1),opacity .5s;transition-delay:calc(var(--i)*110ms)}
-.sw.in i{opacity:1;transform:rotate(calc((var(--i) - 2)*2.4deg))}
-.sw div:hover i{transform:translateY(-6px)}
-.sw span{display:block;margin-top:-20px;position:relative;font-family:var(--serif);font-style:italic;font-size:.74rem;letter-spacing:0;color:var(--ink)}
-.sw .lbl{margin-top:8px;color:var(--mute);font-style:normal}
-
-/* ---------- RSVP ---------- */
-.rsvp .sheet-wrap{transform:rotate(1.2deg);margin-top:30px}
-.clip{position:absolute;top:-22px;right:34px;width:34px;z-index:4;stroke:#4a4a44;fill:none;stroke-width:2.6;stroke-linecap:round;filter:drop-shadow(1px 3px 2px rgba(0,0,0,.35))}
-.dove.b{right:-6px;top:-62px;width:112px;transform:rotate(-6deg);z-index:5}
-.rsvp .sheet{text-align:left;padding:62px 28px 44px}
-.rsvp .head{text-align:center;margin-bottom:22px}
-.f{margin-bottom:18px}
-.f label,.f legend{display:block;font-family:var(--serif);font-size:1rem;font-weight:500;letter-spacing:.03em;color:var(--olive);margin-bottom:6px}
-.f input[type=text],.f textarea{width:100%;font:inherit;font-size:1rem;color:var(--ink);padding:9px 2px;background:transparent;border:0;border-bottom:1px solid rgba(166,122,72,.7);border-radius:0;outline:none;transition:background .25s,border-color .25s}
-.f input:focus,.f textarea:focus{border-bottom-color:var(--olive);background:rgba(253,244,183,.35)}
-.f textarea{border:1px solid rgba(166,122,72,.5);padding:10px;min-height:92px;resize:vertical;line-height:28px;background-image:repeating-linear-gradient(transparent 0 27px,rgba(166,122,72,.2) 27px 28px)}
-.f ::placeholder{color:#9a957a}
-.pills{display:grid;grid-template-columns:1fr 1fr;gap:10px;border:0}
-.pills input{position:absolute;opacity:0;pointer-events:none}
-.pills label{margin:0;text-align:center;padding:13px 8px;border-radius:1px;border:1px solid rgba(166,122,72,.7);background:transparent;cursor:pointer;color:var(--ink);font-family:var(--sans);font-size:.95rem;font-weight:300;box-shadow:inset 0 0 0 3px var(--paper),inset 0 0 0 4px rgba(166,122,72,.25);transition:all .3s var(--ease)}
-.pills input:checked + label{background:var(--olive);color:var(--paper);box-shadow:inset 0 0 0 3px var(--olive),inset 0 0 0 4px rgba(241,234,216,.5)}
-.stepper{display:flex;align-items:center;gap:14px}
-.stepper button{width:42px;height:42px;border-radius:1px;border:1px solid var(--taupe);background:transparent;font-size:1.3rem;color:var(--olive);cursor:pointer}
-.stepper button:active{background:var(--butter)}
-.stepper output{font-family:var(--serif);font-size:1.8rem;min-width:2ch;text-align:center;color:var(--olive)}
-.collapse{display:grid;grid-template-rows:1fr;transition:grid-template-rows .5s var(--ease),opacity .4s}
-.collapse>div{overflow:hidden}.collapse.off{grid-template-rows:0fr;opacity:0}
-.submit{width:100%;margin-top:6px;padding:15px;border:0;border-radius:1px;background:var(--olive);color:var(--paper);font:inherit;font-size:1.02rem;letter-spacing:.12em;cursor:pointer;box-shadow:inset 0 0 0 3px var(--olive),inset 0 0 0 4px rgba(241,234,216,.45);transition:transform .3s var(--ease),box-shadow .3s}
-.submit:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 3px var(--olive),inset 0 0 0 4px rgba(241,234,216,.45),0 12px 22px rgba(0,0,0,.25)}
-.submit[disabled]{opacity:.7;cursor:wait}
-.err{color:#a14a3a;font-size:.82rem;margin-top:6px;display:none}
-.demo-note{font-size:.72rem;color:var(--soft);text-align:center;margin-top:12px}
-.thanks{display:none;text-align:center;padding:10px 6px 0}
-.thanks.show{display:block;animation:pop .9s var(--ease)}
-@keyframes pop{from{opacity:0;transform:scale(.9) translateY(12px)}}
-.thanks h3{font-family:var(--serif);font-size:1.8rem;font-weight:500;color:var(--olive)}
-.stamp{width:128px;height:128px;margin:6px auto 16px;border-radius:50%;border:2px solid var(--peanut);color:var(--peanut);box-shadow:inset 0 0 0 5px var(--paper),inset 0 0 0 6px var(--peanut);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-12deg);opacity:.88;mix-blend-mode:multiply}
-.stamp b{font-family:var(--serif);font-size:1.7rem;letter-spacing:.14em;line-height:1}
-.stamp span{font-family:var(--serif);font-size:.62rem;letter-spacing:.3em;margin-top:2px}
-.stamp small{font-family:var(--serif);font-size:.68rem;letter-spacing:.12em;margin-top:6px;border-top:1px solid var(--peanut);padding-top:4px}
-.thanks.show .stamp{animation:stampin .7s cubic-bezier(.2,1.4,.4,1) .15s both}
-@keyframes stampin{0%{transform:rotate(-30deg) scale(2.4);opacity:0}60%{opacity:1}100%{transform:rotate(-12deg) scale(1);opacity:.88}}
-.rsvp .thanks .btn{color:var(--olive)}
-
-/* ---------- footer ---------- */
-footer{padding:80px 24px 64px;text-align:center;background:#0f1712;position:relative}
-footer img{width:84px;margin:0 auto 18px;filter:invert(1);opacity:.85}
-footer .tag{font-family:var(--serif);font-size:1.5rem;letter-spacing:.14em;color:var(--cr)}
-footer p{font-size:.78rem;color:var(--mute);margin-top:10px}
-
-@media (min-width:760px){section{padding:120px 24px}}
-@media (prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0s!important}}
-
-/* ---------- edit mode (?edit) ---------- */
-.edit-badge{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);z-index:60;padding:9px 16px;border-radius:999px;border:0;background:rgba(253,244,183,.96);color:#2a281d;font:500 .85rem var(--sans);cursor:pointer;box-shadow:0 6px 16px rgba(0,0,0,.4)}
-.strip .edit-badge{padding:5px 9px;font-size:.68rem;white-space:nowrap}
-.edit-badge{white-space:nowrap}
-body.editing [data-slot]{cursor:grab;touch-action:none;outline:2px dashed rgba(253,244,183,.8);outline-offset:-3px}
-body.editing .lace-in img,body.editing .hero-bg{animation:none}
-.editbar{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:300;width:min(94vw,520px);background:rgba(15,23,18,.96);border:1px solid rgba(253,244,183,.5);border-radius:14px;padding:12px 14px;color:var(--cr);font-size:.82rem;line-height:1.5;display:flex;gap:12px;align-items:center;box-shadow:0 14px 34px rgba(0,0,0,.55)}
-.editbar b{color:var(--butter);white-space:nowrap}
-.editbar span{flex:1;color:var(--mute)}
-.editbar button{padding:9px 14px;border:0;border-radius:8px;background:var(--butter);color:#2a281d;font:500 .82rem var(--sans);cursor:pointer;white-space:nowrap}
-
-[hidden]{display:none!important}
-.hero-bg.has-video{background:none;filter:none;transform:none;inset:0}
-.hero-bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.55) saturate(.75)}
-.bgm{position:fixed;right:14px;bottom:14px;z-index:250;width:44px;height:44px;border-radius:50%;border:1px solid rgba(239,232,214,.5);background:rgba(15,23,18,.75);color:var(--cr);font-size:1.2rem;cursor:pointer;display:grid;place-items:center;backdrop-filter:blur(4px)}
-.bgm::after{content:"";position:absolute;width:26px;height:1.5px;background:var(--cr);transform:rotate(-45deg)}
-.bgm.on::after{display:none}
-.bgm.on{animation:spin 6s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-footer{background:color-mix(in srgb,var(--bg) 70%,#000)}
-
-#plx{position:absolute;left:0;top:0;width:100%;overflow:clip;contain:strict;pointer-events:none;z-index:3}
-#plx .pi{position:absolute;will-change:transform;filter:drop-shadow(0 6px 8px rgba(0,0,0,.28))}
-#plx svg{display:block;width:100%;height:auto;overflow:visible}
-body.locked #plx{display:none}
-
 /* =====================================================================
-   v5 · SAGE + CRAYON skin (ทับสไตล์เดิม — แก้ได้ที่ตัวแปร :root ด้านบน)
+   Lee & Praew · v8 — ซองจดหมาย + เว็บแบบนิตยสาร (ตามการ์ดจริงและรูปอ้างอิง)
+   สีทั้งหมดแก้ได้ใน admin.html → "สีของเว็บ" (หรือที่ตัวแปรด้านล่าง)
    ===================================================================== */
-body{background:linear-gradient(180deg,var(--bg2),var(--bg))}
-#pgbg{position:fixed;inset:0;z-index:-1;background:var(--pbg,none) center/cover no-repeat}
-#pgbg::after{content:"";position:absolute;inset:0;background:rgba(24,42,24,var(--pbg-dim,.2))}
-.cray{filter:url(#crayonT)}
-.uline::after{content:"";display:block;height:14px;width:min(200px,56%);margin:8px auto 0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'%3E%3Cfilter id='c' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.05 .6' numOctaves='2' seed='3' result='w'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='w' scale='3'/%3E%3C/filter%3E%3Cpath d='M6 8 Q30 2 58 8 T114 7 T194 7' fill='none' stroke='%23c9a0aa' stroke-width='4.5' stroke-linecap='round' filter='url(%23c)'/%3E%3C/svg%3E") center/100% 100% no-repeat}
-.eyebrow{color:var(--butter);opacity:1}
-.sheet .eyebrow{color:var(--peanut)}
-.alogo{display:block;width:min(52vw,250px);height:auto;margin:0 auto;pointer-events:none}
-.alogo:not([src]){visibility:hidden;aspect-ratio:560/490}
-.intro-logo{width:min(46vw,210px);margin-bottom:-6px}
-.hero-logo{width:min(40vw,170px);margin-bottom:6px}
-.foot-logo{width:150px!important;margin-bottom:6px!important;filter:none!important;opacity:1!important}
+@font-face{font-family:'Pinyon Script';src:url(fonts/pinyon.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Gilda Display';src:url(fonts/gilda.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:500;src:url(fonts/cormorant-italic.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Kanit';font-weight:300;src:url(fonts/kanit-thai-300.woff2) format('woff2');unicode-range:U+02D7,U+0303,U+0331,U+0E01-0E5B,U+200C-200D,U+25CC;font-display:swap}
+@font-face{font-family:'Kanit';font-weight:300;src:url(fonts/kanit-latin-300.woff2) format('woff2');unicode-range:U+0000-00FF,U+2013-2014,U+2018-201D,U+2022,U+2026,U+2190-2193;font-display:swap}
+@font-face{font-family:'Kanit';font-weight:400;src:url(fonts/kanit-thai-400.woff2) format('woff2');unicode-range:U+02D7,U+0303,U+0331,U+0E01-0E5B,U+200C-200D,U+25CC;font-display:swap}
+@font-face{font-family:'Kanit';font-weight:400;src:url(fonts/kanit-latin-400.woff2) format('woff2');unicode-range:U+0000-00FF,U+2013-2014,U+2018-201D,U+2022,U+2026,U+2190-2193;font-display:swap}
 
-/* ----- sage envelope + wax seal ----- */
-.env-back{background:#93a67f}
-.env-front{background:linear-gradient(180deg,#b9c8a6,#aabb96)}
-.flap{background:linear-gradient(180deg,#c4d1b2,#b3c3a0)}
-.env-front::after,.flap::after{content:"";position:absolute;inset:0;background:var(--paper-grain);opacity:.55;mix-blend-mode:multiply}
-.letter{background:var(--paper-grain),var(--paper);gap:2px}
-.letter::before{border:2px solid rgba(201,160,170,.7);border-radius:3px;filter:url(#wobble)}
-.letter .alogo{width:62%}
-.letter .nm{color:var(--olive)}
-.seal{background:radial-gradient(circle at 35% 30%,#fffdf6,#ede6d3 62%,#d2c9ae);box-shadow:0 5px 12px rgba(30,45,25,.45),inset 0 0 0 4px rgba(255,255,255,.55),inset 0 0 0 6px rgba(190,180,150,.55)}
-.seal img{width:72%;opacity:1}
-.hint{text-transform:none;letter-spacing:0;font-family:var(--sans)}
-.hint .script{display:block;font-size:1.9rem;color:var(--cr);letter-spacing:0;text-transform:none}
-.hint small{color:var(--mute)}
-.env.open ~ .hint,#intro:has(.env.open) .intro-logo{opacity:0;transition:opacity .5s}
+:root{
+  --white:#fdfcf8; --paper:#f5f2ea; --ink:#22231b; --soft:#57584a; --olive:#5b582c; --moss:#68663f; --film:#1d1b16;
+  --cream:#f6f2e6; --line:rgba(34,35,27,.22);
+  --script:'Pinyon Script','Snell Roundhand',cursive;
+  --serif:'Gilda Display','Kanit',Georgia,serif;
+  --ital:'Cormorant Garamond','Gilda Display',Georgia,serif;
+  --sans:'Kanit',system-ui,sans-serif;
+  --pad:clamp(24px,6vw,72px);
+  --grain:url(assets/grain.png);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light}
+body{overflow-x:hidden;overflow-x:clip;background:var(--white);color:var(--ink);font:300 16px/1.75 var(--sans);-webkit-font-smoothing:antialiased}
+body.locked{overflow:hidden}
+img,svg,video{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+h1,h2,h3{font-weight:400}
+ol,ul{list-style:none}
+button,input,textarea{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+.dk :focus-visible{outline-color:#fff2b7}
+.micro{font:400 12px/1.5 var(--sans);letter-spacing:.24em;text-transform:uppercase}
+.lockup{font-family:var(--script);font-weight:400;line-height:1.12;white-space:nowrap;display:inline-block}
+.lockup small{font-size:.3em;margin:0 .02em 0 -.1em;letter-spacing:0}
+.js .rv{opacity:0;transform:translateY(18px);transition:opacity 1s ease,transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+.write{display:inline-block}
+.js .write{clip-path:inset(-30% 100% -30% -8%);transition:clip-path 1.8s cubic-bezier(.55,.1,.3,1) .1s}
+.js .wr.in .write{clip-path:inset(-30% -8% -30% -8%)}
+.sym{position:absolute;width:0;height:0;overflow:hidden}
+img.alogo:not([src]){visibility:hidden}
 
-/* ----- hero ----- */
-.hero{position:relative}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(26,46,26,.38),rgba(26,46,26,.08) 45%,rgba(26,46,26,.4));pointer-events:none}
-.hero-bg{display:none}
-.hero-bg.has-video{display:block;z-index:0}
-.hero-bg.has-video::before,.hero-bg.has-video::after{display:none}
-.hero .script{color:var(--cr)}
-.hero .where small{color:var(--mute)}
-.lace{background:radial-gradient(circle,rgba(150,160,125,.6) 0 1.3px,transparent 1.8px) 0 0/10px 10px,radial-gradient(circle,rgba(150,160,125,.6) 0 1.3px,transparent 1.8px) 5px 5px/10px 10px,var(--paper-grain),#f6f1e4}
-.lace::before{background:var(--sagel);box-shadow:0 0 0 1px rgba(110,140,90,.55),0 0 0 6px #f6f1e4,0 0 0 7px rgba(110,140,90,.35)}
-.lace-in{box-shadow:inset 0 0 0 3px #f6f1e4}
+/* ---------- ช่องรูป (ถ้ายังไม่มีรูปจะเป็นกรอบเขียวพร้อมโลโก้) ---------- */
+.slot{position:relative;overflow:hidden;background:var(--moss)}
+.slot>img,.slot>video{width:100%;height:100%;object-fit:cover}
+.slot.empty{background:var(--moss) var(--grain)}
+.slot.empty::before{content:"";position:absolute;inset:10px;border:1px solid rgba(246,242,230,.34);pointer-events:none}
+.slot.empty::after{content:"";position:absolute;inset:0;margin:auto;width:min(36%,120px);height:min(32%,106px);background:url(assets/logo-sm-light.png) center/contain no-repeat;opacity:.5;pointer-events:none}
+.pv .slot.empty::before{content:attr(data-hint);display:flex;align-items:flex-end;justify-content:center;padding:10px;border:1px dashed rgba(255,255,255,.85);font:400 12px/1.4 var(--sans);letter-spacing:.04em;color:#fff;text-align:center}
 
-/* ----- cloud cards (วาดขอบด้วย JS) ----- */
-.sheet-wrap{filter:none}
-.sheet.cloud{background:none;padding:54px 26px 58px;margin:14px;color:var(--ink)}
-.sheet.cloud.sage{color:var(--ink)}
-.sheet.cloud>*:not(.cb):not(.tassel){position:relative;z-index:1}
-.cb{position:absolute;z-index:0!important;left:-16px;top:-16px;width:calc(100% + 32px);height:calc(100% + 32px);overflow:visible;pointer-events:none;filter:drop-shadow(0 16px 20px rgba(18,34,18,.38))}
-.tassel{position:absolute;left:50%;bottom:-86px;width:44px;height:auto;transform:translateX(-50%);z-index:3;pointer-events:none;transform-origin:50% 0;animation:swing 4.5s ease-in-out infinite;will-change:transform}
-@keyframes swing{0%,100%{transform:translateX(-50%) rotate(-4deg)}50%{transform:translateX(-50%) rotate(4deg)}}
-section.date,section.venue,section.dress{padding-bottom:140px}
-section.welcome{padding-bottom:70px}
-section.rsvp{padding-bottom:150px}
-.welcome h2{color:var(--olive)}
-.welcome p.t{color:var(--soft)}
-.welcome .en{color:var(--ink)}
-.names{color:var(--ink)}
-.names .and{color:var(--mauve)}
-.sig{color:var(--peanut)}
-.script-title{color:var(--olive)}
-.sheet .sm{color:var(--soft)}
-.date .d{color:var(--ink);margin-top:6px}
-.date .quote{color:var(--ink);margin:14px auto 26px}
-.sheet .orn{border-color:rgba(201,160,170,.8)}
+.hero-media.empty::after,.closing .slot.empty::after{display:none}
+.pv .hero-media.empty::before{padding-bottom:64px}
 
-/* ----- calendar ----- */
-.cal{max-width:310px;margin:10px auto 0;padding:4px 0}
-.cal .mn{font-family:var(--serif);font-size:1.5rem;letter-spacing:.2em;text-transform:uppercase;color:var(--olive);font-weight:600}
-.cal .g{display:grid;grid-template-columns:repeat(7,1fr);gap:4px 0;margin-top:10px;font-size:.88rem;color:var(--ink)}
-.cal .g i{font-style:normal;font-size:.78rem;font-weight:500;color:var(--olive);letter-spacing:.04em}
-.cal .g b{position:relative;font-weight:400;height:34px;display:grid;place-items:center}
-.cal .g b.on{color:#fff;font-weight:500}
-.cal .g b.on svg{position:absolute;inset:-1px;width:100%;height:100%;filter:url(#crayon);animation:beat 1.8s ease-in-out infinite;will-change:transform}
-.cal .g b.on span{position:relative;z-index:1}
-@keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+/* ============================ ซองจดหมาย ============================ */
+#intro{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2.6vh,24px);padding:40px 20px calc(56px + env(safe-area-inset-bottom));background:var(--olive);color:var(--cream);text-align:center;overflow:hidden;transition:opacity .8s ease}
+#intro::before{content:"";position:absolute;inset:0;background:var(--grain),radial-gradient(110% 75% at 50% 46%,transparent 42%,rgba(0,0,0,.34));pointer-events:none}
+#intro>*{position:relative}
+.i-names{font-size:clamp(46px,12.6vw,74px);margin-top:-4px}
+.i-to{font-size:17px;letter-spacing:.02em;margin-bottom:2px}
+.env-wrap{margin:clamp(6px,1.6vh,16px) 0;animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-7px)}}
+#intro.open .env-wrap{animation-play-state:paused}
+.env{position:relative;display:block;width:min(82vw,400px);aspect-ratio:1.42/1;border:0;padding:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.env:focus-visible{outline:2px solid #fff2b7;outline-offset:12px}
+.env-in{position:absolute;inset:0;background:#ddd5bf;box-shadow:0 26px 44px -20px rgba(0,0,0,.62),0 2px 5px rgba(0,0,0,.14)}
+.letter{position:absolute;left:5.5%;right:5.5%;top:5%;height:90%;z-index:2;background:var(--white);color:var(--ink);display:flex;flex-direction:column;align-items:center;padding-top:7%;transition:transform 1s cubic-bezier(.2,.75,.2,1) .66s}
+.letter .ov{width:15%;margin-bottom:4%}
+.letter .lockup{font-size:clamp(30px,8.6vw,42px)}
+.letter .micro{font-size:10px;letter-spacing:.3em;color:var(--soft);margin-top:2%}
+.pocket{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+.flap{position:absolute;left:0;top:0;width:100%;height:60%;z-index:4;transform-origin:50% 0;transform:perspective(900px) rotateX(0);transition:transform .75s cubic-bezier(.45,.05,.3,1) .14s,z-index 0s .52s;pointer-events:none}
+.flap svg{width:100%;height:100%;display:block;overflow:visible}
+.flap .fl{fill:#ebe4d0;transition:fill 0s .52s}
+.seal{position:absolute;left:50%;top:58%;width:23%;aspect-ratio:1;z-index:5;transform:translate(-50%,-50%);transition:opacity .35s ease,transform .45s ease;pointer-events:none}
+.seal svg{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
+.seal img{position:absolute;left:21%;top:22%;width:58%}
+.i-hint{display:flex;flex-direction:column;align-items:center;gap:0;font-size:16px;transition:opacity .4s}
+.i-hint .micro{opacity:.86;font-size:12px}
+.i-date{position:absolute!important;left:0;right:0;bottom:calc(22px + env(safe-area-inset-bottom));opacity:.86}
+#intro.open .seal{opacity:0;transform:translate(-50%,-50%) scale(1.16)}
+#intro.open .flap{transform:perspective(900px) rotateX(180deg);z-index:1}
+#intro.open .flap .fl{fill:#d6cdb3}
+#intro.open .letter{transform:translateY(-58%)}
+#intro.open .i-hint,#intro.open .i-top{opacity:0}
+.i-top{transition:opacity .45s ease}
+#intro.leave{opacity:0;pointer-events:none}
+#intro.leave .env-wrap{transform:scale(1.05);transition:transform .9s ease}
+@media(max-height:640px){#intro{gap:8px;padding-top:24px}.i-names{font-size:40px}.env{width:min(68vw,330px)}.i-date{display:none}}
 
-/* ----- countdown / buttons / inputs = crayon outline ----- */
-.count{gap:8px}
-.count div{border:0;background:rgba(255,255,255,.4);position:relative;border-radius:12px;padding:14px 2px 10px}
-.count b{color:var(--olive)}
-.count span{color:var(--soft)}
-.btn,.pills label,.count div,.stepper button,.submit{position:relative}
-.btn::before,.pills label::before,.count div::before,.stepper button::before,.submit::before{content:"";position:absolute;inset:0;border:3.5px solid var(--olive);border-radius:12px;filter:url(#crayon);pointer-events:none}
-.count div::before{border-color:var(--mauve)}
-.pills label::before{border-color:var(--mauve)}
-.btn{border:0;border-radius:12px;color:var(--olive)}
-.btn:hover{background:rgba(88,115,67,.14);color:var(--olive)}
-.pills label{border:0;border-radius:12px;box-shadow:none}
-.pills input:checked + label{background:var(--sagel);color:var(--ink);box-shadow:none}
-.pills input:checked + label::before{border-color:var(--olive)}
-.stepper button{border:0;border-radius:12px;color:var(--olive)}
-.stepper button::before{border-color:var(--mauve)}
-.submit{border:0;border-radius:12px;background:var(--olive);box-shadow:none;color:#fbf7ee}
-.submit::before{border-color:#3d5530;inset:-2px}
-.submit:hover{box-shadow:0 12px 22px rgba(30,50,25,.3)}
-.f input[type=text],.f textarea{border:0;background:transparent}
-.f input[type=text]{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14'%3E%3Cfilter id='c' x='-5%25' y='-50%25' width='110%25' height='200%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.05 .6' numOctaves='2' seed='3' result='w'/%3E%3CfeDisplacementMap in='SourceGraphic' in2='w' scale='3'/%3E%3C/filter%3E%3Cpath d='M6 8 Q30 2 58 8 T114 7 T194 7' fill='none' stroke='%23c9a0aa' stroke-width='4.5' stroke-linecap='round' filter='url(%23c)'/%3E%3C/svg%3E") bottom/100% 12px no-repeat;padding-bottom:14px}
-.f input:focus{background-color:rgba(244,205,211,.25);border:0}
-.f textarea{border-radius:12px;background-image:repeating-linear-gradient(transparent 0 27px,rgba(201,160,170,.45) 27px 28px);box-shadow:inset 0 0 0 2.5px rgba(201,160,170,.75);padding:10px 12px}
-.f label,.f legend{color:var(--olive)}
-.stamp{color:var(--peanut);border-color:var(--mauve);box-shadow:inset 0 0 0 5px var(--paper),inset 0 0 0 6px var(--mauve);filter:url(#crayon)}
-.stamp small{border-color:var(--mauve)}
-.thanks h3{color:var(--olive)}
+/* ============================ หน้าแรก ============================ */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:start center;text-align:center;color:#fff;isolation:isolate;overflow:hidden;background:var(--olive)}
+.hero-media{position:absolute;inset:0;z-index:-2}
+.hero.live .hero-media>img{animation:kb 10s cubic-bezier(.2,.6,.2,1) both}
+@keyframes kb{from{transform:scale(1.08)}to{transform:none}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(75% 42% at 50% 30%,rgba(16,18,10,.34),rgba(16,18,10,0) 72%),linear-gradient(180deg,rgba(16,18,10,.52) 0,rgba(16,18,10,.3) 28%,rgba(16,18,10,.14) 60%,rgba(16,18,10,.6) 100%)}
+.hero-in{display:flex;flex-direction:column;align-items:center;padding:clamp(92px,13vh,150px) var(--pad) 140px;text-shadow:0 1px 24px rgba(0,0,0,.3)}
+.hero-logo{width:clamp(88px,23vw,136px);aspect-ratio:560/495;margin-bottom:18px;filter:drop-shadow(0 1px 14px rgba(0,0,0,.25))}
+.hero .lockup{font-size:clamp(66px,18.6vw,160px);margin:2px 0 6px}
+.hero-th{font-size:clamp(15px,4vw,18px);letter-spacing:.02em}
+.corner{position:absolute;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.c-tl{top:24px;left:var(--pad)}.c-tr{top:24px;right:var(--pad)}
+.c-bl{bottom:26px;left:var(--pad)}.c-br{bottom:26px;right:var(--pad)}
+.vbtn{position:absolute;right:calc(var(--pad) - 12px);bottom:64px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(16,18,10,.35);color:#fff;display:grid;place-items:center;cursor:pointer}
+.vbtn svg{width:16px;height:16px;fill:currentColor}
+@media(max-width:640px){.c-bl{left:0;right:0;text-align:center}.c-br{display:none}}
 
-/* ----- timeline + dress ----- */
-.tl .line{border-left:3px dotted rgba(201,160,170,.9)}
-.tl .ic{background:var(--paper);box-shadow:none;border:3px solid var(--mauve);filter:url(#crayon)}
-.tl .ic svg{stroke:var(--olive);stroke-width:1.7}
-.tl .time{color:var(--olive)}
-.sw i{width:64px;height:64px;border:0;border-radius:50%;box-sizing:border-box;margin:0 auto;box-shadow:none;filter:url(#crayon)}
-.sw span{margin-top:8px;color:var(--ink)}
-.sw.in i{transform:rotate(calc((var(--i) - 2)*6deg))}
+/* ============================ ส่วนเนื้อหา ============================ */
+.sec{position:relative;padding:clamp(100px,14vw,156px) var(--pad) clamp(88px,12vw,140px);text-align:center}
+.white{background:var(--white)}.paper{background:var(--paper)}
+.bar{position:absolute;top:26px;left:var(--pad);right:var(--pad);display:flex;justify-content:space-between;color:var(--soft)}
+.dk{color:var(--cream)}
+.dk .bar{color:rgba(246,242,230,.86)}
+.caps{font:400 13px/1.65 var(--serif);letter-spacing:.12em;text-transform:uppercase;color:var(--soft);text-wrap:balance}
+.serif-p{font:400 clamp(16.5px,4.3vw,21px)/1.62 var(--serif);color:#33342a;text-wrap:pretty}
+.sub-th{font-size:clamp(15px,4vw,17px);margin-top:6px}
+.btn-line{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 28px;border:1px solid currentColor;border-radius:999px;font:400 14px/1 var(--sans);letter-spacing:.08em;text-decoration:none;transition:background .25s,color .25s}
+.btn-line:hover{background:var(--ink);color:var(--white);border-color:var(--ink)}
 
-/* ----- prints / strip : hand-cut + crayon frame ----- */
-.print::after,.strip::after{content:"";position:absolute;inset:-5px;border:4px solid var(--mauve);border-radius:4px;filter:url(#crayon);pointer-events:none;opacity:.9}
-.print,.strip{background:#fbf7ee;box-shadow:0 14px 26px rgba(18,34,18,.4)}
-.tape{background:rgba(244,205,211,.8)}
-.dove{fill:#fbf7ee;filter:none}
+/* --- 01 Save the Date (ตามการ์ด) --- */
+.save h2{font:400 clamp(56px,16.4vw,136px)/1.08 var(--script);margin:0 0 4px}
+.save .caps{max-width:32ch;margin:0 auto}
+@media(min-width:640px){.save .caps{max-width:none;font-size:14px}}
+.save .serif-p{margin-top:46px}
+.save .serif-p+.serif-p{margin-top:28px}
+.save .lockup{font-size:clamp(48px,12.4vw,76px);margin-top:50px}
+.save .date{font:400 15px/1.5 var(--serif);letter-spacing:.14em;text-transform:uppercase;margin-top:0}
+.count{display:flex;max-width:440px;margin:44px auto 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.count div{flex:1;padding:16px 2px 12px}
+.count div+div{border-left:1px solid var(--line)}
+.count b{display:block;font:400 clamp(30px,8.6vw,44px)/1.15 var(--serif);font-variant-numeric:tabular-nums}
+.count span{font:400 12px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.cta{display:inline-flex;align-items:center;gap:10px;min-height:48px;margin-top:30px;font:400 15px var(--sans);letter-spacing:.06em;text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px}
+.cta svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.4}
 
-/* ----- footer ----- */
-footer{background:rgba(28,46,26,.86);}
-footer .tag{color:var(--cr);filter:url(#crayonT)}
-footer p{color:var(--mute)}
-.bgm{background:rgba(40,60,35,.8)}
+/* --- 02 การ์ดเชิญ --- */
+.inv-grid{display:grid;gap:60px;max-width:1120px;margin:0 auto;align-items:center}
+.emblem{display:flex;align-items:center;justify-content:center;gap:18px;color:var(--soft)}
+.emblem .micro{font-size:12px;letter-spacing:.2em}
+.ov{position:relative;display:block;aspect-ratio:120/152;color:var(--ink)}
+.ov svg{position:absolute;inset:0;width:100%;height:100%;fill:none;stroke:currentColor}
+.ov img{position:absolute;left:14%;top:27%;width:72%;aspect-ratio:560/495}
+.invite .emblem .ov{width:clamp(88px,22vw,112px)}
+.inv-th{font-size:clamp(16px,4.3vw,19px);line-height:1.8;margin-top:34px;color:#33342a}
+.invite .lockup{font-size:clamp(54px,14.6vw,92px);margin-top:22px}
+.inv-names{font-size:clamp(15px,4vw,17px);color:var(--soft);margin-top:0}
+.ruled{max-width:440px;margin:30px auto 0;padding:20px 0 22px;border-top:1px solid rgba(34,35,27,.5);border-bottom:1px solid rgba(34,35,27,.5);font-size:clamp(18px,5vw,22px);line-height:1.65;color:var(--ink)}
+.invite .btn-line{margin-top:30px}
+.inv-photo .slot{aspect-ratio:2/3;width:min(100%,440px);margin:0 auto}
+@media(min-width:920px){.inv-grid{grid-template-columns:1.05fr .95fr;gap:80px}.inv-photo .slot{width:100%}}
 
-/* ----- parallax decor: crayon look ----- */
-#plx .pi{filter:none}
+/* --- 03 กำหนดการ (บนรูป) --- */
+.band{isolation:isolate;overflow:hidden;background:var(--olive) var(--grain)}
+.band-bg{position:absolute;inset:0;z-index:-2;background:transparent}
+.band-bg.empty{background:transparent}
+.band-bg.empty::before,.band-bg.empty::after{display:none}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,16,9,var(--dim,.58));pointer-events:none}
+.band.noimg::after{display:none}
+.sched h2{font:italic 500 clamp(42px,11.4vw,80px)/1.06 var(--ital);text-wrap:balance}
+.tl{display:grid;max-width:480px;margin:46px auto 0;text-align:left}
+.tl li{display:grid;grid-template-columns:54px 18px 46px 1fr;align-items:center;min-height:86px}
+.tl .t{font:300 clamp(20px,5.6vw,25px)/1 var(--sans);text-align:right;font-variant-numeric:tabular-nums;letter-spacing:.01em}
+.tl .dot{position:relative;align-self:stretch}
+.tl .dot::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(246,242,230,.72)}
+.tl li:first-child .dot::before{top:50%}.tl li:last-child .dot::before{bottom:50%}
+.tl li:only-child .dot::before{display:none}
+.tl .dot::after{content:"";position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px;border-radius:50%;background:var(--cream)}
+.tl .ic svg{width:40px;height:40px;margin:0 auto;fill:none;stroke:currentColor;stroke-width:1.15;stroke-linecap:round;stroke-linejoin:round}
+.tl .tx{padding:12px 0 12px 8px}
+.tl .th{display:block;font-size:clamp(15.5px,4.2vw,19px);line-height:1.45}
+.tl .en{display:block;font:400 12px/1.5 var(--sans);letter-spacing:.14em;text-transform:uppercase;margin-top:3px;color:rgba(246,242,230,.88)}
+@media(min-width:760px){.tl{max-width:620px;margin-top:56px}.tl li{grid-template-columns:96px 34px 70px 1fr;min-height:110px}.tl .t{font-size:30px}.tl .ic svg{width:54px;height:54px}.tl .th{font-size:21px}.tl .en{font-size:12.5px}}
+
+/* --- 04 Dress code (กระดาษเขียวมะกอก) --- */
+.moss{background:var(--moss) var(--grain)}
+.dress .eyebrow{font:400 clamp(32px,8.6vw,42px)/1.1 var(--script)}
+.dress .slot{width:min(46vw,196px);aspect-ratio:4/5;margin:22px auto 0;background-color:rgba(0,0,0,.12)}
+.dress h2{font:400 clamp(24px,6.6vw,34px)/1.25 var(--serif);letter-spacing:.16em;text-transform:uppercase;margin-top:32px}
+.sw{display:flex;flex-wrap:wrap;justify-content:center;gap:22px 8px;max-width:600px;margin:34px auto 0}
+.sw li{width:62px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.sw i{display:block;width:50px;height:50px;border-radius:7px;background:var(--c);box-shadow:0 0 0 1px rgba(246,242,230,.6)}
+.sw span{font:400 13px/1.3 var(--serif);text-align:center}
+@media(min-width:600px){.sw{gap:26px 18px}.sw li{width:96px}.sw i{width:62px;height:62px}.sw span{font-size:14px}}
+
+/* --- 05 แถบฟิล์ม --- */
+.film{background:var(--film);color:var(--cream);padding-left:0;padding-right:0}
+.film .bar{color:rgba(246,242,230,.8)}
+.strip{max-width:1100px;margin:0 auto;padding:0 10px;background:#2a261f}
+.holes{height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='26'%3E%3Crect x='9' y='8' width='10' height='10' rx='2' fill='%23efe8d6' fill-opacity='.82'/%3E%3C/svg%3E") repeat-x 0 0}
+.edge{display:flex;justify-content:space-between;font:400 10px/1 var(--sans);letter-spacing:.3em;color:#e0ab5f;padding:0 4px 8px;text-transform:uppercase}
+.frames{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.frames .slot{aspect-ratio:4/5;background-color:#3a352b}
+.frames .slot.empty{background:#3a352b var(--grain)}
+.frames .slot.empty::after{opacity:.35}
+@media(min-width:760px){.strip{padding:0 16px}.frames{gap:14px}}
+
+/* --- 06 RSVP --- */
+.reply{position:relative;max-width:560px;margin:0 auto;background:var(--white);padding:clamp(46px,9vw,68px) clamp(22px,6.4vw,58px) clamp(40px,8vw,60px)}
+.reply::before{content:"";position:absolute;inset:8px;border:1px solid rgba(34,35,27,.26);pointer-events:none}
+.rsvp h2,.thanks .script{font:400 clamp(50px,13.6vw,78px)/1.08 var(--script)}
+.rsvp .note{font-size:15px;color:var(--soft);margin-top:6px}
+form{margin-top:14px;text-align:left}
+.f{display:block;margin-top:26px}
+.f>span,.legend{display:block;font:400 15px/1.5 var(--sans);margin-bottom:4px;color:var(--ink)}
+.fi{width:100%;font:300 17px/1.5 var(--sans);background:transparent;border:0;border-bottom:1px solid #7a7b6c;border-radius:0;padding:8px 2px 9px;color:var(--ink);transition:border-color .2s}
+.fi:focus{outline:none;border-bottom-color:var(--olive);box-shadow:0 1px 0 var(--olive)}
+.fi:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+textarea.fi{min-height:92px;resize:vertical;border:1px solid #7a7b6c;padding:10px 12px}
+.fi[aria-invalid=true]{border-color:#9c2b1c}
+fieldset{border:0;margin-top:26px;min-width:0}
+.choice{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+.choice input{position:absolute;opacity:0;width:1px;height:1px}
+.choice label{display:flex;align-items:center;justify-content:center;gap:8px;min-height:54px;padding:6px 8px;border:1px solid #7a7b6c;cursor:pointer;font:400 15px/1.3 var(--sans);text-align:center;transition:background .2s,color .2s,border-color .2s}
+.choice label svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;display:none}
+.choice input:checked+label{background:var(--olive);border-color:var(--olive);color:var(--cream)}
+.choice input:checked+label svg{display:block}
+.choice input:focus-visible+label{outline:2px solid var(--olive);outline-offset:3px}
+.stepper{display:flex;align-items:center;gap:4px;margin-top:4px}
+.stepper button{width:48px;height:48px;border:1px solid #7a7b6c;background:transparent;font-size:22px;line-height:1;cursor:pointer}
+.stepper output{min-width:56px;text-align:center;font:400 30px/1 var(--serif)}
+.err{color:#9c2b1c;font-size:14px;margin-top:8px}
+.send-btn{display:block;width:100%;min-height:54px;margin-top:34px;border:0;background:var(--olive);color:var(--cream);font:400 15px var(--sans);letter-spacing:.16em;cursor:pointer;transition:filter .2s}
+.send-btn:hover{filter:brightness(1.08)}
+.send-btn[disabled]{opacity:.72;cursor:progress}
+.demo{font-size:14px;color:var(--soft);margin-top:14px;text-align:center}
+.thanks{text-align:center;padding:10px 0 4px}
+.thanks h3{font:400 clamp(19px,5vw,22px)/1.5 var(--sans);margin-top:6px}
+.thanks h3:focus{outline:none}
+.thanks p{color:var(--soft);margin:8px 0 26px}
+.thanks button{min-height:48px;padding:0 24px;border:1px solid var(--ink);background:none;cursor:pointer;font:400 14px var(--sans);letter-spacing:.06em}
+
+/* --- ปิดท้าย + ท้ายหน้า --- */
+.closing{position:relative;min-height:78vh;min-height:78svh;display:grid;place-items:center;isolation:isolate;overflow:hidden;background:var(--olive)}
+.closing .slot{position:absolute;inset:0;z-index:-2}
+.closing .slot.empty{background:var(--olive) var(--grain)}
+.closing .slot.empty::after{display:none}
+.closing::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,16,9,.24);pointer-events:none}
+.closing.noimg::after{display:none}
+.closing.noimg{min-height:62vh;min-height:62svh}
+.closing-logo{width:clamp(112px,30vw,190px);aspect-ratio:560/495;filter:drop-shadow(0 1px 16px rgba(0,0,0,.25))}
+footer{background:var(--white);text-align:center;padding:76px var(--pad) calc(54px + env(safe-area-inset-bottom))}
+.locket{width:92px;height:69px;margin:0 auto 14px;fill:none;stroke:var(--ink);stroke-width:1.1;stroke-linecap:round;stroke-linejoin:round}
+.tagline{font:400 clamp(20px,5.6vw,25px)/1.3 var(--sans);letter-spacing:.01em}
+.apology{font-style:italic;color:var(--soft);font-size:clamp(15px,4vw,17px);margin-top:22px}
+.fine{margin-top:44px;color:var(--soft)}
+.bgm{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));z-index:60;width:48px;height:48px;border-radius:50%;border:1px solid rgba(34,35,27,.25);background:rgba(253,252,248,.94);color:var(--ink);display:grid;place-items:center;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,.14)}
+.bgm svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.4}
+.bgm[aria-pressed=true]{background:var(--olive);color:var(--cream);border-color:var(--olive)}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv,.js .write{opacity:1;transform:none;clip-path:none;transition:none}
+  .env-wrap,.hero.live .hero-media>img{animation:none}
+  #intro,.letter,.flap,.seal{transition:opacity .3s!important}
+}
 </style>
 </head>
 <body class="locked">
+<script>document.documentElement.classList.add('js')</script>
 
-
-<div id="pgbg" aria-hidden="true"></div>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<!-- สัญลักษณ์ที่ใช้ซ้ำ: กรอบหยักรูปไข่ (โลโก้ EST. 2027) และตราขี้ผึ้ง -->
+<svg class="sym" aria-hidden="true" focusable="false">
   <defs>
-    <filter id="crayon" x="-6%" y="-6%" width="112%" height="112%" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4" result="w"/>
-      <feDisplacementMap in="SourceGraphic" in2="w" scale="3.4" xChannelSelector="R" yChannelSelector="G" result="d"/>
-      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="9" result="g"/>
-      <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -4.2 0 0 0 3.05" result="ga"/>
-      <feComposite in="d" in2="ga" operator="in"/>
-    </filter>
-    <filter id="crayonT" x="-4%" y="-10%" width="108%" height="120%" color-interpolation-filters="sRGB">
-      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="2" result="w"/>
-      <feDisplacementMap in="SourceGraphic" in2="w" scale="1.8" xChannelSelector="R" yChannelSelector="G" result="d"/>
-      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="5" result="g"/>
-      <feColorMatrix in="g" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  -3.6 0 0 0 3.0" result="ga"/>
-      <feComposite in="d" in2="ga" operator="in"/>
-    </filter>
-    <symbol id="tassel" viewBox="0 0 60 120">
-      <g filter="url(#crayon)" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="30" cy="10" r="7" fill="none" stroke="#c9a24d" stroke-width="3.4"/>
-        <path d="M30 17v18" stroke="#c9a0aa" stroke-width="4" fill="none"/>
-        <rect x="23" y="35" width="14" height="14" rx="4" fill="#efb9c3" stroke="#c98693" stroke-width="2.5"/>
-        <path d="M22 49c-3 20-4 40-3 62M26 49c-1 22-1 42 0 64M30 49v66M34 49c1 22 1 42 0 64M38 49c3 20 4 40 3 62" stroke="#e7a9b5" stroke-width="3.6" fill="none"/>
-        <path d="M20 108h20" stroke="#c98693" stroke-width="2.5"/>
-      </g>
-    </symbol>
-    <filter id="wobble" x="-3%" y="-3%" width="106%" height="106%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="2" seed="7" result="w"/>
-      <feDisplacementMap in="SourceGraphic" in2="w" scale="3" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
+    <radialGradient id="waxA" cx="38%" cy="32%" r="72%"><stop offset="0" stop-color="#868350"/><stop offset=".5" stop-color="#5f5c2f"/><stop offset="1" stop-color="#3b3a1b"/></radialGradient>
+    <radialGradient id="waxB" cx="50%" cy="50%" r="50%"><stop offset=".74" stop-color="#3b3a1b" stop-opacity="0"/><stop offset=".9" stop-color="#2c2b13" stop-opacity=".5"/><stop offset="1" stop-color="#9a975d" stop-opacity=".55"/></radialGradient>
   </defs>
-  <symbol id="dove" viewBox="0 0 120 84">
-    <path d="M6 74C20 70 30 66 40 58c6-5 14-8 22-8 4-8 10-12 18-12 4-8 12-12 19-10 5 2 7 6 6 10l11 5-12 1c-2 8-10 18-24 23-14 5-28 7-44 10-12 2-22 1-30-3Z"/>
-    <path d="M52 52C44 38 46 20 62 6c4-2 8-3 12-2-2 8-4 14-8 20 8-4 16-8 24-9-6 13-16 25-28 35Z"/>
-    <path d="M44 58C34 46 34 32 46 20c0 10 4 18 12 26Z" opacity=".8"/>
-    <circle cx="98" cy="33" r="1.7" fill="#2a281d"/>
-  </symbol>
+  <symbol id="scallop" viewBox="0 0 120 152"><path d="M73.46 8.39 C83.44 8.27 93.93 16.42 96.77 26.50 C106.65 32.19 112.71 46.31 110.23 57.88 C117.36 67.85 117.36 84.15 110.23 94.12 C112.71 105.69 106.65 119.81 96.77 125.50 C93.93 135.58 83.44 143.73 73.46 143.61 C66.06 149.50 53.94 149.50 46.54 143.61 C36.56 143.73 26.07 135.58 23.23 125.50 C13.35 119.81 7.29 105.69 9.77 94.12 C2.64 84.15 2.64 67.85 9.77 57.88 C7.29 46.31 13.35 32.19 23.23 26.50 C26.07 16.42 36.56 8.27 46.54 8.39 C53.94 2.50 66.06 2.50 73.46 8.39Z" stroke-width="1.15"/><path d="M72.68 11.28 C82.13 11.23 92.01 19.03 94.65 28.62 C104.04 34.10 109.74 47.62 107.33 58.66 C114.14 68.20 114.14 83.80 107.33 93.34 C109.74 104.38 104.04 117.90 94.65 123.38 C92.01 132.97 82.13 140.77 72.68 140.72 C65.71 146.28 54.29 146.28 47.32 140.72 C37.87 140.77 27.99 132.97 25.35 123.38 C15.96 117.90 10.26 104.38 12.67 93.34 C5.86 83.80 5.86 68.20 12.67 58.66 C10.26 47.62 15.96 34.10 25.35 28.62 C27.99 19.03 37.87 11.23 47.32 11.28 C54.29 5.72 65.71 5.72 72.68 11.28Z" stroke-width=".55"/></symbol>
+  <symbol id="wax" viewBox="0 0 100 100"><path d="M95.80 50.00 C95.85 53.27 96.75 56.64 96.32 59.85 C95.89 63.05 94.75 66.39 93.23 69.25 C91.71 72.11 89.18 74.44 87.19 77.02 C85.20 79.60 83.65 82.60 81.29 84.75 C78.93 86.89 75.91 88.51 73.03 89.88 C70.14 91.25 66.99 91.90 63.96 92.97 C60.94 94.04 58.00 95.78 54.87 96.31 C51.73 96.83 48.36 96.46 45.15 96.12 C41.94 95.79 38.67 95.27 35.61 94.28 C32.55 93.29 29.68 91.71 26.79 90.20 C23.90 88.70 20.63 87.41 18.27 85.24 C15.90 83.07 14.34 79.92 12.59 77.18 C10.84 74.44 9.02 71.74 7.77 68.80 C6.52 65.86 5.69 62.68 5.09 59.55 C4.48 56.41 4.26 53.21 4.13 50.00 C4.01 46.79 3.57 43.35 4.36 40.30 C5.14 37.24 7.61 34.69 8.84 31.68 C10.07 28.66 9.87 24.69 11.74 22.20 C13.61 19.71 17.45 18.65 20.05 16.73 C22.64 14.81 24.65 12.36 27.29 10.67 C29.94 8.99 32.92 7.74 35.90 6.61 C38.88 5.47 41.98 4.39 45.15 3.86 C48.32 3.33 51.79 2.79 54.89 3.43 C57.99 4.07 60.62 6.75 63.75 7.68 C66.88 8.61 70.90 7.57 73.67 9.01 C76.43 10.45 78.01 14.03 80.35 16.30 C82.69 18.56 85.76 20.10 87.71 22.60 C89.66 25.10 90.65 28.35 92.03 31.29 C93.41 34.23 95.36 37.11 95.99 40.22 C96.62 43.34 95.74 46.73 95.80 50.00Z" fill="url(#waxA)"/><circle cx="50" cy="50" r="33" fill="url(#waxB)"/><circle cx="50" cy="50" r="33.6" fill="none" stroke="#a3a067" stroke-width=".8" opacity=".6"/></symbol>
 </svg>
 
-<!-- ============ INTRO ENVELOPE ============ -->
+<!-- ============ ซองจดหมาย (แตะเพื่อเปิด) ============ -->
 <div id="intro">
-  <img class="alogo intro-logo" data-v="light" alt="" aria-hidden="true">
-  <div class="env" id="env" role="button" tabindex="0" aria-label="แตะเพื่อเปิดการ์ดเชิญ">
-    <div class="env-back"></div>
-    <div class="letter">
-      <img class="alogo" data-v="dark" alt="" aria-hidden="true">
-      <div class="to" id="toLine" data-t="envelopeLine">ขอเชิญร่วมงานมงคลสมรส</div>
-      <div class="nm" data-t="couple">Lee &amp; Praew</div>
-    </div>
-    <div class="env-front"></div>
-    <div class="flap"></div>
-    <button class="seal" aria-label="เปิดซอง"><img src="assets/logo-anim-dark.png" alt=""></button>
+  <p class="micro i-top" lang="en" data-t="introEyebrow">The wedding of</p>
+  <p class="lockup i-names i-top" lang="en" aria-hidden="true"><span data-t="nameA">Lee</span><small data-t="and">and</small><span data-t="nameB">Praew</span></p>
+  <p class="i-to i-top" id="toLine" hidden></p>
+  <div class="env-wrap">
+    <button class="env" id="env" type="button" aria-describedby="envHint">
+      <span class="sr">เปิดซองจดหมายเชิญ</span>
+      <span class="env-in" aria-hidden="true"></span>
+      <span class="letter" aria-hidden="true">
+        <span class="ov"><svg viewBox="0 0 120 152"><use href="#scallop"/></svg><img class="lt-logo" src="assets/logo-sm-ink.png" alt="" width="560" height="495"></span>
+        <span class="lockup" lang="en"><span data-t="nameA">Lee</span><small data-t="and">and</small><span data-t="nameB">Praew</span></span>
+        <span class="micro" data-t="heroDate">22 · 03 · 2027</span>
+      </span>
+      <svg class="pocket" viewBox="0 0 142 100" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0 0L71 55 0 100z" fill="#eee7d4"/><path d="M142 0L71 55l71 45z" fill="#eee7d4"/>
+        <path d="M0 100L71 47l71 53z" fill="#f3ede0"/>
+        <path d="M0 0L71 55M142 0L71 55" fill="none" stroke="#8a7d57" stroke-opacity=".22" vector-effect="non-scaling-stroke"/>
+        <path d="M0 100L71 47l71 53" fill="none" stroke="#8a7d57" stroke-opacity=".3" vector-effect="non-scaling-stroke"/>
+      </svg>
+      <span class="flap" aria-hidden="true"><svg viewBox="0 0 142 60" preserveAspectRatio="none"><path class="fl" d="M0 0h142L74.2 56.6q-3.2 2.4-6.4 0z"/><path d="M0 0L67.8 56.6q3.2 2.4 6.4 0L142 0" fill="none" stroke="#8a7d57" stroke-opacity=".3" vector-effect="non-scaling-stroke"/></svg></span>
+      <span class="seal" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#wax"/></svg><img src="assets/logo-sm-light.png" alt="" width="560" height="495"></span>
+    </button>
   </div>
-  <div class="hint"><span class="script">Tap the envelope to open</span><small>แตะที่ซองเพื่อเปิดการ์ดเชิญ</small></div>
+  <p class="i-hint" id="envHint"><span data-t="introHint">แตะซองเพื่อเปิด</span><span class="micro" lang="en" data-t="introHintEn">Tap to open</span></p>
+  <p class="micro i-date" aria-hidden="true" data-t="heroDate">22 · 03 · 2027</p>
 </div>
 
 <main>
-<!-- ============ HERO ============ -->
-<section class="hero" id="top" data-goto="hero">
-  <div class="hero-bg"></div>
-  <img class="alogo hero-logo rv" data-v="light" alt="Lee &amp; Praew" role="img">
-  <p class="date-sm rv" data-t="heroDate">2027 · MARCH 22</p>
-  <h1 class="caps rv" style="--d:.1s" data-t="couple">Lee &amp; Praew</h1>
-  <p class="script rv" style="--d:.25s" data-t="tagline">are getting married</p>
-  <div class="lace-wrap rv" style="--d:.4s">
-    <div class="lace scallop"><div class="lace-in"><img data-slot="hero" src="photos/hero.jpg" alt="Lee และ Praew" fetchpriority="high" decoding="async" width="1000" height="667"></div></div>
+<!-- ============ หน้าแรก ============ -->
+<header class="hero" id="top" data-goto="hero">
+  <div class="hero-media slot" data-hint="รูปหน้าแรก · แนวนอนหรือแนวตั้ง ความกว้าง 1600px ขึ้นไป"><img data-slot="hero" src="photos/hero.jpg" alt="" fetchpriority="high"></div>
+  <p class="corner c-tl micro" lang="en" aria-hidden="true"><span data-t="nameA">Lee</span> &amp; <span data-t="nameB">Praew</span></p>
+  <p class="corner c-tr micro" data-t="heroDate">22 · 03 · 2027</p>
+  <div class="hero-in">
+    <img class="alogo hero-logo" data-v="light" alt="" width="560" height="495">
+    <p class="micro" lang="en" data-t="heroEyebrow">We're getting married</p>
+    <h1 class="lockup" id="heroTitle" tabindex="-1" lang="en"><span class="sr" data-names>Lee and Praew</span><span aria-hidden="true"><span data-t="nameA">Lee</span><small data-t="and">and</small><span data-t="nameB">Praew</span></span></h1>
+    <p class="hero-th" data-t="dateTh">วันจันทร์ 22 มีนาคม 2570</p>
   </div>
-  <p class="where rv" style="--d:.5s"><span data-t="whereTh">วันจันทร์ 22 มีนาคม 2570</span><small data-t="whereEn">THE SIGNATURE HOTEL AIRPORT</small></p>
-  <div class="scroll rv" style="--d:.6s" aria-hidden="true"></div>
+  <p class="corner c-bl micro" lang="en" data-t="whereEn">The Signature Hotel Airport</p>
+  <p class="corner c-br micro" lang="en" data-t="tag">#LPLingerHour</p>
+</header>
+
+<!-- ============ 01 Save the Date ============ -->
+<section class="sec white save" id="save" data-section="save" data-goto="save" aria-labelledby="saveH">
+  <div class="bar micro" aria-hidden="true"><span class="num">01</span><span lang="en" data-t="bar1">Save the date</span></div>
+  <h2 class="wr" id="saveH" lang="en"><span class="write" data-t="saveTitle">Save the Date</span></h2>
+  <p class="caps rv" lang="en" data-t="saveSub">Grab your best fit and celebrate with us</p>
+  <p class="serif-p rv" lang="en" data-t="saveP1"></p>
+  <p class="serif-p rv" lang="en" data-t="saveP2"></p>
+  <p class="lockup wr" lang="en"><span class="sr" data-names>Lee and Praew</span><span class="write" aria-hidden="true"><span data-t="nameA">Lee</span><small data-t="and">and</small><span data-t="nameB">Praew</span></span></p>
+  <p class="date rv" lang="en" data-t="dateEn">March 22, 2027</p>
+  <div class="count rv" id="count" role="timer" aria-label="นับถอยหลังถึงวันงาน">
+    <div><b data-k="d">00</b><span lang="en">Days</span></div><div><b data-k="h">00</b><span lang="en">Hours</span></div><div><b data-k="m">00</b><span lang="en">Min</span></div><div><b data-k="s">00</b><span lang="en">Sec</span></div>
+  </div>
+  <a class="cta rv" href="#rsvp" id="saveCta"><span data-t="saveCta">ตอบรับคำเชิญ</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
 </section>
 
-<!-- ============ WELCOME + COLLAGE ============ -->
-<section class="welcome" data-section="welcome" data-goto="welcome">
-  <div class="wrap"><div class="sheet cloud">
-    <h2 class="caps rv uline cray" data-t="welcomeTitle">Welcome to<br>our wedding</h2>
-    <p class="t rv" style="--d:.1s" data-t="welcomeTh">วันพิเศษของเราจะสมบูรณ์ยิ่งขึ้น<br>เมื่อมีคนสำคัญเช่นคุณมาร่วมยินดี</p>
-    <p class="en rv" style="--d:.15s" data-t="welcomeEn">Together with our families, we would love for you to join us in celebrating our wedding.</p>
-    <div class="names">
-      <div class="n rv" style="--d:.2s" data-t="name1">อาภากร อารีวัฒนา</div>
-      <span class="and rv" style="--d:.25s">&amp;</span>
-      <div class="n rv" style="--d:.3s" data-t="name2">วรัญญา เกสโร</div>
+<!-- ============ 02 การ์ดเชิญ ============ -->
+<section class="sec paper invite" id="invite" data-section="invite" data-goto="invite" aria-labelledby="invH">
+  <div class="bar micro" aria-hidden="true"><span class="num">02</span><span lang="en" data-t="bar2">The invitation</span></div>
+  <h2 class="sr" id="invH">การ์ดเชิญ</h2>
+  <div class="inv-grid">
+    <div class="inv-text">
+      <div class="emblem rv" aria-hidden="true"><span class="micro" lang="en" data-t="estLabel">Est.</span><span class="ov"><svg viewBox="0 0 120 152"><use href="#scallop"/></svg><img class="alogo" data-v="ink" alt="" width="560" height="495"></span><span class="micro" data-t="estYear">2027</span></div>
+      <p class="inv-th rv" data-t="inviteTh"></p>
+      <p class="lockup wr" lang="en"><span class="sr" data-names>Lee and Praew</span><span class="write" aria-hidden="true"><span data-t="nameA">Lee</span><small data-t="and">and</small><span data-t="nameB">Praew</span></span></p>
+      <p class="inv-names rv"><span data-t="name1"></span> <span data-t="andTh">และ</span> <span data-t="name2"></span></p>
+      <div class="ruled rv"><p data-t="venueName"></p><p data-t="dateTh"></p></div>
+      <a class="btn-line rv" id="mapBtn" href="#" target="_blank" rel="noopener"><span data-t="mapBtn">ดูแผนที่</span><span class="sr"> (เปิดในแท็บใหม่)</span></a>
     </div>
-    <p class="sig rv" style="--d:.35s" data-t="sig">Lee and Praew</p>
-  </div></div>
-
-  <div class="collage" data-section="collage" data-goto="collage">
-    <div class="strip rv">
-      <div class="fr"><img data-slot="strip1" src="photos/strip1.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="fr"><img data-slot="strip2" src="photos/strip2.jpg" alt="" loading="lazy" decoding="async"></div>
-      <div class="fr"><img data-slot="strip3" src="photos/strip3.jpg" alt="" loading="lazy" decoding="async"></div>
-    </div>
-    <figure class="print p1 rv" style="--d:.15s"><i class="tape"></i><div class="ph"><img data-slot="print1" src="photos/print1.jpg" alt="" loading="lazy" decoding="async"></div></figure>
-    <figure class="print p2 rv" style="--d:.3s"><i class="tape"></i><div class="ph"><img data-slot="print2" src="photos/print2.jpg" alt="" loading="lazy" decoding="async"></div></figure>
-    <svg class="dove a" viewBox="0 0 120 84" aria-hidden="true"><use href="#dove"/></svg>
+    <figure class="inv-photo rv"><div class="slot" data-hint="รูปแนวตั้ง 2:3"><img data-slot="portrait" alt="" loading="lazy"></div></figure>
   </div>
 </section>
 
-<!-- ============ DATE ============ -->
-<section class="date" data-section="date" data-goto="date">
-  <div class="wrap"><div class="sheet cloud sage"><svg class="tassel" viewBox="0 0 60 120" aria-hidden="true"><use href="#tassel"/></svg>
-    <p class="eyebrow rv" data-t="dateEyebrow">Save the Date</p>
-    <div class="script-title rv cray" style="--d:.1s;margin:.2rem 0 .4rem" data-t="dateScript">March 22, 2027</div>
-    <div class="cal rv" id="cal" style="--d:.15s" aria-hidden="true"></div>
-    <div class="d rv" style="--d:.2s" data-t="dateTh">วันจันทร์ 22 มีนาคม 2570</div>
-    <p class="quote rv" style="--d:.25s" data-t="quote">We cannot wait to share love, laughter, and unforgettable memories with the people who mean the most to us.</p>
-    <div class="count rv" style="--d:.3s" id="count" aria-live="off">
-      <div><b data-k="d">--</b><span>Days</span></div>
-      <div><b data-k="h">--</b><span>Hours</span></div>
-      <div><b data-k="m">--</b><span>Mins</span></div>
-      <div><b data-k="s">--</b><span>Secs</span></div>
+<!-- ============ 03 กำหนดการ ============ -->
+<section class="sec band dk sched" id="schedule" data-section="schedule" data-goto="schedule" aria-labelledby="schH">
+  <div class="band-bg slot" data-hint="รูปพื้นหลังกำหนดการ (ตั้งในหมวด รูปภาพ)"><img data-slot="pageBg" alt="" loading="lazy"></div>
+  <div class="bar micro" aria-hidden="true"><span class="num">03</span><span lang="en" data-t="bar3">The day</span></div>
+  <h2 class="rv" id="schH" lang="en" data-t="schedTitle">Wedding Day Schedule</h2>
+  <p class="sub-th rv" data-t="schedSub">กำหนดการ</p>
+  <ol class="tl rv" id="tlItems"></ol>
+</section>
+
+<!-- ============ 04 Dress code ============ -->
+<section class="sec moss dk dress" id="dress" data-section="dress" data-goto="dress" aria-labelledby="drH">
+  <div class="bar micro" aria-hidden="true"><span class="num">04</span><span lang="en" data-t="bar4">Dress code</span></div>
+  <p class="eyebrow wr" lang="en"><span class="write" data-t="dressEyebrow">what to wear</span></p>
+  <div class="slot rv" data-hint="รูปเล็ก แนวตั้ง 4:5"><img data-slot="detail" alt="" loading="lazy"></div>
+  <h2 class="rv" id="drH" lang="en" data-t="dressTitle">Dress Code</h2>
+  <p class="sub-th rv" data-t="dressSub">โทนสีที่แนะนำ</p>
+  <ul class="sw rv" id="sw"></ul>
+</section>
+
+<!-- ============ 05 แถบฟิล์ม ============ -->
+<section class="sec film dk" id="moments" data-section="gallery" data-goto="gallery" aria-labelledby="momH">
+  <div class="bar micro" aria-hidden="true"><span class="num">05</span><span lang="en" data-t="bar5">Moments</span></div>
+  <h2 class="sr" id="momH" lang="en" data-t="bar5">Moments</h2>
+  <div class="strip rv">
+    <div class="holes" aria-hidden="true"></div>
+    <p class="edge" aria-hidden="true"><span data-t="filmEdge">LP 2027</span><span>▸ 22</span><span>▸ 03</span><span>▸ 27</span></p>
+    <div class="frames">
+      <figure class="slot" data-hint="ฟิล์ม 1 · แนวตั้ง 4:5"><img data-slot="film1" alt="" loading="lazy"></figure>
+      <figure class="slot" data-hint="ฟิล์ม 2 · แนวตั้ง 4:5"><img data-slot="film2" alt="" loading="lazy"></figure>
+      <figure class="slot" data-hint="ฟิล์ม 3 · แนวตั้ง 4:5"><img data-slot="film3" alt="" loading="lazy"></figure>
     </div>
-  </div></div>
+    <div class="holes" aria-hidden="true" style="margin-top:6px"></div>
+  </div>
 </section>
 
-<!-- ============ VENUE + SCHEDULE (torn paper) ============ -->
-<section class="venue" data-section="details" data-goto="details">
-  <div class="sheet-wrap rv"><div class="sheet cloud"><svg class="tassel" viewBox="0 0 60 120" aria-hidden="true"><use href="#tassel"/></svg>
-    <p class="eyebrow" data-t="detailsEyebrow">The Details</p>
-    <h2 class="script-title cray" style="margin-top:.2rem" data-t="detailsTitle">Venue &amp; Time</h2>
-    <p class="sm" style="margin-top:2px" data-t="detailsSub">สถานที่และกำหนดการ</p>
-    <h3 style="margin-top:24px" data-t="venueName">เดอะ ซิกเนเจอร์ โฮเทล แอร์พอร์ต</h3>
-    <p style="color:var(--soft);font-size:.92rem" data-t="venueDate">วันจันทร์ 22 มีนาคม 2570</p>
-    <a class="btn" id="mapBtn" target="_blank" rel="noopener">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
-      <span data-t="mapBtn">ดูแผนที่</span>
-    </a>
-    <div class="tl" id="tl"><div class="line"></div><div id="tlItems"></div></div>
-  </div></div>
-</section>
-
-<!-- ============ DRESS CODE ============ -->
-<section class="dress" data-section="dress" data-goto="dress">
-  <div class="wrap"><div class="sheet cloud">
-    <p class="eyebrow rv" data-t="dressEyebrow">Dress Code</p>
-    <h2 class="script-title rv cray" style="--d:.1s" data-t="dressTitle">Colour palette</h2>
-    <p class="sm rv" style="--d:.12s;margin-top:4px" data-t="dressSub">โทนสีที่แนะนำ</p>
-    <div class="sw" id="sw"></div>
-  </div></div>
-</section>
-
-<!-- ============ RSVP (torn paper + clip + dove) ============ -->
-<section class="rsvp" id="rsvp" data-section="rsvp" data-goto="rsvp">
-  <div class="wrap">
-    <div class="sheet-wrap rv">
-      <svg class="dove b" viewBox="0 0 120 84" aria-hidden="true"><use href="#dove"/></svg>
-      <div class="sheet cloud"><svg class="tassel" viewBox="0 0 60 120" aria-hidden="true"><use href="#tassel"/></svg>
-        <div class="head">
-          <p class="eyebrow" style="color:var(--peanut)" data-t="rsvpEyebrow">RSVP</p>
-          <h2 class="script-title cray" style="color:var(--olive)" data-t="rsvpTitle">Will you join us?</h2>
-          <p class="sm" style="margin-top:2px" data-t="rsvpSub">ยืนยันการเข้าร่วม</p>
+<!-- ============ 06 RSVP ============ -->
+<section class="sec paper rsvp" id="rsvp" data-section="rsvp" data-goto="rsvp" aria-labelledby="rsvpH">
+  <div class="bar micro" aria-hidden="true"><span class="num">06</span><span lang="en" data-t="bar6">RSVP</span></div>
+  <div class="reply rv">
+    <div id="rsvpHead">
+      <h2 id="rsvpH" lang="en" data-t="rsvpTitle">Kindly Reply</h2>
+      <p class="sub-th" data-t="rsvpSub">กรุณายืนยันการเข้าร่วมงาน</p>
+      <p class="note" data-t="rsvpNote" data-opt></p>
+    </div>
+    <form id="form" novalidate>
+      <label class="f"><span>ชื่อ–นามสกุล</span><input class="fi" type="text" id="name" name="name" autocomplete="name" required aria-describedby="nameErr" aria-invalid="false"></label>
+      <p class="err" id="nameErr" hidden>กรุณากรอกชื่อ เพื่อให้เรารู้ว่าเป็นคำตอบของใคร</p>
+      <fieldset><legend class="legend">จะมาร่วมงานไหม</legend>
+        <div class="choice">
+          <input type="radio" name="attending" id="yes" value="yes" checked><label for="yes"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>ยินดีเข้าร่วม</label>
+          <input type="radio" name="attending" id="no" value="no"><label for="no"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>ไม่สะดวก</label>
         </div>
-
-        <form id="form" novalidate>
-          <div class="f">
-            <label for="name">ชื่อ-นามสกุล</label>
-            <input type="text" id="name" name="name" autocomplete="name" placeholder="เช่น คุณสมหญิง ใจดี" required>
-            <div class="err" id="nameErr">กรุณากรอกชื่อ</div>
-          </div>
-          <fieldset class="f pills">
-            <legend style="grid-column:1/-1">ท่านสะดวกมาร่วมงานหรือไม่</legend>
-            <input type="radio" name="attending" id="yes" value="yes" checked><label for="yes">ยินดีเข้าร่วม 🤍</label>
-            <input type="radio" name="attending" id="no" value="no"><label for="no">ไม่สะดวก</label>
-          </fieldset>
-          <div class="collapse" id="more"><div>
-            <div class="f">
-              <label>จำนวนผู้เข้าร่วม (รวมตัวท่าน)</label>
-              <div class="stepper">
-                <button type="button" id="minus" aria-label="ลด">−</button>
-                <output id="guests">1</output>
-                <button type="button" id="plus" aria-label="เพิ่ม">+</button>
-              </div>
-            </div>
-            <div class="f">
-              <label for="diet">อาหารที่แพ้ / ข้อจำกัดด้านอาหาร</label>
-              <input type="text" id="diet" name="diet" placeholder="ไม่มี">
-            </div>
-          </div></div>
-          <div class="f">
-            <label for="msg">ข้อความถึงคู่บ่าวสาว</label>
-            <textarea id="msg" name="message" placeholder="ฝากคำอวยพรได้ที่นี่"></textarea>
-          </div>
-          <button class="submit" id="send" type="submit">ส่งคำตอบ</button>
-          <p class="demo-note" id="demoNote" hidden>โหมดเดโม: ยังไม่ได้เชื่อม Google Sheets คำตอบจะยังไม่ถูกบันทึก</p>
-        </form>
-
-        <div class="thanks" id="thanks" role="status">
-          <div class="stamp" aria-hidden="true"><b>RSVP</b><span>RECEIVED</span><small>22 · 03 · 2027</small></div>
-          <h3 id="thanksTitle">ขอบคุณค่ะ</h3>
-          <p id="thanksText" style="color:var(--soft);margin-top:6px"></p>
-          <button class="btn" type="button" id="again" style="margin-top:18px">แก้ไขคำตอบ</button>
-        </div>
+      </fieldset>
+      <div id="more">
+        <div class="f"><span id="gl">จำนวนผู้มาร่วมงาน (รวมตัวคุณ)</span>
+          <div class="stepper" role="group" aria-labelledby="gl"><button type="button" id="minus" aria-label="ลดจำนวน">−</button><output id="guests" aria-live="polite">1</output><button type="button" id="plus" aria-label="เพิ่มจำนวน">+</button></div></div>
+        <label class="f"><span>อาหารที่แพ้หรือไม่ทาน (ถ้ามี)</span><input class="fi" type="text" id="diet" name="diet" autocomplete="off"></label>
       </div>
+      <label class="f"><span>คำอวยพรถึงบ่าวสาว (ถ้ามี)</span><textarea class="fi" id="msg" name="message" rows="3"></textarea></label>
+      <p class="err" id="sendErr" hidden>ส่งไม่สำเร็จ ตรวจสอบอินเทอร์เน็ตแล้วกดส่งอีกครั้ง</p>
+      <button class="send-btn" id="send" type="submit">ส่งคำตอบ</button>
+      <p class="demo" id="demoNote" hidden>โหมดตัวอย่าง: ยังไม่ได้เชื่อม Google Sheets คำตอบจะยังไม่ถูกบันทึก</p>
+    </form>
+    <div class="thanks" id="thanks" hidden>
+      <p class="script" lang="en" data-t="thanksScript" aria-hidden="true">Thank you</p>
+      <h3 id="thanksTitle" tabindex="-1"></h3>
+      <p id="thanksText"></p>
+      <button type="button" id="again">แก้ไขคำตอบ</button>
     </div>
   </div>
+</section>
+
+<!-- ============ ปิดท้าย ============ -->
+<section class="closing" id="closing" data-section="closing" data-goto="closing" aria-label="Lee and Praew">
+  <div class="slot" data-hint="รูปปิดท้าย · แนวนอน ความกว้าง 1600px ขึ้นไป"><img data-slot="closing" alt="" loading="lazy"></div>
+  <img class="alogo closing-logo" data-v="light" alt="" width="560" height="495">
 </section>
 </main>
 
 <footer data-goto="footer">
-  <img class="alogo foot-logo" data-v="light" alt="Lee &amp; Praew" role="img">
-  <div class="tag" data-t="footerTag">#LPLingerHour</div>
-  <p data-t="footerNote">ขออภัยหากไม่ได้มาเรียนเชิญด้วยตนเอง</p>
+  <svg class="locket" id="locket" viewBox="0 0 64 48" aria-hidden="true"></svg>
+  <p class="tagline" lang="en" data-t="tag">#LPLingerHour</p>
+  <p class="apology" data-t="footerNote">(ขออภัยหากมิได้มาเรียนเชิญด้วยตนเอง)</p>
+  <p class="micro fine" lang="en" aria-hidden="true"><span data-t="nameA">Lee</span> &amp; <span data-t="nameB">Praew</span> · <span data-t="heroDate">22 · 03 · 2027</span></p>
 </footer>
+<div id="ui"></div>
 
 <script>
 /* ข้อมูลทั้งหมดอ่านจาก config.js (แก้ผ่าน admin.html ได้) */
 let SITE = window.SITE || {};
 let started = false, target = 0, CONFIG = {};
+const ICONS = window.LP_ICONS || {};
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const params = new URLSearchParams(location.search);
 const previewMode = params.has('preview');
-const editMode = params.has('edit') && !previewMode;
 const guestName = (params.get('to') || '').trim().slice(0, 60);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const get = p => p.split('.').reduce((o,k) => (o == null ? o : o[k]), SITE);
 const T = (k, d) => { const v = get('text.' + k); return (v === undefined || v === null || v === '') ? d : v; };
-const ICONS = {
-  tea:'<path d="M4 9h11v3.5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/><path d="M15 10h1.5a2.5 2.5 0 0 1 0 5H15"/><path d="M7.5 3.5c0 1.2 1 1.2 1 2.5M11 3.5c0 1.2 1 1.2 1 2.5"/>',
-  rings:'<circle cx="9" cy="15" r="5"/><circle cx="16" cy="15" r="5"/><path d="M7 6.5 9 3.5l2 3-2 2.2z"/>',
-  dinner:'<path d="M7 3v6.5A2.5 2.5 0 0 0 9.5 12h0A2.5 2.5 0 0 0 12 9.5V3M9.5 3v18"/><path d="M17.5 3c-2 1.4-3 3.8-3 7h3v11"/>',
-  heart:'<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
-  music:'<path d="M9 18V6l10-2v12"/><circle cx="7" cy="18" r="2.5"/><circle cx="17" cy="16" r="2.5"/>',
-  camera:'<rect x="3" y="7" width="18" height="13" rx="2"/><circle cx="12" cy="13.5" r="3.5"/><path d="M8 7l1.5-3h5L16 7"/>',
-  cake:'<path d="M4 20h16v-6H4z"/><path d="M6 14v-3h12v3M12 11V7"/><path d="M12 4c1 1 1 2 0 3-1-1-1-2 0-3z"/>',
-  car:'<path d="M4 16v-4l2-5h12l2 5v4"/><circle cx="8" cy="17" r="1.8"/><circle cx="16" cy="17" r="1.8"/><path d="M4 12h16"/>'
-};
-function setHeroBg(url){ document.documentElement.style.setProperty('--hero-url', `url("${url}")`); }
+const svgIcon = (k, cls='') => { const ic = ICONS[k] || ICONS.heart; return ic ? `<svg class="${cls}" viewBox="${ic.vb}" aria-hidden="true" focusable="false">${ic.d}</svg>` : ''; };
+const intro = $('#intro'), mainEl = $('main'), footEl = $('footer'), uiEl = $('#ui');
+if (previewMode) document.body.classList.add('pv');
 
 /* ---------- ใส่ข้อมูลจาก SITE ลงหน้าเว็บ (เรียกซ้ำได้ — admin ใช้ตอนดูตัวอย่าง) ---------- */
 function render(){
-  CONFIG = {
-    eventDate: SITE.eventDate || '2027-03-22T14:00:00+07:00',
-    scriptUrl: SITE.scriptUrl || '',
-    mapUrl: SITE.mapUrl || 'https://www.google.com/maps/search/?api=1&query=The+Signature+Hotel+Airport'
-  };
+  CONFIG = { eventDate: SITE.eventDate || '2027-03-22T14:00:00+07:00', scriptUrl: SITE.scriptUrl || '',
+    mapUrl: SITE.mapUrl || 'https://www.google.com/maps/search/?api=1&query=The+Signature+Hotel+Airport' };
   target = new Date(CONFIG.eventDate).getTime();
-  $('#mapBtn').href = CONFIG.mapUrl; renderCal();
+  document.title = `${T('nameA','Lee')} & ${T('nameB','Praew')} · ${T('heroDate','')}`;
+  $('#mapBtn').href = CONFIG.mapUrl;
   $('#demoNote').hidden = !!CONFIG.scriptUrl;
 
   $$('[data-t]').forEach(el => { const v = get('text.' + el.dataset.t); if (v !== undefined && v !== null) el.innerHTML = esc(v).replace(/\n/g, '<br>'); });
-  if (guestName) { $('#toLine').textContent = 'ถึง ' + guestName; $('#name').value = guestName; }
+  $$('[data-opt]').forEach(el => { el.hidden = !T(el.dataset.t, ''); });
+  $$('[data-names]').forEach(el => { el.textContent = `${T('nameA','Lee')} ${T('and','and')} ${T('nameB','Praew')}`; });
+  if (guestName) { const t = $('#toLine'); t.textContent = `${T('toPrefix','ถึง')} ${guestName}`; t.hidden = false; if (!$('#name').value) $('#name').value = guestName; }
 
-  const th = SITE.theme || {}, map = { bg:'--bg', bg2:'--bg2', paper:'--paper', ink:'--ink', accent:'--butter', olive:'--olive', peanut:'--peanut' };
-  Object.entries(map).forEach(([k,v]) => { if (th[k]) document.documentElement.style.setProperty(v, th[k]); });
+  const th = SITE.theme || {}, rs = document.documentElement.style;
+  Object.entries({ white:'--white', paper:'--paper', ink:'--ink', olive:'--olive', moss:'--moss', film:'--film' }).forEach(([k,v]) => { if (th[k]) rs.setProperty(v, th[k]); else rs.removeProperty(v); });
 
+  /* ซ่อน/แสดงส่วน แล้วเรียงเลข 01, 02 … ใหม่ตามส่วนที่แสดง */
   const sec = SITE.sections || {};
   $$('[data-section]').forEach(el => { el.hidden = sec[el.dataset.section] === false; });
+  let n = 0; $$('.sec').forEach(s => { if (!s.hidden) { const num = $('.num', s); if (num) num.textContent = String(++n).padStart(2, '0'); } });
 
-  const cls = started ? ' in' : '';
-  if (Array.isArray(SITE.timeline))
-    $('#tlItems').innerHTML = SITE.timeline.map(it => `<div class="it rv${cls}"><span class="time">${esc(it.time||'')}</span><span class="ic"><svg viewBox="0 0 24 24">${ICONS[it.icon] || ICONS.heart}</svg></span><h4>${esc(it.th||'')}</h4><p>${esc(it.en||'')}</p></div>`).join('');
-  if (Array.isArray(SITE.dress))
-    $('#sw').innerHTML = SITE.dress.map((d,i) => `<div style="--i:${i}"><i style="--i:${i};--c:${esc(d.color||'#999')}"></i><span>${esc(d.name||'')}</span></div>`).join('');
+  const tl = Array.isArray(SITE.timeline) ? SITE.timeline : [];
+  $('#tlItems').innerHTML = tl.map(it => `<li><span class="t">${esc(it.time||'')}</span><span class="dot" aria-hidden="true"></span><span class="ic">${svgIcon(it.icon)}</span><span class="tx"><span class="th">${esc(it.th||'')}</span>${it.en ? `<span class="en" lang="en">${esc(it.en)}</span>` : ''}</span></li>`).join('');
+  const dr = Array.isArray(SITE.dress) ? SITE.dress : [];
+  $('#sw').innerHTML = dr.map(d => `<li><i style="--c:${esc(d.color||'#999')}" aria-hidden="true"></i><span lang="en">${esc(d.name||'')}</span></li>`).join('');
+  if (ICONS.locket) { $('#locket').setAttribute('viewBox', ICONS.locket.vb); $('#locket').innerHTML = ICONS.locket.d; }
 
+  /* รูป: ช่องไหนไม่มีรูปจะกลายเป็นกรอบสีเขียวพร้อมโลโก้ */
   $$('[data-slot]').forEach(img => {
-    const c = (SITE.photos || {})[img.dataset.slot]; if (!c) return;
-    if (c.src && img.getAttribute('src') !== c.src) img.src = c.src;
-    if (c.focus) img.style.objectPosition = c.focus;
+    const k = img.dataset.slot, c = (k === 'pageBg' ? SITE.pageBg : (SITE.photos || {})[k]) || {}, box = img.closest('.slot'), src = c.src || '';
+    if (src) { if (img.getAttribute('src') !== src) img.src = src; img.hidden = false; img.style.objectPosition = c.focus || ''; box && box.classList.remove('empty'); }
+    else { img.removeAttribute('src'); img.hidden = true; box && box.classList.add('empty'); }
   });
-  setHeroBg($('[data-slot=hero]').getAttribute('src'));
-  window.__live = SITE;
-  if (!reduce && window.plxSet) { plxSet((SITE.motion || {}).parallax !== false); window.plxRefresh && plxRefresh(); }
-  const pb = SITE.pageBg || {};
-  if (pb.src) { document.documentElement.style.setProperty('--pbg', `url("${pb.src}")`); document.documentElement.style.setProperty('--pbg-dim', String((pb.dim == null ? 32 : pb.dim) / 100)); } else { document.documentElement.style.removeProperty('--pbg'); }
+  const pb = SITE.pageBg || {}, band = $('#schedule');
+  band.style.setProperty('--dim', String((pb.dim == null ? 58 : pb.dim) / 100));
+  band.classList.toggle('noimg', !pb.src);
+  $('#closing').classList.toggle('noimg', !((SITE.photos || {}).closing || {}).src);
 
-  /* วิดีโอพื้นหลังหน้าแรก */
-  const vsrc = (SITE.video || {}).src, bg = $('.hero-bg'); let vid = $('#heroVid');
-  bg.classList.toggle('has-video', !!vsrc);
+  /* วิดีโอพื้นหลังหน้าแรก (มีปุ่มหยุด) */
+  const vsrc = (SITE.video || {}).src, media = $('.hero-media'); let vid = $('#heroVid'), vb = $('#vbtn');
   if (vsrc) {
-    if (!vid) { vid = Object.assign(document.createElement('video'), { id:'heroVid', muted:true, loop:true, playsInline:true, autoplay:true }); bg.appendChild(vid); }
-    if (vid.getAttribute('src') !== vsrc) { vid.src = vsrc; vid.play().catch(() => {}); }
-  } else if (vid) vid.remove();
+    if (!vid) { vid = Object.assign(document.createElement('video'), { id:'heroVid', muted:true, loop:true, playsInline:true, autoplay:!reduce }); vid.setAttribute('aria-hidden','true'); media.appendChild(vid); }
+    if (vid.getAttribute('src') !== vsrc) { vid.src = vsrc; if (!reduce) vid.play().catch(() => {}); }
+    media.classList.remove('empty'); $('[data-slot=hero]').hidden = true;
+    if (!vb) { vb = Object.assign(document.createElement('button'), { id:'vbtn', className:'vbtn', type:'button' }); vb.onclick = () => { vid.paused ? vid.play() : vid.pause(); setVb(); }; $('.hero').appendChild(vb); }
+    setVb();
+  } else { if (vid) vid.remove(); if (vb) vb.remove(); }
 
-  /* เพลง: เริ่มเล่นตอนแตะเปิดซอง + ปุ่มเปิด/ปิดเสียง */
+  /* เพลง: เริ่มเล่นตอนแตะเปิดซอง + ปุ่มเปิด/ปิดมุมขวาล่าง */
   const msrc = (SITE.music || {}).src; let btn = $('#bgmBtn');
   if (msrc) {
-    if (!window.bgm) { window.bgm = Object.assign(new Audio(), { loop:true, preload:'none' }); }
+    if (!window.bgm) window.bgm = Object.assign(new Audio(), { loop:true, preload:'none' });
     if (window.bgm.getAttribute('src') !== msrc) window.bgm.src = msrc;
     if (!btn) {
-      btn = Object.assign(document.createElement('button'), { id:'bgmBtn', className:'bgm', type:'button', textContent:'♪', title:'เปิด/ปิดเพลง' });
-      btn.addEventListener('click', () => { if (window.bgm.paused) { window.bgm.play().then(() => btn.classList.add('on')).catch(() => {}); } else { window.bgm.pause(); btn.classList.remove('on'); } });
-      document.body.appendChild(btn);
+      btn = Object.assign(document.createElement('button'), { id:'bgmBtn', className:'bgm', type:'button', innerHTML:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 17.5V6l10-2v11.5"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="16.5" cy="15.5" r="2.5"/></svg>' });
+      btn.setAttribute('aria-label', 'เพลงประกอบ'); btn.setAttribute('aria-pressed', 'false');
+      btn.onclick = () => window.bgm.paused ? playMusic() : (window.bgm.pause(), btn.setAttribute('aria-pressed', 'false'));
+      uiEl.appendChild(btn);
     }
   } else { if (window.bgm) { window.bgm.pause(); window.bgm = null; } if (btn) btn.remove(); }
 }
-function playMusic(){ const b = $('#bgmBtn'); if (window.bgm) window.bgm.play().then(() => b && b.classList.add('on')).catch(() => {}); }
+function setVb(){ const v = $('#heroVid'), b = $('#vbtn'); if (!v || !b) return; const p = v.paused;
+  b.setAttribute('aria-label', p ? 'เล่นวิดีโอ' : 'หยุดวิดีโอ'); b.innerHTML = p ? '<svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg>' : '<svg viewBox="0 0 16 16"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg>'; }
+function playMusic(){ const b = $('#bgmBtn'); if (window.bgm) window.bgm.play().then(() => b && b.setAttribute('aria-pressed', 'true')).catch(() => {}); }
 render();
 
-/* split text */
-$$('.split').forEach(el => [...el.dataset.split].forEach((ch,i) => {
-  const s = document.createElement('span'); s.style.setProperty('--i', i);
-  if (ch === ' ') { s.className = 'sp'; s.innerHTML = '&nbsp;'; } else s.textContent = ch; el.appendChild(s);
-}));
-
-const rnd = (x,y) => x + Math.random()*(y-x);
-function startPetals(){}
-function burst(){}
-
-/* ---------------- shapes: scalloped lace + torn paper ---------------- */
-function rng(seed){ return () => (seed = (seed*1664525 + 1013904223) >>> 0) / 4294967296; }
-function lace(el){
-  const w = el.offsetWidth, h = el.offsetHeight; if (!w) return;
-  const k = 26, B = Math.min(w,h)*.028, a = w/2 - B, b = h/2 - B, pts = [];
-  for (let i=0;i<=720;i++){ const t = i/720*Math.PI*2, bump = B*Math.abs(Math.sin(k*t/2));
-    pts.push(`${(w/2+(a+bump)*Math.cos(t)).toFixed(1)}px ${(h/2+(b+bump)*Math.sin(t)).toFixed(1)}px`); }
-  el.style.clipPath = `polygon(${pts.join(',')})`;
-}
-function tear(el){
-  const w = el.offsetWidth, h = el.offsetHeight; if (!w) return;
-  const r = rng(el.dataset.seed ? +el.dataset.seed : Math.round(w*7+h)), s = 9, top = [], bot = [];
-  for (let x=0; x<=w; x+=s){ top.push(`${x}px ${(r()*7+(r()>.93?5:0)).toFixed(1)}px`); }
-  for (let x=w; x>=0; x-=s){ bot.push(`${x}px ${(h-r()*9-(r()>.92?5:0)).toFixed(1)}px`); }
-  el.style.clipPath = `polygon(${top.join(',')},${bot.join(',')})`;
-}
-const ro = new ResizeObserver(es => es.forEach(e => e.target.matches('.lace') ? lace(e.target) : tear(e.target)));
-$$('.lace').forEach(el => { lace(el); ro.observe(el); });
-$$('.torn').forEach(el => { tear(el); ro.observe(el); });
-
-
-/* ---------------- crayon cloud cards ---------------- */
-let cloudN = 0;
-function cloudPath(w, h, inset, bump, step, rr){
-  const x0=inset, y0=inset, x1=w-inset, y1=h-inset, pts=[], P=2*((x1-x0)+(y1-y0));
-  const n=Math.max(8,Math.round(P/step)), s=P/n;
-  const at=d=>{ d=((d%P)+P)%P; const W=x1-x0,H=y1-y0;
-    if(d<W) return [x0+d,y0,0,-1]; d-=W; if(d<H) return [x1,y0+d,1,0]; d-=H; if(d<W) return [x1-d,y1,0,1]; d-=W; return [x0,y1-d,-1,0]; };
-  const r=rng(Math.round(w*3+h*7+cloudN*13)), J=()=> (r()-.5)*2.4;
-  for(let i=0;i<n;i++) pts.push(at(i*s));
-  let dstr='';
-  pts.forEach((p,i)=>{ const q=pts[(i+1)%n], mx=(p[0]+q[0])/2, my=(p[1]+q[1])/2;
-    let nx=0,ny=0; const m=bump*.8; if(mx<x0+m)nx=-1; else if(mx>x1-m)nx=1; if(my<y0+m)ny=-1; else if(my>y1-m)ny=1;
-    if(!nx&&!ny){ nx=p[2]; ny=p[3]; } const L=Math.hypot(nx,ny)||1; nx/=L; ny/=L;
-    const cx=mx+nx*bump*2+J(), cy=my+ny*bump*2+J();
-    if(i===0) dstr+=`M${(p[0]+J()).toFixed(1)} ${(p[1]+J()).toFixed(1)}`;
-    dstr+=`Q${cx.toFixed(1)} ${cy.toFixed(1)} ${(q[0]+J()).toFixed(1)} ${(q[1]+J()).toFixed(1)}`; });
-  return dstr+'Z';
-}
-function cloud(el){
-  const w=el.offsetWidth+32, h=el.offsetHeight+32; if(el.offsetWidth<40) return;
-  const id='cl'+(++cloudN), sage=el.classList.contains('sage');
-  const a=cloudPath(w,h,20,8,46), b=cloudPath(w,h,18.5,7,40);
-  const fill=sage?'#c6d3b3':'#fbf7ee', hatch=sage?'#9fb589':'#c6d3b3';
-  const svg=`<svg class="cb" viewBox="0 0 ${w} ${h}" aria-hidden="true">
-    <defs><pattern id="${id}" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(38)"><path d="M0 11H22" stroke="${hatch}" stroke-width="7" opacity="${sage?.32:.14}"/></pattern></defs>
-    <path d="${a}" fill="${fill}"/>
-    <g filter="url(#crayon)"><path d="${a}" fill="url(#${id})"/></g>
-    <g filter="url(#crayon)" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path d="${a}" stroke="#c9a0aa" stroke-width="6"/>
-      <path d="${b}" stroke="#efb9c3" stroke-width="3" opacity=".85"/>
-    </g></svg>`;
-  const old=$('.cb',el); if(old) old.remove(); el.insertAdjacentHTML('afterbegin',svg);
-}
-let cloudT; const cloudRO=new ResizeObserver(()=>{ clearTimeout(cloudT); cloudT=setTimeout(()=>$$('.cloud').forEach(cloud),120); });
-$$('.cloud').forEach(el=>cloudRO.observe(el));
-
-/* ---------------- calendar (from eventDate) ---------------- */
-function renderCal(){
-  const box=$('#cal'); if(!box) return;
-  const m=String(CONFIG.eventDate).match(/(\d{4})-(\d{2})-(\d{2})/); if(!m){ box.innerHTML=''; return; }
-  const Y=+m[1], M=+m[2]-1, D=+m[3], first=(new Date(Date.UTC(Y,M,1)).getUTCDay()+6)%7, dim=new Date(Date.UTC(Y,M+1,0)).getUTCDate();
-  const MN=['JANUARY','FEBRUARY','MARCH','APRIL','MAY','JUNE','JULY','AUGUST','SEPTEMBER','OCTOBER','NOVEMBER','DECEMBER'];
-  let g=['จ','อ','พ','พฤ','ศ','ส','อา'].map(x=>`<i>${x}</i>`).join('')+'<b></b>'.repeat(first);
-  for(let d=1;d<=dim;d++) g+= d===D ? `<b class="on"><svg viewBox="0 0 100 100"><path d="M50 88C10 58 6 30 28 21c12-4 20 3 22 11 2-8 10-15 22-11 22 9 18 37-22 67z" fill="#e48ea0" stroke="#c9677d" stroke-width="5"/></svg><span>${d}</span></b>` : `<b>${d}</b>`;
-  box.innerHTML=`<div class="mn">${MN[M]} ${Y}</div><div class="g">${g}</div>`;
-}
-
-/* ---------------- animated logo (webp ที่วาดเส้นทีละเส้น) ---------------- */
-const LOGO={ light:'assets/logo-anim-light.webp', dark:'assets/logo-anim-dark.webp' }, logoBlob={};
+/* ---------------- โลโก้เคลื่อนไหว (วาดเส้นทีละเส้น) ---------------- */
+const LOGO = { light:'assets/logo-anim-light.webp', ink:'assets/logo-anim-ink.webp' }, logoBlob = {};
 async function playLogo(img){
-  const v=img.dataset.v||'light'; if(reduce){ img.src=LOGO[v].replace('.webp','.png'); return; }
-  try{ if(!logoBlob[v]) logoBlob[v]=await (await fetch(LOGO[v])).blob();
-    const u=URL.createObjectURL(logoBlob[v]); const old=img._u; img.src=u; img._u=u; if(old) setTimeout(()=>URL.revokeObjectURL(old),500);
-  }catch(e){ img.src=LOGO[v]+'?r='+Date.now(); }
+  const v = img.dataset.v || 'light';
+  if (reduce) { img.src = LOGO[v].replace('.webp', '.png'); return; }
+  try {
+    if (!logoBlob[v]) logoBlob[v] = fetch(LOGO[v]).then(r => { if (!r.ok) throw 0; return r.blob(); });
+    const u = URL.createObjectURL(await logoBlob[v]), old = img._u; img.src = u; img._u = u; if (old) setTimeout(() => URL.revokeObjectURL(old), 800);
+  } catch(e){ img.src = LOGO[v].replace('.webp', '.png'); }
 }
 
-/* ---------------- intro ---------------- */
-const env = $('#env'), intro = $('#intro');
-let opened = false;
+/* ---------------- ซองจดหมาย ---------------- */
+const setInert = on => { mainEl.inert = on; footEl.inert = on; uiEl.inert = on; };
+let opening = false;
 function openEnvelope(){
-  if (opened) return; opened = true; env.classList.add('open'); playMusic(); setTimeout(() => playLogo($('.letter .alogo')), 900);
-  const r = env.getBoundingClientRect(); burst(r.left + r.width/2, r.top + r.height*.55, 40);
-  setTimeout(() => intro.classList.add('done'), 2300);
-  setTimeout(() => { document.body.classList.remove('locked'); intro.remove(); start(); }, 3300);
+  if (opening) return; opening = true; playMusic();
+  if (reduce) { intro.classList.add('leave'); setTimeout(introDone, 350); return; }
+  intro.classList.add('open');
+  setTimeout(() => intro.classList.add('leave'), 1850);
+  setTimeout(introDone, 2650);
 }
-env.addEventListener('click', openEnvelope);
-env.addEventListener('keydown', e => { if (e.key==='Enter' || e.key===' ') { e.preventDefault(); openEnvelope(); } });
-if (params.has('skip') || editMode || previewMode) { intro.remove(); document.body.classList.remove('locked'); start(); }
-startPetals();
-if ($('#intro .intro-logo')) playLogo($('#intro .intro-logo'));
+function introDone(){
+  opening = false;
+  if (previewMode) { intro.hidden = true; intro.classList.remove('open', 'leave'); return; }
+  intro.remove(); document.body.classList.remove('locked'); setInert(false);
+  $('#heroTitle').focus({ preventScroll:true }); start();
+}
+$('#env').addEventListener('click', openEnvelope);
+if (previewMode || params.has('skip')) { intro.hidden = true; document.body.classList.remove('locked'); start(); }
+else setInert(true);
 
-/* ---------------- reveal + timeline ---------------- */
+/* ---------------- ค่อยๆ ปรากฏเมื่อเลื่อนถึง ---------------- */
 function start(){
   if (started) return; started = true;
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold:.12, rootMargin:'0px 0px -6% 0px' });
-  $$('.rv, .split, #sw').forEach(el => io.observe(el));
-  const lio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { playLogo(e.target); lio.unobserve(e.target); } }), { threshold:.5 });
-  $$('.hero-logo,.foot-logo').forEach(el => lio.observe(el));
+  $('.hero').classList.add('live');
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold:.15, rootMargin:'0px 0px -6% 0px' });
+  $$('.rv,.wr').forEach(el => io.observe(el));
+  const lio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { playLogo(e.target); lio.unobserve(e.target); } }), { threshold:.4 });
+  $$('.alogo').forEach(el => lio.observe(el));
 }
 
-/* ---------------- countdown ---------------- */
+/* ---------------- นับถอยหลัง ---------------- */
 const cEls = Object.fromEntries($$('#count b').map(b => [b.dataset.k, b]));
-function setC(k, v){ const el = cEls[k], s = String(v).padStart(2,'0'); if (el.textContent !== s){ el.textContent = s; el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick'); } }
+function setC(k, v){ const s = String(v).padStart(2, '0'); if (cEls[k].textContent !== s) cEls[k].textContent = s; }
 function count(){ const d = Math.max(0, target - Date.now());
   setC('d', Math.floor(d/864e5)); setC('h', Math.floor(d%864e5/36e5)); setC('m', Math.floor(d%36e5/6e4)); setC('s', Math.floor(d%6e4/1e3)); }
 count(); setInterval(count, 1000);
 
-/* ---------------- RSVP form ---------------- */
-const form = $('#form'), more = $('#more'), guests = $('#guests'), thanks = $('#thanks');
+/* ---------------- ฟอร์ม RSVP ---------------- */
+const form = $('#form'), more = $('#more'), guests = $('#guests'), thanks = $('#thanks'), nameIn = $('#name'), nameErr = $('#nameErr');
 let n = 1;
-$('#plus').onclick = () => { n = Math.min(10, n+1); guests.textContent = n; };
-$('#minus').onclick = () => { n = Math.max(1, n-1); guests.textContent = n; };
-$$('input[name=attending]').forEach(r => r.addEventListener('change', () => more.classList.toggle('off', r.value==='no' && r.checked)));
+$('#plus').onclick = () => { n = Math.min(10, n + 1); guests.textContent = n; };
+$('#minus').onclick = () => { n = Math.max(1, n - 1); guests.textContent = n; };
+$$('input[name=attending]').forEach(r => r.addEventListener('change', () => { more.hidden = form.attending.value === 'no'; }));
+nameIn.addEventListener('input', () => { if (nameIn.value.trim()) { nameErr.hidden = true; nameIn.setAttribute('aria-invalid', 'false'); } });
 form.addEventListener('submit', async e => {
   e.preventDefault();
-  const name = $('#name').value.trim();
-  $('#nameErr').style.display = name ? 'none' : 'block';
-  if (!name){ $('#name').focus(); return; }
+  const name = nameIn.value.trim();
+  nameErr.hidden = !!name; nameIn.setAttribute('aria-invalid', name ? 'false' : 'true'); $('#sendErr').hidden = true;
+  if (!name) { nameIn.focus(); return; }
   const attending = form.attending.value;
-  const data = { timestamp:new Date().toISOString(), name, attending: attending==='yes' ? 'ยินดีเข้าร่วม' : 'ไม่สะดวก',
-    guests: attending==='yes' ? n : 0, diet: $('#diet').value.trim(), message: $('#msg').value.trim() };
+  const data = { timestamp:new Date().toISOString(), name, attending: attending === 'yes' ? 'ยินดีเข้าร่วม' : 'ไม่สะดวก',
+    guests: attending === 'yes' ? n : 0, diet: attending === 'yes' ? $('#diet').value.trim() : '', message: $('#msg').value.trim() };
   const btn = $('#send'); btn.disabled = true; btn.textContent = 'กำลังส่ง…';
   try {
-    if (CONFIG.scriptUrl){ await fetch(CONFIG.scriptUrl, { method:'POST', mode:'no-cors', headers:{'Content-Type':'text/plain;charset=utf-8'}, body:JSON.stringify(data) }); }
-    else { await new Promise(r => setTimeout(r, 900)); }
-    form.style.display = 'none';
-    $('#thanksTitle').textContent = attending==='yes' ? T('thanksYesTitle','แล้วพบกันนะคะ 🤍') : T('thanksNoTitle','ขอบคุณที่แจ้งให้ทราบค่ะ');
-    $('#thanksText').textContent = (attending==='yes' ? T('thanksYesText','ขอบคุณคุณ {name} เจอกัน 22 มีนาคม 2570') : T('thanksNoText','เสียดายที่ไม่ได้เจอกัน แต่ขอบคุณสำหรับคำอวยพรของคุณ {name}')).replace(/\{name\}/g, name);
-    thanks.classList.add('show');
-    const r = thanks.getBoundingClientRect();
-    if (attending==='yes'){ burst(innerWidth/2, Math.max(180, r.top+80), 140); setTimeout(() => burst(innerWidth*.25, innerHeight*.7, 60), 250); setTimeout(() => burst(innerWidth*.75, innerHeight*.7, 60), 400); }
-  } catch (err){ alert('ส่งไม่สำเร็จ กรุณาลองใหม่อีกครั้ง'); }
+    if (CONFIG.scriptUrl) await fetch(CONFIG.scriptUrl, { method:'POST', mode:'no-cors', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body:JSON.stringify(data) });
+    else await new Promise(r => setTimeout(r, 900));
+    form.hidden = true; $('#rsvpHead').hidden = true;
+    $('#thanksTitle').textContent = attending === 'yes' ? T('thanksYesTitle', 'แล้วพบกันนะคะ') : T('thanksNoTitle', 'ขอบคุณที่แจ้งให้ทราบค่ะ');
+    $('#thanksText').textContent = (attending === 'yes' ? T('thanksYesText', 'ขอบคุณ {name}') : T('thanksNoText', 'ขอบคุณ {name}')).split('{name}').join(name);
+    thanks.hidden = false; $('#thanksTitle').focus();
+  } catch (err) { $('#sendErr').hidden = false; }
   finally { btn.disabled = false; btn.textContent = 'ส่งคำตอบ'; }
 });
-$('#again').onclick = () => { thanks.classList.remove('show'); form.style.display = ''; };
+$('#again').onclick = () => { thanks.hidden = true; form.hidden = false; $('#rsvpHead').hidden = false; nameIn.focus(); };
 
 /* ---------------- ดูตัวอย่างสดจาก admin.html (iframe ?preview) ---------------- */
 if (previewMode) {
   addEventListener('message', e => {
     const d = e.data || {};
     if (d.type === 'site') { SITE = d.site; render(); }
-    if (d.type === 'goto') { const el = d.id === 'hero' ? $('#top') : d.id === 'footer' ? $('footer') : $(`[data-goto="${d.id}"]`); if (el && !el.hidden) el.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    if (d.type === 'goto') {
+      if (d.id === 'intro') { intro.classList.remove('open', 'leave'); opening = false; intro.hidden = false; return; }
+      intro.hidden = true;
+      const el = $(`[data-goto="${d.id}"]`);
+      if (el && !el.hidden) el.scrollIntoView({ behavior:'smooth', block:'start' });
+    }
   });
   parent.postMessage({ type:'ready' }, '*');
 }
-
-/* ====================================================================
-   โหมดแก้รูป: เปิดเว็บด้วย  ...?edit
-   - กด "เปลี่ยนรูป" เพื่อเลือกรูปจากเครื่อง (ย่อขนาดให้อัตโนมัติ)
-   - ลากบนรูปเพื่อเลื่อนจุดโฟกัส
-   - กด "ดาวน์โหลดไฟล์ที่แก้" แล้วเอาไฟล์ไปอัปโหลดทับใน GitHub
-   ==================================================================== */
-if (editMode) initEdit();
-function initEdit(){
-  document.body.classList.add('editing');
-  const photos = JSON.parse(JSON.stringify(SITE.photos || {}));
-  const blobs = {};
-  const bar = document.createElement('div'); bar.className = 'editbar';
-  bar.innerHTML = '<b>โหมดแก้รูป</b><span>กด “เปลี่ยนรูป” · ลากบนรูปเพื่อเลื่อนโฟกัส</span><button type="button">ดาวน์โหลดไฟล์ที่แก้</button>';
-  document.body.appendChild(bar);
-
-  $$('[data-slot]').forEach(img => {
-    const slot = img.dataset.slot, wrap = img.parentElement;
-    photos[slot] = photos[slot] || { src:`photos/${slot}.jpg`, focus:'50% 50%' };
-    const input = Object.assign(document.createElement('input'), { type:'file', accept:'image/*' });
-    const badge = document.createElement('button'); badge.type = 'button'; badge.className = 'edit-badge'; badge.textContent = 'เปลี่ยนรูป';
-    if (getComputedStyle(wrap).position === 'static') wrap.style.position = 'relative'; wrap.appendChild(badge);
-    badge.addEventListener('click', e => { e.stopPropagation(); input.click(); });
-    input.addEventListener('change', async () => {
-      const f = input.files[0]; if (!f) return;
-      const bmp = await createImageBitmap(f), sc = Math.min(1, 1600/Math.max(bmp.width, bmp.height));
-      const c = Object.assign(document.createElement('canvas'), { width:Math.round(bmp.width*sc), height:Math.round(bmp.height*sc) });
-      c.getContext('2d').drawImage(bmp, 0, 0, c.width, c.height);
-      const blob = await new Promise(r => c.toBlob(r, 'image/jpeg', .86));
-      blobs[slot] = blob; photos[slot].src = `photos/${slot}.jpg`;
-      const url = URL.createObjectURL(blob); img.src = url; if (slot === 'hero') setHeroBg(url);
-    });
-    let drag = null;
-    img.addEventListener('pointerdown', e => { const [fx,fy] = (img.style.objectPosition || photos[slot].focus || '50% 50%').split(' ').map(parseFloat);
-      drag = { x:e.clientX, y:e.clientY, fx:fx||50, fy:fy||50 }; img.setPointerCapture(e.pointerId); img.style.cursor = 'grabbing'; });
-    img.addEventListener('pointermove', e => { if (!drag) return; const r = img.getBoundingClientRect();
-      const fx = Math.max(0, Math.min(100, drag.fx - (e.clientX-drag.x)/r.width*100)), fy = Math.max(0, Math.min(100, drag.fy - (e.clientY-drag.y)/r.height*100));
-      photos[slot].focus = `${fx.toFixed(0)}% ${fy.toFixed(0)}%`; img.style.objectPosition = photos[slot].focus; });
-    img.addEventListener('pointerup', () => { drag = null; img.style.cursor = ''; });
-  });
-
-  const save = (name, blob) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = name; document.body.appendChild(a); a.click(); a.remove(); };
-  $('button', bar).addEventListener('click', () => {
-    const out = Object.assign({}, SITE, { photos });
-    const text = '/* config.js — สร้างจากโหมดแก้รูป */\nwindow.SITE = ' + JSON.stringify(out, null, 2) + ';\n';
-    let i = 0; Object.entries(blobs).forEach(([slot, blob]) => setTimeout(() => save(`${slot}.jpg`, blob), 450*i++));
-    setTimeout(() => save('config.js', new Blob([text], { type:'text/javascript' })), 450*i);
-  });
-}
-
-/* ---------------- parallax decor (scrolls at different speeds) ---------------- */
-(function(){
-  const NS='http://www.w3.org/2000/svg';
-  const F='filter="url(#crayon)" stroke-linecap="round" stroke-linejoin="round"';
-  const leaf=(c,c2)=>`<svg viewBox="0 0 100 160"><g ${F}><path d="M50 156C46 120 48 70 50 6" stroke="${c2}" stroke-width="3.5" fill="none"/><g fill="${c}" stroke="${c2}" stroke-width="2.5"><path d="M50 128C30 122 16 108 14 92c20 2 34 14 36 36z"/><path d="M50 108c20-6 34-20 36-36-20 2-34 14-36 36z"/><path d="M50 86C32 80 20 66 18 50c20 2 32 14 32 36z"/><path d="M50 64c18-6 30-18 32-34-18 2-30 14-32 34z"/><path d="M50 40C38 34 30 24 30 12c14 2 22 12 20 28z"/></g></g></svg>`;
-  const hyd=(i)=>{ const P=[[60,34,'#fbf7ee'],[36,48,'#f6e2e6'],[84,48,'#fbf7ee'],[48,68,'#fbf7ee'],[74,70,'#f6e2e6'],[28,78,'#fbf7ee'],[94,78,'#fbf7ee'],[60,92,'#fbf7ee'],[44,100,'#efb9c3'],[78,100,'#fbf7ee']];
-    return `<svg viewBox="0 0 120 150"><g ${F}><path d="M60 148C46 136 38 122 36 108c18 4 26 18 24 40z" fill="#aebd9a" stroke="#6f8a5a" stroke-width="3"/><path d="M62 148c14-12 22-26 24-40-18 4-26 18-24 40z" fill="#c6d3b3" stroke="#6f8a5a" stroke-width="3"/>${P.map(([x,y,c],k)=>`<circle cx="${x}" cy="${y}" r="${15-(k%3)}" fill="${c}" stroke="${k%4==1?'#d9a5af':'#c3cfb0'}" stroke-width="3"/>`).join('')}</g></svg>`; };
-  const rose=()=>`<svg viewBox="0 0 110 130"><g ${F}><path d="M55 128C40 118 30 104 28 88c20 4 28 18 27 40z" fill="#aebd9a" stroke="#6f8a5a" stroke-width="3"/><path d="M56 128c14-10 24-22 26-38-18 4-27 18-26 38z" fill="#c6d3b3" stroke="#6f8a5a" stroke-width="3"/><circle cx="55" cy="46" r="38" fill="#efb9c3" stroke="#c98693" stroke-width="4"/><path d="M55 20c18 2 30 18 22 34-8 14-30 12-34-4-3-12 8-22 20-18 10 4 8 16-2 18-8 1-12-8-4-12" fill="none" stroke="#c98693" stroke-width="3.5"/></g></svg>`;
-  const bird=()=>`<svg viewBox="0 0 120 60"><g ${F}><path d="M4 34C22 12 40 14 60 32 80 14 98 12 116 34 98 28 80 32 60 46 40 32 22 28 4 34z" fill="#587343" stroke="#3d5530" stroke-width="3"/></g></svg>`;
-  const heart=()=>`<svg viewBox="0 0 100 100"><g ${F}><path d="M50 88C10 58 6 30 28 21c12-4 20 3 22 11 2-8 10-15 22-11 22 9 18 37-22 67z" fill="#efb9c3" stroke="#c98693" stroke-width="4.5"/></g></svg>`;
-  const blossom=(c,c2)=>hyd();
-  const berry=(c)=>`<svg viewBox="0 0 80 120"><g ${F}><path d="M40 118C40 80 38 40 40 6" stroke="#6f8a5a" stroke-width="3.5" fill="none"/><g fill="${c}" stroke="#8a5a3a" stroke-width="2.5"><circle cx="30" cy="32" r="8"/><circle cx="50" cy="48" r="8"/><circle cx="30" cy="66" r="8"/><circle cx="50" cy="84" r="8"/><circle cx="40" cy="14" r="7"/></g></g></svg>`;
-  const DEF=[[-4,2,90,.10,'blossom',-10],[86,7,70,-.06,'bird',-8],[88,16,74,.14,'rose',10],[-5,25,96,-.08,'leaf',30],[80,33,64,.12,'heart',14],[-3,43,86,.15,'blossom',8],[90,52,92,-.10,'leaf',-28],[-6,61,70,.09,'rose',-12],[84,70,76,.12,'blossom',-6],[-4,78,100,-.07,'leaf',24],[86,88,58,.11,'heart',-10],[-2,94,80,.15,'rose',10]].map(([x,y,w,d,kind,r])=>({kind,x,y,w,d,r,src:''}));
-  window.PLX_DEFAULT=DEF;
-  const getItems=()=>{ const m=(window.__live||window.SITE||{}).decor; return Array.isArray(m)?m:DEF; };
-  let sig='';
-  let layer, nodes=[], docH=0;
-  function build(){
-    if (layer) layer.remove();
-    layer=document.createElement('div'); layer.id='plx'; layer.setAttribute('aria-hidden','true'); document.body.append(layer); nodes=[];
-    getItems().forEach(({x,y,w,d,kind:k,r,src})=>{
-      const e=document.createElement('div'); e.className='pi'; e.style.cssText=`left:${x}%;width:${w}px`;
-      const c=['#7f8f5a','#a3b07c','#5f6b3a','#8a9a64'][nodes.length%4];
-      e.innerHTML = (k==='image'&&src)?`<img src="${src}" alt="" style="width:100%;display:block">`:k==='leaf'?leaf('#aebd9a','#587343'):k==='blossom'?hyd():k==='rose'?rose():k==='bird'?bird():k==='heart'?heart():berry('#d9a5af');
-      layer.append(e); nodes.push({e,y:+y||0,d:+d||0,r:+r||0,ph:Math.random()*6.28});
-    });
-    measure();
-  }
-  function measure(){ docH=Math.max(document.documentElement.scrollHeight, innerHeight); if(layer){layer.style.height=docH+'px'; nodes.forEach(n=>{n.top=n.y/100*docH; n.e.style.top=n.top+'px';}); frame();} }
-  function frame(){
-    const sy=scrollY, mid=sy+innerHeight/2;
-    nodes.forEach(n=>{
-      const off=mid-n.top; if (Math.abs(off)>innerHeight*1.3) return;
-      n.e.style.transform=`translate3d(0,${(off*n.d).toFixed(1)}px,0) rotate(${(n.r+off*.02).toFixed(1)}deg)`;
-    });
-  }
-  let tick=false; const onScroll=()=>{ if(tick||!on) return; tick=true; requestAnimationFrame(()=>{ tick=false; frame(); }); };
-  let on=false;
-  window.plxRefresh=function(){ if(!on) return; const n=JSON.stringify(getItems()); if(n!==sig){ sig=n; build(); frame(); } };
-  window.plxSet=function(v){ if(v&&!on){ on=true; sig=JSON.stringify(getItems()); build(); frame(); addEventListener('scroll',onScroll,{passive:true}); } else if(!v&&on){ on=false; if(layer){layer.remove();layer=null;} } };
-  if (!reduce) plxSet((((window.__live||window.SITE)||{}).motion||{}).parallax !== false);
-  addEventListener('resize',()=>{ if(on) measure(); });
-  new ResizeObserver(()=>{ if(on) measure(); }).observe(document.body);
-})();
 </script>
 </body>
 </html>
