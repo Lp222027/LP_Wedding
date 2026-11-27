@@ -23,9 +23,7 @@ window.SITE = {
     "nameA": "Lee",
     "and": "and",
     "nameB": "Praew",
-    "heroEyebrow": "We're getting married",
     "heroDate": "22 · 03 · 2027",
-    "whereEn": "The Signature Hotel Airport",
     "tag": "#LPLingerHour",
 
     "bar1": "Save the date",
@@ -87,16 +85,35 @@ window.SITE = {
   ],
 
   "photos": {
-    "hero":     { "src": "photos/hero.jpg",   "focus": "47% 62%" },
+    "poster":   { "src": "", "focus": "50% 50%" },
     "portrait": { "src": "photos/print1.jpg", "focus": "50% 45%" },
     "detail":   { "src": "", "focus": "50% 50%" },
-    "film1":    { "src": "", "focus": "50% 50%" },
-    "film2":    { "src": "", "focus": "50% 50%" },
-    "film3":    { "src": "", "focus": "50% 50%" },
     "closing":  { "src": "", "focus": "50% 50%" }
   },
 
   "pageBg": { "src": "photos/bg.jpg", "dim": 58 },
   "music": { "src": "" },
-  "video": { "src": "" }
+
+  /* วิดีโอเปิดซอง: video = แนวตั้ง 9:16 (มือถือ), videoWide = แนวนอน 16:9 (จอคอม ไม่บังคับ)
+     ภาพนิ่งซองปิดใส่ที่ photos.poster  ถ้ายังไม่มีวิดีโอ เว็บจะใช้ซองที่วาดไว้ + โลโก้แทน */
+  "video": { "src": "" },
+  "videoWide": { "src": "" },
+
+  /* รูปในแถบฟิล์มที่วิ่งวน (05) */
+  "gallery": [
+    { "src": "photos/gallery/01.webp", "alt": "คู่บ่าวสาวยืนยิ้มข้างประตูไม้เก่า" },
+    { "src": "photos/gallery/02.webp", "alt": "เจ้าสาวหมุนกระโปรงบนสนามหญ้า" },
+    { "src": "photos/gallery/03.webp", "alt": "คู่บ่าวสาวจูงมือเดินริมบึง" },
+    { "src": "photos/gallery/04.webp", "alt": "คู่บ่าวสาวโผล่จากหน้าต่างผนังปูนเก่า" },
+    { "src": "photos/gallery/05.webp", "alt": "เจ้าบ่าวอุ้มเจ้าสาวหมุนกลางสวน" },
+    { "src": "photos/gallery/06.webp", "alt": "เจ้าสาวมองกระจก เห็นเงาเจ้าบ่าว" },
+    { "src": "photos/gallery/07.webp", "alt": "เจ้าสาวคลุมผ้าคลุมหน้า ยืนหันหลังในสวน" },
+    { "src": "photos/gallery/08.webp", "alt": "คู่บ่าวสาวกอดกันในโถงทางเดิน ภาพขาวดำ" },
+    { "src": "photos/gallery/09.webp", "alt": "เจ้าสาวหมุนชุดในศาลาไม้" },
+    { "src": "photos/gallery/10.webp", "alt": "เจ้าสาวนั่งบนสนามหญ้าริมบึง เจ้าบ่าวยืนข้าง" },
+    { "src": "photos/gallery/11.webp", "alt": "คู่บ่าวสาววิ่งออกจากประตูสู่สวน" },
+    { "src": "photos/gallery/12.webp", "alt": "คู่บ่าวสาวใต้ผ้าคลุมหน้า ท่ามกลางหญ้าสูง" },
+    { "src": "photos/gallery/13.webp", "alt": "คู่บ่าวสาวหัวเราะด้วยกัน" },
+    { "src": "photos/gallery/14.webp", "alt": "เจ้าสาวยิ้มใต้ผ้าคลุมหน้า เจ้าบ่าวยืนด้านหลัง" }
+  ]
 };

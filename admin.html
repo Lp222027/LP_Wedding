@@ -74,6 +74,12 @@ details.g>summary .off{font-size:.72rem;color:var(--warn);border:1px solid rgba(
 .sl{display:grid;grid-template-columns:62px 1fr;font-size:.76rem;color:var(--mute);align-items:center;gap:6px}
 .sl input[type=range]{width:100%;accent-color:#fff2b7}
 .note{font-size:.8rem;color:var(--mute);margin-top:8px}
+.gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:10px;margin:10px 0}
+.gi{display:flex;flex-direction:column;gap:4px;min-width:0}
+.gi img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:8px;background:#5b582c}
+.gi .gb2{display:flex;gap:4px}
+.gi .gb2 .ib{flex:1;min-width:0;padding:4px 0}
+.gi input{width:100%;min-width:0;font-size:.74rem;padding:5px 7px;border:1px solid var(--line);border-radius:7px;background:transparent;color:inherit}
 .note a{color:var(--accent)}
 .st{font-size:.8rem;margin-top:6px}.st.ok{color:var(--ok)}.st.warn{color:var(--warn)}.st.bad{color:var(--bad)}
 .th2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
@@ -145,14 +151,14 @@ details.g>summary .off{font-size:.72rem;color:var(--warn);border:1px solid rgba(
 /* ============ สถานะ ============ */
 const ORIG = JSON.parse(JSON.stringify(window.SITE || {}));
 let S = JSON.parse(JSON.stringify(ORIG));
-const ensure = () => { ['text','theme','sections','photos','music','video','pageBg'].forEach(k => S[k] = S[k] || {}); S.timeline = S.timeline || []; S.dress = S.dress || []; };
+const ensure = () => { ['text','theme','sections','photos','music','video','videoWide','pageBg'].forEach(k => S[k] = S[k] || {}); S.timeline = S.timeline || []; S.dress = S.dress || []; S.gallery = S.gallery || []; };
 ensure();
-const blobs = { photos:{}, music:null, video:null };
+const blobs = { photos:{}, music:null, video:null, videoWide:null, gallery:{} };
 const ICONS = window.LP_ICONS || {};
 const $ = (s, r=document) => r.querySelector(s);
 const el = (tag, props={}, kids=[]) => { const e = Object.assign(document.createElement(tag), props); [].concat(kids).forEach(k => k != null && e.append(k)); return e; };
 const frame = $('#frame'); let ready = false, draftTimer;
-const DRAFT = 'lp_admin_draft_v8';
+const DRAFT = 'lp_admin_draft_v9';
 
 function push(){ if (ready) frame.contentWindow.postMessage({ type:'site', site:S }, '*'); clearTimeout(draftTimer); draftTimer = setTimeout(saveDraft, 400); }
 function gotoPreview(id){ if (ready) frame.contentWindow.postMessage({ type:'goto', id }, '*'); }
@@ -164,7 +170,8 @@ frame.addEventListener('load', () => setTimeout(() => { if (!ready) { ready = tr
 function saveDraft(){ try {
   const d = JSON.parse(JSON.stringify(S));
   Object.keys(blobs.photos).forEach(k => { const o = k === 'pageBg' ? ORIG.pageBg : (ORIG.photos || {})[k]; const t = k === 'pageBg' ? d.pageBg : d.photos[k]; if (t) t.src = (o || {}).src || ''; });
-  ['music','video'].forEach(k => { if (blobs[k]) d[k].src = (ORIG[k] || {}).src || ''; });
+  ['music','video','videoWide'].forEach(k => { if (blobs[k]) d[k].src = (ORIG[k] || {}).src || ''; });
+  d.gallery = (d.gallery || []).filter(x => !String(x.src || '').startsWith('blob:')).map(({ _id, ...x }) => x);
   localStorage.setItem(DRAFT, JSON.stringify(d));
 } catch(e){} }
 const setPath = (o, p, v) => { const ks = p.split('.'); let t = o; ks.slice(0,-1).forEach(k => t = (t[k] = t[k] || {})); t[ks.at(-1)] = v; };
@@ -180,40 +187,35 @@ const GROUPS = [
     { k:'siteUrl', label:'ที่อยู่เว็บจริง (ใช้สร้างลิงก์เชิญเฉพาะคน)' } ]},
   { title:'ซองจดหมาย (หน้าแรกสุด)', goto:'intro', custom:'guestLink', items:[
     T('introEyebrow','ข้อความเล็กด้านบน'), T('nameA','ชื่อคนที่ 1 (อังกฤษ ใช้ทั้งเว็บ)'), T('and','คำเชื่อมตัวเล็ก (and)'), T('nameB','ชื่อคนที่ 2 (อังกฤษ ใช้ทั้งเว็บ)'),
-    T('introHint','คำบอกใต้ซอง (ไทย)'), T('introHintEn','คำบอกใต้ซอง (อังกฤษ)'), T('toPrefix','คำนำหน้าชื่อแขก (เช่น ถึง)') ]},
-  { title:'หน้าแรก (รูปเต็มจอ)', goto:'hero', items:[
-    T('heroEyebrow','ข้อความเล็กเหนือชื่อ'), T('dateTh','วันที่ภาษาไทย (ใช้ทั้งเว็บ)'), T('heroDate','วันที่แบบตัวเลข (มุมขวาบน/ซอง)'),
-    T('whereEn','ชื่อสถานที่ภาษาอังกฤษ (มุมล่าง)'), T('tag','แฮชแท็ก (มุมล่าง/ท้ายหน้า)') ]},
+    T('introHint','คำบอกใต้ซอง (ไทย)'), T('introHintEn','คำบอกใต้ซอง (อังกฤษ)'), T('toPrefix','คำนำหน้าชื่อแขก (เช่น ถึง)'), T('heroDate','วันที่แบบตัวเลข (บนซอง/ท้ายหน้า)') ],
+    note:'วิดีโอเปิดซอง (ซองเปิด → คลิป → โลโก้) และภาพนิ่งซองปิด ใส่ได้ในหมวด "วิดีโอเปิดซองและเพลง" กับ "รูปภาพ" ด้านล่าง ถ้ายังไม่ใส่ เว็บจะใช้ซองที่วาดไว้ + โลโก้แทน' },
   { n:'01', title:'Save the Date', goto:'save', toggle:'save', items:[
     T('bar1','ป้ายเล็กมุมขวา'), T('saveTitle','หัวข้อตัวเขียน'), T('saveSub','บรรทัดตัวพิมพ์ใหญ่ใต้หัวข้อ'),
     T('saveP1','ย่อหน้าที่ 1 (ขึ้นบรรทัดใหม่ได้)',1), T('saveP2','ย่อหน้าที่ 2',1), T('dateEn','วันที่ภาษาอังกฤษ'), T('saveCta','ลิงก์ไปที่ฟอร์มตอบรับ') ]},
   { n:'02', title:'การ์ดเชิญ', goto:'invite', toggle:'invite', items:[
     T('bar2','ป้ายเล็กมุมขวา'), T('estLabel','ตราด้านซ้าย (EST.)'), T('estYear','ตราด้านขวา (ปี)'), T('inviteTh','ข้อความเชิญ',1),
     T('name1','ชื่อ-นามสกุล คนที่ 1'), T('andTh','คำเชื่อม (และ)'), T('name2','ชื่อ-นามสกุล คนที่ 2'),
-    T('venueName','ชื่อสถานที่ (ใช้ทั้งเว็บ)'), T('mapBtn','ข้อความปุ่มแผนที่') ]},
+    T('venueName','ชื่อสถานที่ (ใช้ทั้งเว็บ)'), T('dateTh','วันที่ภาษาไทย (ใช้ทั้งเว็บ)'), T('mapBtn','ข้อความปุ่มแผนที่') ]},
   { n:'03', title:'กำหนดการ', goto:'schedule', toggle:'schedule', items:[
     T('bar3','ป้ายเล็กมุมขวา'), T('schedTitle','หัวข้อ'), T('schedSub','คำอธิบายใต้หัวข้อ') ], list:'timeline' },
   { n:'04', title:'Dress code', goto:'dress', toggle:'dress', items:[
     T('bar4','ป้ายเล็กมุมขวา'), T('dressEyebrow','ข้อความตัวเขียนด้านบน'), T('dressTitle','หัวข้อ'), T('dressSub','คำอธิบายภาษาไทย') ], list:'dress' },
-  { n:'05', title:'แถบฟิล์ม (รูป 3 ใบ)', goto:'gallery', toggle:'gallery', items:[
-    T('bar5','ป้ายเล็กมุมขวา'), T('filmEdge','ตัวอักษรบนขอบฟิล์ม') ], note:'ใส่รูปได้ในหมวด "รูปภาพ" ด้านล่าง (ฟิล์ม 1–3)' },
+  { n:'05', title:'แถบฟิล์ม (รูปวิ่ง)', goto:'gallery', toggle:'gallery', items:[
+    T('bar5','ป้ายเล็กมุมขวา'), T('filmEdge','ตัวอักษรบนขอบฟิล์ม') ], custom:'gallery' },
   { n:'06', title:'RSVP (ฟอร์มตอบรับ)', goto:'rsvp', toggle:'rsvp', items:[
     T('bar6','ป้ายเล็กมุมขวา'), T('rsvpTitle','หัวข้อตัวเขียน'), T('rsvpSub','คำอธิบายใต้หัวข้อ'), T('rsvpNote','หมายเหตุ เช่น กรุณาตอบภายในวันที่ … (เว้นว่างได้)'),
     T('thanksScript','ข้อความตัวเขียนหลังส่ง'), T('thanksYesTitle','หัวข้อเมื่อตอบ "ยินดีเข้าร่วม"'), T('thanksYesText','ข้อความเมื่อ "ยินดีเข้าร่วม" ({name} = ชื่อแขก)',1),
     T('thanksNoTitle','หัวข้อเมื่อตอบ "ไม่สะดวก"'), T('thanksNoText','ข้อความเมื่อ "ไม่สะดวก"',1) ]},
-  { title:'ปิดท้าย และท้ายหน้า', goto:'footer', toggle:'closing', toggleLabel:'แสดงแถบรูปปิดท้าย', items:[ T('footerNote','ข้อความท้ายสุด') ]},
-  { title:'รูปภาพ', goto:'hero', custom:'photos' },
-  { title:'เพลงและวิดีโอ', goto:'hero', custom:'media' },
+  { title:'ปิดท้าย และท้ายหน้า', goto:'footer', toggle:'closing', toggleLabel:'แสดงแถบรูปปิดท้าย', items:[ T('tag','แฮชแท็ก (ท้ายหน้า)'), T('footerNote','ข้อความท้ายสุด') ]},
+  { title:'รูปภาพ', goto:'invite', custom:'photos' },
+  { title:'วิดีโอเปิดซองและเพลง', goto:'intro', custom:'media' },
   { title:'สีของเว็บ', goto:'save', custom:'theme' }
 ];
 const PHOTO_SLOTS = [
-  { k:'hero', name:'หน้าแรก (เต็มจอ)', hint:'แนวนอนหรือแนวตั้ง กว้าง 1600px ขึ้นไป', goto:'hero', max:2000 },
+  { k:'poster', name:'ภาพนิ่งซองปิด (ก่อนแตะเปิด)', hint:'แนวตั้ง 9:16 ใช้เฟรมแรกของวิดีโอเปิดซอง (ใช้คู่กับวิดีโอเท่านั้น)', goto:'intro', max:1600 },
   { k:'portrait', name:'การ์ดเชิญ (ข้างข้อความ)', hint:'แนวตั้ง 2:3', goto:'invite', max:1400 },
   { k:'pageBg', name:'พื้นหลังกำหนดการ', hint:'รูปวิวหรือต้นไม้ แนวตั้ง จะถูกทำให้มืดลง', goto:'schedule', max:1600 },
   { k:'detail', name:'Dress code (รูปเล็ก)', hint:'แนวตั้ง 4:5', goto:'dress', max:1000 },
-  { k:'film1', name:'แถบฟิล์ม ใบที่ 1', hint:'แนวตั้ง 4:5', goto:'gallery', max:1200 },
-  { k:'film2', name:'แถบฟิล์ม ใบที่ 2', hint:'แนวตั้ง 4:5', goto:'gallery', max:1200 },
-  { k:'film3', name:'แถบฟิล์ม ใบที่ 3', hint:'แนวตั้ง 4:5', goto:'gallery', max:1200 },
   { k:'closing', name:'ปิดท้าย (เต็มจอ)', hint:'แนวนอน กว้าง 1600px ขึ้นไป', goto:'closing', max:2000 }
 ];
 const THEME_NAMES = { white:'พื้นขาว (Save the Date / ท้ายหน้า)', paper:'พื้นครีม (การ์ดเชิญ / RSVP)', ink:'ตัวอักษร', olive:'เขียวมะกอก (ซอง / ปุ่ม)', moss:'เขียวกระดาษ (Dress code)', film:'สีแถบฟิล์ม' };
@@ -299,6 +301,23 @@ function photosUI(box){
   });
 }
 
+/* ---- แถบฟิล์ม: หลายรูป ---- */
+function galleryUI(box){
+  box.replaceChildren();
+  box.append(el('p', { className:'note', textContent:'รูปในแถบฟิล์มที่วิ่งวน แนะนำ 8–16 รูป แนวตั้ง 2:3 เลือกได้ทีละหลายรูป ระบบย่อขนาดให้อัตโนมัติ ช่องใต้รูปคือคำบรรยายสำหรับโปรแกรมอ่านหน้าจอ' }));
+  const grid = el('div', { className:'gal' });
+  S.gallery.forEach((g, i) => {
+    const alt = el('input', { type:'text', value:g.alt || '', placeholder:'คำบรรยายรูป' });
+    alt.setAttribute('aria-label', 'คำบรรยายรูปที่ ' + (i + 1)); alt.oninput = () => { g.alt = alt.value; push(); };
+    const mv = d => el('button', { className:'ib', type:'button', textContent:d < 0 ? '←' : '→', title:d < 0 ? 'ย้ายไปก่อน' : 'ย้ายไปหลัง', onclick:() => { const j = i + d; if (j < 0 || j >= S.gallery.length) return; [S.gallery[i], S.gallery[j]] = [S.gallery[j], S.gallery[i]]; galleryUI(box); push(); } });
+    const del = el('button', { className:'ib', type:'button', textContent:'✕', title:'ลบรูปนี้', onclick:() => { const [x] = S.gallery.splice(i, 1); if (x && x._id) delete blobs.gallery[x._id]; galleryUI(box); push(); } });
+    grid.append(el('div', { className:'gi' }, [el('img', { src:g.src, alt:'' }), el('div', { className:'gb2' }, [mv(-1), mv(1), del]), alt]));
+  });
+  const file = el('input', { type:'file', accept:'image/*', multiple:true, hidden:true });
+  file.onchange = async () => { for (const f of file.files) { const b = await shrink(f, 900, .82); const id = 'g' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6); blobs.gallery[id] = b; S.gallery.push({ src:URL.createObjectURL(b), alt:'', _id:id }); } file.value = ''; galleryUI(box); push(); gotoPreview('gallery'); };
+  box.append(grid, el('div', { style:'display:flex;gap:8px;flex-wrap:wrap' }, [el('button', { className:'btn sm', type:'button', textContent:'+ เพิ่มรูป', onclick:() => file.click() }), file]));
+}
+
 /* ---- เพลง / วิดีโอ ---- */
 function mediaUI(box){
   const mk = (key, label, accept, limitMB, hint) => {
@@ -312,8 +331,9 @@ function mediaUI(box){
     return el('div', { className:'fld' }, [el('span', { className:'lbl', textContent:label }), el('div', { style:'display:flex;gap:8px' }, [el('button', { className:'btn sm', type:'button', textContent:'เลือกไฟล์', onclick:() => file.click() }), file, clear]), st, el('p', { className:'note', textContent:hint })]);
   };
   box.append(
-    mk('music', 'เพลงประกอบ (mp3 / m4a)', 'audio/*', 4, 'เพลงเริ่มเล่นเมื่อแขกแตะเปิดซอง และมีปุ่มเปิด/ปิดเพลงมุมขวาล่าง ใช้เพลงที่คุณมีสิทธิ์ใช้ ความยาวไม่เกิน 3–4 นาที'),
-    mk('video', 'วิดีโอแทนรูปหน้าแรก (mp4 / webm)', 'video/mp4,video/webm', 10, 'เล่นวนแบบไม่มีเสียง มีปุ่มหยุดให้แขก แนะนำคลิปสั้น 8–15 วินาที ไม่เกิน 720p')
+    mk('video', 'วิดีโอเปิดซอง แนวตั้ง 9:16 (mp4)', 'video/mp4,video/webm', 6, 'เล่นเมื่อแขกแตะซอง: ซองเปิด → คลิป → โลโก้ แล้วเข้าหน้า Save the Date มีปุ่มข้าม แนะนำยาวราว 10 วินาที 720p ไม่เกิน 4–6 MB'),
+    mk('videoWide', 'วิดีโอแนวนอน 16:9 สำหรับจอคอม (ไม่บังคับ)', 'video/mp4,video/webm', 8, 'ถ้าไม่ใส่ จอคอมจะแสดงวิดีโอแนวตั้งไว้กลางจอบนพื้นสีเขียวมะกอก'),
+    mk('music', 'เพลงประกอบ (mp3 / m4a)', 'audio/*', 4, 'เพลงเริ่มเล่นเมื่อแขกแตะเปิดซอง (ถ้ามีวิดีโอ เพลงจะเริ่มหลังวิดีโอจบ) มีปุ่มเปิด/ปิดเพลงมุมขวาล่าง ใช้เพลงที่คุณมีสิทธิ์ใช้ ความยาวไม่เกิน 3–4 นาที')
   );
 }
 
@@ -356,6 +376,7 @@ function build(){
     if (g.list === 'dress') { body.append(el('div', { className:'fld' }, [el('span', { className:'lbl', textContent:'สีที่แนะนำ' })])); const b = el('div'); body.append(b); listDress(b); }
     if (g.custom === 'photos') { const b = el('div'); body.append(b); photosUI(b); }
     if (g.custom === 'media') mediaUI(body);
+    if (g.custom === 'gallery') { const b = el('div'); body.append(b); galleryUI(b); }
     if (g.custom === 'theme') { const b = el('div'); body.append(b); themeUI(b); }
     panel.append(d);
   });
@@ -376,7 +397,9 @@ function finalFiles(){
     files.push({ path, data:b });
   });
   if (blobs.music) { const e = extOf(blobs.music, 'mp3'); c.music.src = `media/music.${e}?v=${v}`; files.push({ path:`media/music.${e}`, data:blobs.music }); }
-  if (blobs.video) { const e = extOf(blobs.video, 'mp4'); c.video.src = `media/hero.${e}?v=${v}`; files.push({ path:`media/hero.${e}`, data:blobs.video }); }
+  if (blobs.video) { const e = extOf(blobs.video, 'mp4'); c.video.src = `media/intro.${e}?v=${v}`; files.push({ path:`media/intro.${e}`, data:blobs.video }); }
+  if (blobs.videoWide) { const e = extOf(blobs.videoWide, 'mp4'); c.videoWide.src = `media/intro-wide.${e}?v=${v}`; files.push({ path:`media/intro-wide.${e}`, data:blobs.videoWide }); }
+  (c.gallery || []).forEach(g => { const b = g._id && blobs.gallery[g._id]; if (b) { const path = `photos/gallery/${g._id}.jpg`; g.src = `${path}?v=${v}`; files.push({ path, data:b }); } delete g._id; });
   const text = '/* config.js — สร้างจากหน้าแอดมิน (แก้ต่อผ่าน admin.html ได้) */\nwindow.SITE = ' + JSON.stringify(c, null, 2) + ';\n';
   files.push({ path:'config.js', data:new Blob([text], { type:'text/javascript' }) });
   return files;
@@ -385,7 +408,7 @@ function showLog(msg){ const l = $('#log'); $('#pub').classList.add('on'); l.sty
 $('#btnDl').onclick = () => {
   const files = finalFiles(); let i = 0;
   files.forEach(f => setTimeout(() => { const a = el('a', { href:URL.createObjectURL(f.data), download:f.path.split('/').pop() }); document.body.append(a); a.click(); a.remove(); }, 450 * i++));
-  showLog(`กำลังดาวน์โหลด ${files.length} ไฟล์\nอัปโหลดไปที่ GitHub: ไฟล์รูปไปโฟลเดอร์ photos/, เพลงและวิดีโอไปโฟลเดอร์ media/, ส่วน config.js ไปที่ราก repo (แทนไฟล์เดิม)`);
+  showLog(`กำลังดาวน์โหลด ${files.length} ไฟล์\nอัปโหลดไปที่ GitHub: ไฟล์รูปไปโฟลเดอร์ photos/ (รูปแถบฟิล์มที่ขึ้นต้นด้วย g ไปที่ photos/gallery/), เพลงและวิดีโอไปโฟลเดอร์ media/, ส่วน config.js ไปที่ราก repo (แทนไฟล์เดิม)`);
 };
 
 /* ============ เผยแพร่ขึ้น GitHub ============ */

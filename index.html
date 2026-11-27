@@ -8,17 +8,17 @@
 <meta name="theme-color" content="#5b582c">
 <meta property="og:title" content="Lee and Praew · Save the Date">
 <meta property="og:description" content="วันจันทร์ 22 มีนาคม 2570 · เดอะ ซิกเนเจอร์ โฮเทล แอร์พอร์ต">
-<meta property="og:image" content="photos/hero.jpg">
+<meta property="og:image" content="photos/print1.jpg">
 <link rel="icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="fonts/pinyon.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="fonts/kanit-thai-300.woff2" crossorigin>
-<link rel="preload" as="image" href="photos/hero.jpg">
 <script src="config.js"></script>
 <script src="icons.js"></script>
+<script src="assets/lenis.min.js" defer></script>
 <style>
 /* =====================================================================
-   Lee & Praew · v8 — ซองจดหมาย + เว็บแบบนิตยสาร (ตามการ์ดจริงและรูปอ้างอิง)
+   Lee & Praew · v9 — ซอง (วิดีโอ) → Save the Date → motion ตอนเลื่อนแบบ cora
    สีทั้งหมดแก้ได้ใน admin.html → "สีของเว็บ" (หรือที่ตัวแปรด้านล่าง)
    ===================================================================== */
 @font-face{font-family:'Pinyon Script';src:url(fonts/pinyon.woff2) format('woff2');font-display:swap}
@@ -40,9 +40,12 @@
   --grain:url(assets/grain.png);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%;color-scheme:light}
+html{overflow-x:hidden;overflow-x:clip;-webkit-text-size-adjust:100%;color-scheme:light}
 body{overflow-x:hidden;overflow-x:clip;background:var(--white);color:var(--ink);font:300 16px/1.75 var(--sans);-webkit-font-smoothing:antialiased}
 body.locked{overflow:hidden}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:clip}
 img,svg,video{display:block;max-width:100%}
 img{height:auto}
 a{color:inherit}
@@ -72,8 +75,7 @@ img.alogo:not([src]){visibility:hidden}
 .slot.empty::after{content:"";position:absolute;inset:0;margin:auto;width:min(36%,120px);height:min(32%,106px);background:url(assets/logo-sm-light.png) center/contain no-repeat;opacity:.5;pointer-events:none}
 .pv .slot.empty::before{content:attr(data-hint);display:flex;align-items:flex-end;justify-content:center;padding:10px;border:1px dashed rgba(255,255,255,.85);font:400 12px/1.4 var(--sans);letter-spacing:.04em;color:#fff;text-align:center}
 
-.hero-media.empty::after,.closing .slot.empty::after{display:none}
-.pv .hero-media.empty::before{padding-bottom:64px}
+.closing .slot.empty::after{display:none}
 
 /* ============================ ซองจดหมาย ============================ */
 #intro{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(12px,2.6vh,24px);padding:40px 20px calc(56px + env(safe-area-inset-bottom));background:var(--olive);color:var(--cream);text-align:center;overflow:hidden;transition:opacity .8s ease}
@@ -111,22 +113,25 @@ img.alogo:not([src]){visibility:hidden}
 #intro.leave .env-wrap{transform:scale(1.05);transition:transform .9s ease}
 @media(max-height:640px){#intro{gap:8px;padding-top:24px}.i-names{font-size:40px}.env{width:min(68vw,330px)}.i-date{display:none}}
 
-/* ============================ หน้าแรก ============================ */
-.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;place-items:start center;text-align:center;color:#fff;isolation:isolate;overflow:hidden;background:var(--olive)}
-.hero-media{position:absolute;inset:0;z-index:-2}
-.hero.live .hero-media>img{animation:kb 10s cubic-bezier(.2,.6,.2,1) both}
-@keyframes kb{from{transform:scale(1.08)}to{transform:none}}
-.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(75% 42% at 50% 30%,rgba(16,18,10,.34),rgba(16,18,10,0) 72%),linear-gradient(180deg,rgba(16,18,10,.52) 0,rgba(16,18,10,.3) 28%,rgba(16,18,10,.14) 60%,rgba(16,18,10,.6) 100%)}
-.hero-in{display:flex;flex-direction:column;align-items:center;padding:clamp(92px,13vh,150px) var(--pad) 140px;text-shadow:0 1px 24px rgba(0,0,0,.3)}
-.hero-logo{width:clamp(88px,23vw,136px);aspect-ratio:560/495;margin-bottom:18px;filter:drop-shadow(0 1px 14px rgba(0,0,0,.25))}
-.hero .lockup{font-size:clamp(66px,18.6vw,160px);margin:2px 0 6px}
-.hero-th{font-size:clamp(15px,4vw,18px);letter-spacing:.02em}
-.corner{position:absolute;text-shadow:0 1px 10px rgba(0,0,0,.4)}
-.c-tl{top:24px;left:var(--pad)}.c-tr{top:24px;right:var(--pad)}
-.c-bl{bottom:26px;left:var(--pad)}.c-br{bottom:26px;right:var(--pad)}
-.vbtn{position:absolute;right:calc(var(--pad) - 12px);bottom:64px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:rgba(16,18,10,.35);color:#fff;display:grid;place-items:center;cursor:pointer}
-.vbtn svg{width:16px;height:16px;fill:currentColor}
-@media(max-width:640px){.c-bl{left:0;right:0;text-align:center}.c-br{display:none}}
+/* วิดีโอเปิดซอง (ใส่ไฟล์ใน admin → "วิดีโอเปิดซองและเพลง") ถ้ายังไม่มี จะใช้ซองด้านบน + โลโก้แทน */
+.i-film{position:absolute!important;inset:0;z-index:6;display:none;background:var(--olive)}
+.i-film img,.i-film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.i-film.fit img,.i-film.fit video{object-fit:contain}
+.i-film video{opacity:0;transition:opacity .3s ease}
+#intro.poster .i-film,#intro.playing .i-film{display:block}
+#intro.playing .i-film video{opacity:1}
+.i-tap{position:absolute!important;inset:0;z-index:7;display:none;width:100%;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#intro.poster:not(.playing) .i-tap{display:block}
+.i-tap:focus-visible{outline:2px solid #fff2b7;outline-offset:-12px}
+#intro.poster .i-hint{position:absolute!important;left:0;right:0;bottom:calc(30px + env(safe-area-inset-bottom));z-index:8;pointer-events:none;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+#intro.poster #toLine{position:absolute!important;left:0;right:0;bottom:calc(96px + env(safe-area-inset-bottom));z-index:8;text-shadow:0 1px 14px rgba(0,0,0,.5)}
+#intro.poster .i-date{display:none}
+#intro.playing .i-hint,#intro.playing #toLine{opacity:0}
+.i-skip{position:absolute!important;top:calc(14px + env(safe-area-inset-top));right:14px;z-index:9;min-height:44px;padding:0 20px;border:1px solid rgba(246,242,230,.6);border-radius:999px;background:rgba(20,20,10,.35);color:var(--cream);font:400 14px/1 var(--sans);letter-spacing:.06em;cursor:pointer;opacity:0;visibility:hidden;transition:opacity .4s ease,visibility 0s .4s}
+#intro.playing .i-skip,#intro.logo .i-skip{opacity:1;visibility:visible;transition:opacity .4s ease .8s}
+.i-logo{position:absolute!important;inset:0;z-index:6;display:grid;place-items:center;background:var(--olive) var(--grain);opacity:0;pointer-events:none;transition:opacity .8s ease}
+.i-logo img{width:min(50vw,230px);aspect-ratio:560/495}
+#intro.logo .i-logo{opacity:1}
 
 /* ============================ ส่วนเนื้อหา ============================ */
 .sec{position:relative;padding:clamp(100px,14vw,156px) var(--pad) clamp(88px,12vw,140px);text-align:center}
@@ -173,12 +178,22 @@ img.alogo:not([src]){visibility:hidden}
 @media(min-width:920px){.inv-grid{grid-template-columns:1.05fr .95fr;gap:80px}.inv-photo .slot{width:100%}}
 
 /* --- 03 กำหนดการ (บนรูป) --- */
-.band{isolation:isolate;overflow:hidden;background:var(--olive) var(--grain)}
+.band{background:var(--olive) var(--grain)}
+.sec.sched{padding:0}
+.pin{position:relative;isolation:isolate;overflow:hidden;padding:clamp(100px,14vw,156px) var(--pad) clamp(88px,12vw,140px)}
 .band-bg{position:absolute;inset:0;z-index:-2;background:transparent}
 .band-bg.empty{background:transparent}
 .band-bg.empty::before,.band-bg.empty::after{display:none}
-.band::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,16,9,var(--dim,.58));pointer-events:none}
-.band.noimg::after{display:none}
+.sched .pin::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(14,16,9,var(--dim,.58));pointer-events:none}
+.sched.noimg .pin::after{display:none}
+/* motion: หัวข้อค้างกลางจอ แล้วเวลาขึ้นทีละช่วงตามการเลื่อน */
+.sc .sec.sched{height:calc(100vh + 130vh);height:calc(100svh + 130svh)}
+.sc .sched .pin{position:sticky;top:0;height:100vh;height:100svh;display:flex;flex-direction:column;justify-content:center;padding-top:64px;padding-bottom:40px}
+.sc .tl li{opacity:calc(.14 + .86 * var(--q,0));transform:translateY(calc((1 - var(--q,0)) * 16px))}
+.sc .tl li .dot::before{transform:scaleY(var(--q,0));transform-origin:50% 0}
+.sc .tl li .dot::after{transform:scale(var(--q,0))}
+.tl li .t{transition:color .4s ease}
+.tl li.cur .t{color:#fff2b7}
 .sched h2{font:italic 500 clamp(42px,11.4vw,80px)/1.06 var(--ital);text-wrap:balance}
 .tl{display:grid;max-width:480px;margin:46px auto 0;text-align:left}
 .tl li{display:grid;grid-template-columns:54px 18px 46px 1fr;align-items:center;min-height:86px}
@@ -199,29 +214,76 @@ img.alogo:not([src]){visibility:hidden}
 .dress .eyebrow{font:400 clamp(32px,8.6vw,42px)/1.1 var(--script)}
 .dress .slot{width:min(46vw,196px);aspect-ratio:4/5;margin:22px auto 0;background-color:rgba(0,0,0,.12)}
 .dress h2{font:400 clamp(24px,6.6vw,34px)/1.25 var(--serif);letter-spacing:.16em;text-transform:uppercase;margin-top:32px}
-.sw{display:flex;flex-wrap:wrap;justify-content:center;gap:22px 8px;max-width:600px;margin:34px auto 0}
-.sw li{width:62px;display:flex;flex-direction:column;align-items:center;gap:10px}
-.sw i{display:block;width:50px;height:50px;border-radius:7px;background:var(--c);box-shadow:0 0 0 1px rgba(246,242,230,.6)}
-.sw span{font:400 13px/1.3 var(--serif);text-align:center}
-@media(min-width:600px){.sw{gap:26px 18px}.sw li{width:96px}.sw i{width:62px;height:62px}.sw span{font-size:14px}}
+/* motion: การ์ดสีซ้อนเป็นปึก แล้วกางออกเป็นพัดตามการเลื่อน */
+.sw{--cw:70px;--ch:136px;position:relative;height:calc(var(--ch) + 34px);max-width:640px;margin:40px auto 0}
+.sw li{position:absolute;left:50%;bottom:0;width:var(--cw);height:var(--ch);margin-left:calc(var(--cw) / -2);display:flex;flex-direction:column;padding:0 5px 5px;background:#f6f2e6;color:var(--ink);transform-origin:50% 240%;box-shadow:0 12px 26px -14px rgba(0,0,0,.6),0 1px 2px rgba(0,0,0,.18);will-change:transform}
+.sw i{flex:1;display:block;background:var(--c)}
+.sw span{order:-1;display:block;min-height:34px;padding:6px 1px 4px;font:400 10.5px/1.2 var(--serif);text-align:left}
+@media(min-width:600px){.sw{--cw:112px;--ch:172px}.sw span{font-size:12.5px;min-height:38px;padding-left:2px}}
 
 /* --- 05 แถบฟิล์ม --- */
 .film{background:var(--film);color:var(--cream);padding-left:0;padding-right:0}
 .film .bar{color:rgba(246,242,230,.8)}
-.strip{max-width:1100px;margin:0 auto;padding:0 10px;background:#2a261f}
-.holes{height:26px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='26'%3E%3Crect x='9' y='8' width='10' height='10' rx='2' fill='%23efe8d6' fill-opacity='.82'/%3E%3C/svg%3E") repeat-x 0 0}
-.edge{display:flex;justify-content:space-between;font:400 10px/1 var(--sans);letter-spacing:.3em;color:#e0ab5f;padding:0 4px 8px;text-transform:uppercase}
-.frames{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
-.frames .slot{aspect-ratio:4/5;background-color:#3a352b}
-.frames .slot.empty{background:#3a352b var(--grain)}
-.frames .slot.empty::after{opacity:.35}
-@media(min-width:760px){.strip{padding:0 16px}.frames{gap:14px}}
+.film{overflow:hidden}
+/* motion: แถบฟิล์มวิ่งเอง เร็วขึ้นและกลับทิศตามการเลื่อนหน้า */
+.reel{position:relative;margin:6px -6vw 0;background:#2a261f;transform:rotate(-2.5deg);box-shadow:0 18px 40px -20px rgba(0,0,0,.7)}
+.reel .holes{background-position-x:var(--hx,0px)}
+.reel-track{display:flex;gap:6px;width:max-content;padding:0 3px;will-change:transform}
+.reel-track figure{flex:none;width:clamp(118px,33vw,200px);display:flex;flex-direction:column}
+.fe{height:16px;padding-left:2px;font:400 9px/16px var(--sans);letter-spacing:.24em;color:#e0ab5f;white-space:nowrap;overflow:hidden}
+.ph{position:relative;display:block;aspect-ratio:2/3;background:#3a352b var(--grain);overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph.empty::after{content:"";position:absolute;inset:0;margin:auto;width:46%;height:40%;background:url(assets/logo-sm-light.png) center/contain no-repeat;opacity:.3}
+.reel-ctl{display:flex;justify-content:center;margin-top:36px}
+.reel-btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:1px solid rgba(246,242,230,.42);border-radius:999px;background:none;color:var(--cream);font:400 13px/1 var(--sans);letter-spacing:.06em;cursor:pointer}
+.reel-btn svg{width:12px;height:12px;fill:currentColor}
+.rm .reel{transform:none;margin:6px 0 0;overflow-x:auto}
+.rm .reel-ctl{display:none}
 
 /* --- 06 RSVP --- */
 .reply{position:relative;max-width:560px;margin:0 auto;background:var(--white);padding:clamp(46px,9vw,68px) clamp(22px,6.4vw,58px) clamp(40px,8vw,60px)}
 .reply::before{content:"";position:absolute;inset:8px;border:1px solid rgba(34,35,27,.26);pointer-events:none}
-.rsvp h2,.thanks .script{font:400 clamp(50px,13.6vw,78px)/1.08 var(--script)}
-.rsvp .note{font-size:15px;color:var(--soft);margin-top:6px}
+.thanks .script{font:400 clamp(50px,13.6vw,78px)/1.08 var(--script)}
+.rsvp .note{font-size:14px;color:var(--soft);margin-top:4px}
+/* motion: ซองตอบกลับ เลื่อนแล้วตราหลุด ฝาเปิด การ์ดเลื่อนขึ้น / ตอนส่ง การ์ดลงซองแล้วประทับตรา */
+.rsvp-scene{position:relative}
+.rsvp-pin{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:0 0 56px}
+.sc .rsvp-scene{height:calc(100vh + 80vh);height:calc(100svh + 80svh);margin-top:-60px}
+.sc .rsvp-pin{position:sticky;top:0;height:100vh;height:100svh;padding:30px 0}
+.mail{--mw:min(84vw,430px);position:relative;width:var(--mw);aspect-ratio:1.42/1;margin:calc(var(--mw) * .4) auto 0}
+.m-back{position:absolute;inset:0;background:#dcd3bb;box-shadow:0 30px 50px -24px rgba(34,35,27,.55),0 2px 6px rgba(34,35,27,.14)}
+.m-card{position:absolute;left:5.5%;right:5.5%;top:5%;height:90%;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:5% 7%;background:var(--white);text-align:center;box-shadow:0 1px 3px rgba(0,0,0,.1);will-change:transform}
+.m-card::before{content:"";position:absolute;inset:6px;border:1px solid rgba(34,35,27,.24);pointer-events:none}
+.m-card h2{font:400 clamp(34px,10vw,54px)/1.05 var(--script)}
+.m-card .sub-th{font-size:clamp(13.5px,3.6vw,16px);margin-top:4px}
+.m-pocket{position:absolute;inset:0;width:100%;height:100%;z-index:3;pointer-events:none}
+.m-flap{position:absolute;left:0;top:0;width:100%;height:60%;z-index:4;transform-origin:50% 0;pointer-events:none;will-change:transform}
+.m-flap svg{width:100%;height:100%;display:block;overflow:visible}
+.m-flap .fl{fill:#ebe4d0}
+.m-flap.back .fl{fill:#d3caaf}
+.m-seal{position:absolute;left:50%;top:58%;width:22%;aspect-ratio:1;z-index:5;transform:translate(-50%,-50%);pointer-events:none}
+.m-seal svg{width:100%;height:100%;display:block;overflow:visible;filter:drop-shadow(0 2px 2px rgba(0,0,0,.3))}
+.m-seal img{position:absolute;left:21%;top:22%;width:58%}
+.scroll-hint .h-reply,.opened .scroll-hint .h-open{display:none}
+.opened .scroll-hint .h-reply{display:inline}
+.scroll-hint{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:14px;color:var(--soft)}
+.scroll-hint svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.4;animation:nudge 1.8s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(5px)}}
+.mail.mini{--mw:min(66vw,260px);margin:calc(var(--mw) * .26) auto 26px}
+.mail.mini .m-card{transition:transform .85s cubic-bezier(.5,0,.25,1)}
+.mail.mini .m-flap{transition:transform .6s cubic-bezier(.45,.05,.3,1) .62s,z-index 0s .92s}
+.mail.mini .m-flap .fl{transition:fill 0s .92s}
+.mail.mini .m-seal{transition:opacity .2s ease 1.24s,transform .5s cubic-bezier(.34,1.56,.64,1) 1.24s}
+.mail.mini.out .m-card{transform:translateY(-40%)}
+.mail.mini.out .m-flap{transform:perspective(700px) rotateX(180deg);z-index:1}
+.mail.mini.out .m-flap .fl{fill:#d3caaf}
+.mail.mini.out .m-seal{opacity:0;transform:translate(-50%,-50%) scale(1.7)}
+.mail.mini.now *{transition:none!important}
+.m-from{font-size:13px;color:var(--soft);line-height:1.4}
+.m-from b{display:block;font:400 clamp(17px,4.8vw,21px)/1.3 var(--serif);color:var(--ink)}
+.m-ans{font:400 11px/1.4 var(--sans);letter-spacing:.12em;color:var(--olive);margin-top:6px}
+.thanks .tx{animation:tUp .8s cubic-bezier(.2,.7,.2,1) 1.6s both}
+@keyframes tUp{from{opacity:0;transform:translateY(10px)}}
 form{margin-top:14px;text-align:left}
 .f{display:block;margin-top:26px}
 .f>span,.legend{display:block;font:400 15px/1.5 var(--sans);margin-bottom:4px;color:var(--ink)}
@@ -246,7 +308,7 @@ fieldset{border:0;margin-top:26px;min-width:0}
 .send-btn:hover{filter:brightness(1.08)}
 .send-btn[disabled]{opacity:.72;cursor:progress}
 .demo{font-size:14px;color:var(--soft);margin-top:14px;text-align:center}
-.thanks{text-align:center;padding:10px 0 4px}
+.thanks{text-align:center;padding:0 0 4px}
 .thanks h3{font:400 clamp(19px,5vw,22px)/1.5 var(--sans);margin-top:6px}
 .thanks h3:focus{outline:none}
 .thanks p{color:var(--soft);margin:8px 0 26px}
@@ -271,10 +333,11 @@ footer{background:var(--white);text-align:center;padding:76px var(--pad) calc(54
 .bgm[aria-pressed=true]{background:var(--olive);color:var(--cream);border-color:var(--olive)}
 
 @media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
   .js .rv,.js .write{opacity:1;transform:none;clip-path:none;transition:none}
-  .env-wrap,.hero.live .hero-media>img{animation:none}
+  .env-wrap,.scroll-hint svg{animation:none}
   #intro,.letter,.flap,.seal{transition:opacity .3s!important}
+  .mail.mini *{transition:none!important}
+  .thanks .tx{animation:none}
 }
 </style>
 </head>
@@ -317,28 +380,17 @@ footer{background:var(--white);text-align:center;padding:76px var(--pad) calc(54
   </div>
   <p class="i-hint" id="envHint"><span data-t="introHint">แตะซองเพื่อเปิด</span><span class="micro" lang="en" data-t="introHintEn">Tap to open</span></p>
   <p class="micro i-date" aria-hidden="true" data-t="heroDate">22 · 03 · 2027</p>
+  <div class="i-film" aria-hidden="true"><img alt="" hidden><video playsinline preload="auto"></video></div>
+  <div class="i-logo" aria-hidden="true"><img class="i-logo-img" data-v="light" alt="" width="560" height="495"></div>
+  <button class="i-tap" type="button" aria-label="เปิดซองจดหมายเชิญ"></button>
+  <button class="i-skip" type="button">ข้าม<span class="sr"> วิดีโอเปิดซอง</span></button>
 </div>
 
 <main>
-<!-- ============ หน้าแรก ============ -->
-<header class="hero" id="top" data-goto="hero">
-  <div class="hero-media slot" data-hint="รูปหน้าแรก · แนวนอนหรือแนวตั้ง ความกว้าง 1600px ขึ้นไป"><img data-slot="hero" src="photos/hero.jpg" alt="" fetchpriority="high"></div>
-  <p class="corner c-tl micro" lang="en" aria-hidden="true"><span data-t="nameA">Lee</span> &amp; <span data-t="nameB">Praew</span></p>
-  <p class="corner c-tr micro" data-t="heroDate">22 · 03 · 2027</p>
-  <div class="hero-in">
-    <img class="alogo hero-logo" data-v="light" alt="" width="560" height="495">
-    <p class="micro" lang="en" data-t="heroEyebrow">We're getting married</p>
-    <h1 class="lockup" id="heroTitle" tabindex="-1" lang="en"><span class="sr" data-names>Lee and Praew</span><span aria-hidden="true"><span data-t="nameA">Lee</span><small data-t="and">and</small><span data-t="nameB">Praew</span></span></h1>
-    <p class="hero-th" data-t="dateTh">วันจันทร์ 22 มีนาคม 2570</p>
-  </div>
-  <p class="corner c-bl micro" lang="en" data-t="whereEn">The Signature Hotel Airport</p>
-  <p class="corner c-br micro" lang="en" data-t="tag">#LPLingerHour</p>
-</header>
-
 <!-- ============ 01 Save the Date ============ -->
 <section class="sec white save" id="save" data-section="save" data-goto="save" aria-labelledby="saveH">
   <div class="bar micro" aria-hidden="true"><span class="num">01</span><span lang="en" data-t="bar1">Save the date</span></div>
-  <h2 class="wr" id="saveH" lang="en"><span class="write" data-t="saveTitle">Save the Date</span></h2>
+  <h2 class="wr" id="saveH" lang="en" tabindex="-1"><span class="write" data-t="saveTitle">Save the Date</span></h2>
   <p class="caps rv" lang="en" data-t="saveSub">Grab your best fit and celebrate with us</p>
   <p class="serif-p rv" lang="en" data-t="saveP1"></p>
   <p class="serif-p rv" lang="en" data-t="saveP2"></p>
@@ -347,7 +399,7 @@ footer{background:var(--white);text-align:center;padding:76px var(--pad) calc(54
   <div class="count rv" id="count" role="timer" aria-label="นับถอยหลังถึงวันงาน">
     <div><b data-k="d">00</b><span lang="en">Days</span></div><div><b data-k="h">00</b><span lang="en">Hours</span></div><div><b data-k="m">00</b><span lang="en">Min</span></div><div><b data-k="s">00</b><span lang="en">Sec</span></div>
   </div>
-  <a class="cta rv" href="#rsvp" id="saveCta"><span data-t="saveCta">ตอบรับคำเชิญ</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
+  <a class="cta rv" href="#reply" id="saveCta"><span data-t="saveCta">ตอบรับคำเชิญ</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 7l5 5-5 5"/></svg></a>
 </section>
 
 <!-- ============ 02 การ์ดเชิญ ============ -->
@@ -369,11 +421,13 @@ footer{background:var(--white);text-align:center;padding:76px var(--pad) calc(54
 
 <!-- ============ 03 กำหนดการ ============ -->
 <section class="sec band dk sched" id="schedule" data-section="schedule" data-goto="schedule" aria-labelledby="schH">
-  <div class="band-bg slot" data-hint="รูปพื้นหลังกำหนดการ (ตั้งในหมวด รูปภาพ)"><img data-slot="pageBg" alt="" loading="lazy"></div>
-  <div class="bar micro" aria-hidden="true"><span class="num">03</span><span lang="en" data-t="bar3">The day</span></div>
-  <h2 class="rv" id="schH" lang="en" data-t="schedTitle">Wedding Day Schedule</h2>
-  <p class="sub-th rv" data-t="schedSub">กำหนดการ</p>
-  <ol class="tl rv" id="tlItems"></ol>
+  <div class="pin">
+    <div class="band-bg slot" data-hint="รูปพื้นหลังกำหนดการ (ตั้งในหมวด รูปภาพ)"><img data-slot="pageBg" alt="" loading="lazy"></div>
+    <div class="bar micro" aria-hidden="true"><span class="num">03</span><span lang="en" data-t="bar3">The day</span></div>
+    <h2 class="rv" id="schH" lang="en" data-t="schedTitle">Wedding Day Schedule</h2>
+    <p class="sub-th rv" data-t="schedSub">กำหนดการ</p>
+    <ol class="tl" id="tlItems"></ol>
+  </div>
 </section>
 
 <!-- ============ 04 Dress code ============ -->
@@ -390,27 +444,31 @@ footer{background:var(--white);text-align:center;padding:76px var(--pad) calc(54
 <section class="sec film dk" id="moments" data-section="gallery" data-goto="gallery" aria-labelledby="momH">
   <div class="bar micro" aria-hidden="true"><span class="num">05</span><span lang="en" data-t="bar5">Moments</span></div>
   <h2 class="sr" id="momH" lang="en" data-t="bar5">Moments</h2>
-  <div class="strip rv">
+  <div class="reel" id="reel">
     <div class="holes" aria-hidden="true"></div>
-    <p class="edge" aria-hidden="true"><span data-t="filmEdge">LP 2027</span><span>▸ 22</span><span>▸ 03</span><span>▸ 27</span></p>
-    <div class="frames">
-      <figure class="slot" data-hint="ฟิล์ม 1 · แนวตั้ง 4:5"><img data-slot="film1" alt="" loading="lazy"></figure>
-      <figure class="slot" data-hint="ฟิล์ม 2 · แนวตั้ง 4:5"><img data-slot="film2" alt="" loading="lazy"></figure>
-      <figure class="slot" data-hint="ฟิล์ม 3 · แนวตั้ง 4:5"><img data-slot="film3" alt="" loading="lazy"></figure>
-    </div>
-    <div class="holes" aria-hidden="true" style="margin-top:6px"></div>
+    <div class="reel-track" id="reelTrack"></div>
+    <div class="holes" aria-hidden="true"></div>
   </div>
+  <div class="reel-ctl"><button class="reel-btn" id="reelBtn" type="button"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 1h3v10H2zM7 1h3v10H7z"/></svg><span>หยุดภาพเลื่อน</span></button></div>
 </section>
 
 <!-- ============ 06 RSVP ============ -->
 <section class="sec paper rsvp" id="rsvp" data-section="rsvp" data-goto="rsvp" aria-labelledby="rsvpH">
   <div class="bar micro" aria-hidden="true"><span class="num">06</span><span lang="en" data-t="bar6">RSVP</span></div>
-  <div class="reply rv">
-    <div id="rsvpHead">
-      <h2 id="rsvpH" lang="en" data-t="rsvpTitle">Kindly Reply</h2>
-      <p class="sub-th" data-t="rsvpSub">กรุณายืนยันการเข้าร่วมงาน</p>
-      <p class="note" data-t="rsvpNote" data-opt></p>
+  <div class="rsvp-scene">
+    <div class="rsvp-pin">
+      <div class="mail" id="mailScene">
+        <span class="m-back" aria-hidden="true"></span>
+        <div class="m-card" id="rsvpHead">
+          <h2 id="rsvpH" lang="en" data-t="rsvpTitle">Kindly Reply</h2>
+          <p class="sub-th" data-t="rsvpSub">กรุณายืนยันการเข้าร่วมงาน</p>
+          <p class="note" data-t="rsvpNote" data-opt></p>
+        </div>
+      </div>
+      <p class="scroll-hint" aria-hidden="true"><span class="h-open">เลื่อนเพื่อเปิดซอง</span><span class="h-reply">เลื่อนลงเพื่อตอบรับ</span><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></p>
     </div>
+  </div>
+  <div class="reply rv" id="reply">
     <form id="form" novalidate>
       <label class="f"><span>ชื่อ–นามสกุล</span><input class="fi" type="text" id="name" name="name" autocomplete="name" required aria-describedby="nameErr" aria-invalid="false"></label>
       <p class="err" id="nameErr" hidden>กรุณากรอกชื่อ เพื่อให้เรารู้ว่าเป็นคำตอบของใคร</p>
@@ -431,10 +489,16 @@ footer{background:var(--white);text-align:center;padding:76px var(--pad) calc(54
       <p class="demo" id="demoNote" hidden>โหมดตัวอย่าง: ยังไม่ได้เชื่อม Google Sheets คำตอบจะยังไม่ถูกบันทึก</p>
     </form>
     <div class="thanks" id="thanks" hidden>
-      <p class="script" lang="en" data-t="thanksScript" aria-hidden="true">Thank you</p>
-      <h3 id="thanksTitle" tabindex="-1"></h3>
-      <p id="thanksText"></p>
-      <button type="button" id="again">แก้ไขคำตอบ</button>
+      <div class="mail mini" id="mailThanks" aria-hidden="true">
+        <span class="m-back"></span>
+        <div class="m-card"><p class="m-from">จาก<b id="mFrom"></b></p><p class="m-ans" id="mAns"></p></div>
+      </div>
+      <div class="tx">
+        <p class="script" lang="en" data-t="thanksScript" aria-hidden="true">Thank you</p>
+        <h3 id="thanksTitle" tabindex="-1"></h3>
+        <p id="thanksText"></p>
+        <button type="button" id="again">แก้ไขคำตอบ</button>
+      </div>
     </div>
   </div>
 </section>
@@ -470,6 +534,13 @@ const get = p => p.split('.').reduce((o,k) => (o == null ? o : o[k]), SITE);
 const T = (k, d) => { const v = get('text.' + k); return (v === undefined || v === null || v === '') ? d : v; };
 const svgIcon = (k, cls='') => { const ic = ICONS[k] || ICONS.heart; return ic ? `<svg class="${cls}" viewBox="${ic.vb}" aria-hidden="true" focusable="false">${ic.d}</svg>` : ''; };
 const intro = $('#intro'), mainEl = $('main'), footEl = $('footer'), uiEl = $('#ui');
+const iFilm = $('.i-film'), iVid = $('.i-film video'), iPoster = $('.i-film img'), iLogo = $('.i-logo-img'), iSkip = $('.i-skip');
+const reelTrack = $('#reelTrack'), reelEl = $('#reel'), reelBtn = $('#reelBtn');
+let introVideo = '', rsig = '', rw = 0, motionReady = false;
+
+/* ชิ้นส่วนซองที่ใช้ซ้ำ (ฝาหน้า ฝาบน ตราขี้ผึ้ง) */
+const MAILPARTS = `<svg class="m-pocket" viewBox="0 0 142 100" preserveAspectRatio="none" aria-hidden="true"><path d="M0 0L71 55 0 100z" fill="#eee7d4"/><path d="M142 0L71 55l71 45z" fill="#eee7d4"/><path d="M0 100L71 47l71 53z" fill="#f3ede0"/><path d="M0 0L71 55M142 0L71 55" fill="none" stroke="#8a7d57" stroke-opacity=".22" vector-effect="non-scaling-stroke"/><path d="M0 100L71 47l71 53" fill="none" stroke="#8a7d57" stroke-opacity=".3" vector-effect="non-scaling-stroke"/></svg><span class="m-flap" aria-hidden="true"><svg viewBox="0 0 142 60" preserveAspectRatio="none"><path class="fl" d="M0 0h142L74.2 56.6q-3.2 2.4-6.4 0z"/><path d="M0 0L67.8 56.6q3.2 2.4 6.4 0L142 0" fill="none" stroke="#8a7d57" stroke-opacity=".3" vector-effect="non-scaling-stroke"/></svg></span><span class="m-seal" aria-hidden="true"><svg viewBox="0 0 100 100"><use href="#wax"/></svg><img src="assets/logo-sm-light.png" alt="" width="560" height="495"></span>`;
+$$('.mail').forEach(m => m.insertAdjacentHTML('beforeend', MAILPARTS));
 if (previewMode) document.body.classList.add('pv');
 
 /* ---------- ใส่ข้อมูลจาก SITE ลงหน้าเว็บ (เรียกซ้ำได้ — admin ใช้ตอนดูตัวอย่าง) ---------- */
@@ -511,15 +582,8 @@ function render(){
   band.classList.toggle('noimg', !pb.src);
   $('#closing').classList.toggle('noimg', !((SITE.photos || {}).closing || {}).src);
 
-  /* วิดีโอพื้นหลังหน้าแรก (มีปุ่มหยุด) */
-  const vsrc = (SITE.video || {}).src, media = $('.hero-media'); let vid = $('#heroVid'), vb = $('#vbtn');
-  if (vsrc) {
-    if (!vid) { vid = Object.assign(document.createElement('video'), { id:'heroVid', muted:true, loop:true, playsInline:true, autoplay:!reduce }); vid.setAttribute('aria-hidden','true'); media.appendChild(vid); }
-    if (vid.getAttribute('src') !== vsrc) { vid.src = vsrc; if (!reduce) vid.play().catch(() => {}); }
-    media.classList.remove('empty'); $('[data-slot=hero]').hidden = true;
-    if (!vb) { vb = Object.assign(document.createElement('button'), { id:'vbtn', className:'vbtn', type:'button' }); vb.onclick = () => { vid.paused ? vid.play() : vid.pause(); setVb(); }; $('.hero').appendChild(vb); }
-    setVb();
-  } else { if (vid) vid.remove(); if (vb) vb.remove(); }
+  introMedia();
+  buildReel();
 
   /* เพลง: เริ่มเล่นตอนแตะเปิดซอง + ปุ่มเปิด/ปิดมุมขวาล่าง */
   const msrc = (SITE.music || {}).src; let btn = $('#bgmBtn');
@@ -533,9 +597,31 @@ function render(){
       uiEl.appendChild(btn);
     }
   } else { if (window.bgm) { window.bgm.pause(); window.bgm = null; } if (btn) btn.remove(); }
+  if (motionReady) refreshMotion();
 }
-function setVb(){ const v = $('#heroVid'), b = $('#vbtn'); if (!v || !b) return; const p = v.paused;
-  b.setAttribute('aria-label', p ? 'เล่นวิดีโอ' : 'หยุดวิดีโอ'); b.innerHTML = p ? '<svg viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg>' : '<svg viewBox="0 0 16 16"><path d="M4 2.5h3v11H4zM9 2.5h3v11H9z"/></svg>'; }
+
+/* วิดีโอเปิดซอง: ภาพนิ่งซองปิด + วิดีโอแนวตั้ง (หรือแนวนอนสำหรับจอคอม) */
+function introMedia(){
+  const v = (SITE.video || {}).src || '', vw = (SITE.videoWide || {}).src || '', po = ((SITE.photos || {}).poster || {}).src || '';
+  const wide = innerWidth > innerHeight * 1.15, src = wide && vw ? vw : v;
+  iFilm.classList.toggle('fit', wide && !vw);
+  if (po) { if (iPoster.getAttribute('src') !== po) iPoster.src = po; iPoster.hidden = false; } else { iPoster.removeAttribute('src'); iPoster.hidden = true; }
+  intro.classList.toggle('poster', !!(po && src));
+  if (src !== introVideo) { introVideo = src; if (src) { iVid.src = src; iVid.load(); } else iVid.removeAttribute('src'); }
+}
+
+/* แถบฟิล์ม: รูปจาก SITE.gallery (แก้ใน admin) ทำซ้ำ 2 ชุดเพื่อให้วิ่งวนได้ไม่สะดุด */
+function buildReel(){
+  const g = (Array.isArray(SITE.gallery) ? SITE.gallery : []).filter(x => x && x.src);
+  const edge = T('filmEdge', 'LP 2027'), sig = JSON.stringify(g) + edge;
+  if (sig === rsig) return; rsig = sig;
+  const items = g.length ? g : Array.from({ length:6 }, () => ({}));
+  const fig = (x, i, dup) => `<figure${dup ? ' aria-hidden="true"' : ''}><span class="fe" aria-hidden="true">${esc(edge)} ▸ ${String(i + 1).padStart(2, '0')}</span><span class="ph${x.src ? '' : ' empty'}">${x.src ? `<img src="${esc(x.src)}" alt="${dup ? '' : esc(x.alt || '')}" loading="lazy" decoding="async">` : ''}</span></figure>`;
+  reelTrack.innerHTML = items.map((x, i) => fig(x, i, false)).join('') + (reduce ? '' : items.map((x, i) => fig(x, i, true)).join(''));
+  reelTrack.dataset.n = items.length;
+  requestAnimationFrame(reelMeasure);
+}
+function reelMeasure(){ const n = +reelTrack.dataset.n, k = reelTrack.children; rw = (k[n] && k[0]) ? k[n].offsetLeft - k[0].offsetLeft : 0; }
 function playMusic(){ const b = $('#bgmBtn'); if (window.bgm) window.bgm.play().then(() => b && b.setAttribute('aria-pressed', 'true')).catch(() => {}); }
 render();
 
@@ -550,34 +636,169 @@ async function playLogo(img){
   } catch(e){ img.src = LOGO[v].replace('.webp', '.png'); }
 }
 
-/* ---------------- ซองจดหมาย ---------------- */
+/* ---------------- ซองจดหมาย → (วิดีโอ) → โลโก้ → Save the Date ---------------- */
 const setInert = on => { mainEl.inert = on; footEl.inert = on; uiEl.inert = on; };
-let opening = false;
+let opening = false, introTimers = [];
+const later = (fn, ms) => introTimers.push(setTimeout(fn, ms));
 function openEnvelope(){
-  if (opening) return; opening = true; playMusic();
-  if (reduce) { intro.classList.add('leave'); setTimeout(introDone, 350); return; }
-  intro.classList.add('open');
-  setTimeout(() => intro.classList.add('leave'), 1850);
-  setTimeout(introDone, 2650);
+  if (opening) return; opening = true;
+  if (introVideo && !reduce) { playIntroVideo(); return; }
+  playMusic();
+  if (reduce) { intro.classList.add('leave'); later(introDone, 350); return; }
+  /* ยังไม่มีวิดีโอ: ซองเปิด → โลโก้วาดเส้น → เข้าเว็บ */
+  intro.classList.remove('poster'); intro.classList.add('open');
+  later(() => { intro.classList.add('logo'); playLogo(iLogo); }, 1500);
+  later(finishIntro, 1500 + 3600);
+}
+function playIntroVideo(){
+  intro.classList.add('playing');
+  iSkip.focus({ preventScroll:true });
+  const fail = () => { if (!intro.classList.contains('playing')) return; intro.classList.remove('playing', 'poster'); introVideo = ''; opening = false; openEnvelope(); };
+  iVid.onended = finishIntro; iVid.onerror = fail;
+  iVid.muted = false;
+  const p = iVid.play();
+  if (p && p.catch) p.catch(() => { iVid.muted = true; iVid.play().catch(fail); });
+  later(() => { if (intro.classList.contains('playing') && iVid.currentTime < .05) fail(); }, 6000);
+}
+function finishIntro(){
+  if (!opening || intro.classList.contains('leave')) return;
+  introTimers.forEach(clearTimeout); introTimers = [];
+  try { iVid.pause(); } catch(e){}
+  playMusic();
+  intro.classList.add('leave');
+  later(introDone, 800);
 }
 function introDone(){
   opening = false;
-  if (previewMode) { intro.hidden = true; intro.classList.remove('open', 'leave'); return; }
+  if (previewMode) { intro.hidden = true; intro.classList.remove('open', 'leave', 'logo', 'playing'); return; }
   intro.remove(); document.body.classList.remove('locked'); setInert(false);
-  $('#heroTitle').focus({ preventScroll:true }); start();
+  $('#saveH').focus({ preventScroll:true }); start();
 }
 $('#env').addEventListener('click', openEnvelope);
+$('.i-tap').addEventListener('click', openEnvelope);
+iSkip.addEventListener('click', finishIntro);
+addEventListener('keydown', e => { if (e.key === 'Escape' && opening) finishIntro(); });
 if (previewMode || params.has('skip')) { intro.hidden = true; document.body.classList.remove('locked'); start(); }
 else setInert(true);
 
 /* ---------------- ค่อยๆ ปรากฏเมื่อเลื่อนถึง ---------------- */
+let lenis = null;
+function smooth(){
+  if (reduce || lenis || typeof Lenis === 'undefined') return;
+  lenis = new Lenis({ lerp:.1, wheelMultiplier:.9, anchors:true });
+  const raf = t => { lenis.raf(t); requestAnimationFrame(raf); };
+  requestAnimationFrame(raf);
+}
 function start(){
   if (started) return; started = true;
-  $('.hero').classList.add('live');
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold:.15, rootMargin:'0px 0px -6% 0px' });
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', smooth); else smooth();
+  /* ของที่เข้าจอพร้อมกันจะค่อยๆ ขึ้นทีละชิ้น */
+  const io = new IntersectionObserver(es => { let k = 0; es.forEach(e => { if (!e.isIntersecting) return;
+    const t = e.target.classList.contains('wr') ? $('.write', e.target) : e.target, d = (k++ * .09).toFixed(2) + 's';
+    if (t && !reduce) { t.style.transitionDelay = d; setTimeout(() => { t.style.transitionDelay = ''; }, 2200); }
+    e.target.classList.add('in'); io.unobserve(e.target); }); }, { threshold:.15, rootMargin:'0px 0px -6% 0px' });
   $$('.rv,.wr').forEach(el => io.observe(el));
   const lio = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { playLogo(e.target); lio.unobserve(e.target); } }), { threshold:.4 });
   $$('.alogo').forEach(el => lio.observe(el));
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', initMotion); else initMotion();
+}
+
+/* ---------------- motion ตอนเลื่อน (แบบ cora: บางฉากค้างกลางจอแล้วเล่นตามการเลื่อน) ---------------- */
+const SC = !reduce;
+document.documentElement.classList.add(SC ? 'sc' : 'rm');
+const clamp01 = v => v < 0 ? 0 : v > 1 ? 1 : v;
+const scenes = [];
+let ticking = false, sy = 0, svel = 0, slast = 0;
+function scene(el, mode, fn){ if (el) scenes.push({ el, mode, fn, top:0, h:0, p:-1 }); }
+function measureScenes(){ const y = scrollY; scenes.forEach(s => { const r = s.el.getBoundingClientRect(); s.top = r.top + y; s.h = r.height; s.p = -1; }); }
+function tick(){
+  ticking = false;
+  const y = scrollY, vh = innerHeight, now = performance.now();
+  if (slast) svel = svel * .7 + (y - sy) / Math.max(8, now - slast) * 16.7 * .3;
+  sy = y; slast = now;
+  for (const s of scenes) {
+    if (!s.h) continue;
+    const p = clamp01(s.mode === 'pin' ? (y - s.top) / Math.max(1, s.h - vh) : (y + vh - s.top) / (s.h + vh));
+    if (p !== s.p) { s.p = p; s.fn(p); }
+  }
+}
+const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(tick); } };
+
+/* 03 กำหนดการ: เส้นเวลาวาดลงมา แล้วแต่ละช่วงขึ้นทีละอัน */
+function schedSet(p){
+  const lis = $$('#tlItems li'), n = lis.length; if (!n) return;
+  let cur = -1;
+  lis.forEach((li, i) => { const q = clamp01((p - (.06 + i * (.8 / n))) / (.8 / n * .85)); li.style.setProperty('--q', q.toFixed(3)); if (q > .5) cur = i; });
+  lis.forEach((li, i) => li.classList.toggle('cur', SC && i === cur && p < .97));
+}
+/* 02 การ์ดเชิญ + ปิดท้าย: รูปเลื่อนช้ากว่าหน้า */
+function invSet(p){ const im = $('.inv-photo img'); if (im && !im.hidden) im.style.transform = `translate3d(0,${((p - .5) * -10).toFixed(2)}%,0) scale(1.12)`; }
+function closeSet(p){ const im = $('.closing .slot img'); if (im && !im.hidden) im.style.transform = `translate3d(0,${((p - .5) * -12).toFixed(2)}%,0) scale(1.14)`; }
+/* 04 Dress code: พัดสี */
+let fanSpread = 12;
+const TILT = [-4, 3, -2, 4, -3, 2, -1, 3];
+function fanMeasure(){
+  const sw = $('#sw'), li = sw && sw.firstElementChild, n = sw ? sw.children.length : 0; if (!li) return;
+  const half = Math.min(sw.clientWidth, 640) / 2, R = li.offsetHeight * 2.4;
+  const amax = Math.asin(Math.min(.95, Math.max(0, (half - li.offsetWidth / 2 - 6) / R))) * 180 / Math.PI;
+  fanSpread = n > 1 ? Math.min(16, amax / ((n - 1) / 2)) : 0;
+}
+function fanSet(p){
+  const lis = $$('#sw li'), n = lis.length, e = 1 - Math.pow(1 - p, 3);
+  lis.forEach((li, i) => { const a = (i - (n - 1) / 2) * fanSpread * e + TILT[i % TILT.length] * (1 - e); li.style.transform = `rotate(${a.toFixed(2)}deg)`; });
+}
+/* 06 RSVP: ซองเปิดตามการเลื่อน (0 = ปิดประทับตรา, 1 = การ์ดออกมาแล้ว) */
+function mailSet(m, p){
+  if (!m) return;
+  const seal = $('.m-seal', m), flap = $('.m-flap', m), card = $('.m-card', m);
+  const s = clamp01(p / .16), f = clamp01((p - .1) / .34), c = clamp01((p - .4) / .5);
+  const ef = f < .5 ? 2 * f * f : 1 - Math.pow(-2 * f + 2, 2) / 2, ec = 1 - Math.pow(1 - c, 3), ang = ef * 180;
+  seal.style.opacity = (1 - s).toFixed(3); seal.style.transform = `translate(-50%,-50%) scale(${(1 + s * .2).toFixed(3)})`;
+  flap.style.transform = `perspective(900px) rotateX(${ang.toFixed(2)}deg)`; flap.style.zIndex = ang > 90 ? 1 : 4; flap.classList.toggle('back', ang > 90);
+  card.style.transform = `translate3d(0,${(-ec * 62).toFixed(2)}%,0)`;
+  m.parentNode.classList.toggle('opened', p > .55);
+}
+/* 05 แถบฟิล์มวิ่ง */
+let rx = 0, rraf = 0, rlast = 0, rvis = false, rpause = reduce;
+function reelTick(t){
+  rraf = 0;
+  if (!rvis || rpause || !rw) { rlast = 0; return; }
+  const dt = rlast ? Math.min(50, t - rlast) : 16.7; rlast = t;
+  svel *= Math.pow(.9, dt / 16.7);
+  const dir = svel < -.4 ? -1 : 1, speed = .45 + Math.min(14, Math.abs(svel)) * .35;
+  rx -= dir * speed * dt / 16.7;
+  if (rx <= -rw) rx += rw; else if (rx > 0) rx -= rw;
+  reelTrack.style.transform = `translate3d(${rx.toFixed(2)}px,0,0)`;
+  reelEl.style.setProperty('--hx', rx.toFixed(2) + 'px');
+  rraf = requestAnimationFrame(reelTick);
+}
+function refreshMotion(){
+  fanMeasure(); reelMeasure();
+  if (!SC) { schedSet(1); fanSet(1); mailSet($('#mailScene'), 1); return; }
+  measureScenes(); tick();
+}
+function initMotion(){
+  scene($('#schedule'), 'pin', schedSet);
+  scene($('.inv-photo'), 'through', invSet);
+  scene($('#sw'), 'through', p => fanSet(clamp01((p - .12) / .36)));
+  scene($('.rsvp-scene'), 'pin', p => mailSet($('#mailScene'), clamp01(p / .85)));
+  scene($('#closing'), 'through', closeSet);
+  motionReady = true; refreshMotion();
+  reelBtn.onclick = () => { rpause = !rpause; $('span', reelBtn).textContent = rpause ? 'เล่นภาพเลื่อน' : 'หยุดภาพเลื่อน';
+    $('svg', reelBtn).innerHTML = rpause ? '<path d="M2 1l9 5-9 5z"/>' : '<path d="M2 1h3v10H2zM7 1h3v10H7z"/>'; if (!rpause && !rraf) rraf = requestAnimationFrame(reelTick); };
+  new IntersectionObserver(es => es.forEach(e => { rvis = e.isIntersecting; if (rvis && !rraf) rraf = requestAnimationFrame(reelTick); }), { rootMargin:'120px 0px' }).observe(reelEl);
+  if (!SC) return;
+  addEventListener('scroll', onScroll, { passive:true });
+  addEventListener('resize', () => { fanMeasure(); reelMeasure(); measureScenes(); onScroll(); });
+  new ResizeObserver(() => { measureScenes(); onScroll(); }).observe(mainEl);
+}
+
+/* ซองเล็กหลังส่งคำตอบ: การ์ดเลื่อนลงซอง ฝาปิด แล้วประทับตรา */
+function sealMail(){
+  const m = $('#mailThanks'), tx = $('.thanks .tx');
+  m.classList.add('now', 'out'); void m.offsetWidth; m.classList.remove('now');
+  tx.style.animation = 'none'; void tx.offsetWidth; tx.style.animation = '';
+  requestAnimationFrame(() => requestAnimationFrame(() => m.classList.remove('out')));
 }
 
 /* ---------------- นับถอยหลัง ---------------- */
@@ -606,14 +827,17 @@ form.addEventListener('submit', async e => {
   try {
     if (CONFIG.scriptUrl) await fetch(CONFIG.scriptUrl, { method:'POST', mode:'no-cors', headers:{ 'Content-Type':'text/plain;charset=utf-8' }, body:JSON.stringify(data) });
     else await new Promise(r => setTimeout(r, 900));
-    form.hidden = true; $('#rsvpHead').hidden = true;
+    form.hidden = true;
     $('#thanksTitle').textContent = attending === 'yes' ? T('thanksYesTitle', 'แล้วพบกันนะคะ') : T('thanksNoTitle', 'ขอบคุณที่แจ้งให้ทราบค่ะ');
     $('#thanksText').textContent = (attending === 'yes' ? T('thanksYesText', 'ขอบคุณ {name}') : T('thanksNoText', 'ขอบคุณ {name}')).split('{name}').join(name);
-    thanks.hidden = false; $('#thanksTitle').focus();
+    $('#mFrom').textContent = name;
+    $('#mAns').textContent = attending === 'yes' ? `ยินดีเข้าร่วม · ${n} ท่าน` : 'ไม่สะดวกมาร่วมงาน';
+    thanks.hidden = false; sealMail(); $('#thanksTitle').focus({ preventScroll:true });
+    const box = $('#reply'); if (lenis) lenis.scrollTo(box, { offset:-70, duration:1 }); else box.scrollIntoView({ block:'start', behavior:reduce ? 'auto' : 'smooth' });
   } catch (err) { $('#sendErr').hidden = false; }
   finally { btn.disabled = false; btn.textContent = 'ส่งคำตอบ'; }
 });
-$('#again').onclick = () => { thanks.hidden = true; form.hidden = false; $('#rsvpHead').hidden = false; nameIn.focus(); };
+$('#again').onclick = () => { thanks.hidden = true; form.hidden = false; nameIn.focus(); };
 
 /* ---------------- ดูตัวอย่างสดจาก admin.html (iframe ?preview) ---------------- */
 if (previewMode) {
@@ -621,10 +845,10 @@ if (previewMode) {
     const d = e.data || {};
     if (d.type === 'site') { SITE = d.site; render(); }
     if (d.type === 'goto') {
-      if (d.id === 'intro') { intro.classList.remove('open', 'leave'); opening = false; intro.hidden = false; return; }
+      if (d.id === 'intro') { introTimers.forEach(clearTimeout); introTimers = []; try { iVid.pause(); } catch(e){} intro.classList.remove('open', 'leave', 'logo', 'playing'); opening = false; introMedia(); intro.hidden = false; return; }
       intro.hidden = true;
       const el = $(`[data-goto="${d.id}"]`);
-      if (el && !el.hidden) el.scrollIntoView({ behavior:'smooth', block:'start' });
+      if (el && !el.hidden) { if (lenis) lenis.scrollTo(el, { duration:1.1 }); else el.scrollIntoView({ behavior:'smooth', block:'start' }); }
     }
   });
   parent.postMessage({ type:'ready' }, '*');
